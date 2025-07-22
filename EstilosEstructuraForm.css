@@ -58,3 +58,20 @@ footer {
     padding: 1rem;
     text-align: center;
 }
+
+.fotoPerfil{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.imagenPerfil{
+    width: 100px;
+    border-radius: 50%;
+}
+@media (max-width:500px){
+    .imagenPerfil{
+        width: 70px;
+    }
+}
