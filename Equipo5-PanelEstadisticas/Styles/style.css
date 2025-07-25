@@ -191,24 +191,6 @@
   border-bottom-right-radius: var(--radio);
 }
 
-.grande {
-  font-size: 1.5rem;
-  width: 570px;
-  min-height: 200px;
-}
-
-.mediana {
-  font-size: 1.1rem;
-  width: 220px;
-  min-height: 140px;
-}
-
-.pequena {
-  font-size: 1rem;
-  width: 140px;
-  min-height: 100px;
-}
-
 .busqueda-header {
   margin-left: auto;
   display: flex;
@@ -242,6 +224,59 @@
   pointer-events: none;
   stroke: #bdbd7d;
   opacity: 0.8;
+}
+
+.grid-estadisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-estadistica {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tarjeta-estadistica:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(119, 114, 231, 0.15);
+}
+
+.valor-estadistica {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primario);
+  margin: 0.5rem 0;
+  font-family: "Urbanist", sans-serif;
+  background: linear-gradient(135deg, var(--primario), var(--secundario));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titulo-estadistica {
+  font-size: 1.1rem;
+  color: var(--oscuro);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: "Urbanist", sans-serif;
+}
+
+.descripcion-estadistica {
+  font-size: 0.9rem;
+  color: var(--claro);
+  line-height: 1.5;
+  font-family: "Urbanist", sans-serif;
 }
 
 
