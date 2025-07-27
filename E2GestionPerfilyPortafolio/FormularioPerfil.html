@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Perfil</title>
+  <link rel="stylesheet" href="EstilosEstructuraForm.css" />
+</head>
+
+<body>
+
+
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo-container">
+        <div class="logo">Z</div>
+        <span style="font-weight: bold; color: var(--primary-color);">Zenith</span>
+      </div>
+      <div class="nav-buttons">
+        <a href="#login" class="btn btn-outline">Login</a>
+        <a href="#register" class="btn btn-primary">Registrarse</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="containerMain">
+      <section class="formulario-contenedor">
+        <h2>FORMULARIO DE PERFIL</h2>
+        <form class="formulario">
+          <!-- Aqui se agregan los elementos -->
+          <!-- Bloque 3 -->
+          <div class="fotoPerfil">
+            <img class="imagenPerfil"
+              src="/E2GestionPerfilyPortafolio/img/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg"
+              alt="imagen de perfil">
+            <div class="file">
+              <input type="file" name="foto de perfil">
+            </div>
+            <button class="guardar">Guardar</button>
+          </div>
+          <!-- Bloque 1 -->
+          <div class="informacionBasica">
+            <div class="contenedorInputs">
+              <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tus nombres">
+              </div>
+
+              <div class="campo">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tus apellidos">
+              </div>
+
+              <div class="campo">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="correo">
+              </div>
+
+              <div class="campo">
+                <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque 2 -->
+
+          <p><em>Espacio para especialidad (HU003C5)</em></p>
+
+
+
+
+          <!-- Bloque 4 -->
+          <p><em>Espacio para biografia (HU006C5)</em></p>
+          <!-- Aqui va la parte de Tatiana -->
+
+
+        </form>
+      </section>
+    </div>
+  </main>
+
+
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+      <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+      <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>
