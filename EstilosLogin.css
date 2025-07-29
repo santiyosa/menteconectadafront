@@ -14,27 +14,35 @@ body {
   align-items: center;
 }
 
+.logo {
+  width: 150px;     
+  height: auto;  
+  display: flex;
+  align-self: center;
+  margin-left: 75px;
+  margin-top: 70px;
+}
 
 .containerZ {
-display: flex;
-align-items: center;
-font-size: 32px;
-margin-right: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  margin-right: 50px;
 }
-.Z{
+.Z{ 
     display: flex;
-align-items: center;
-font-size: 32px;
- justify-content: center;
- border-radius: 50%;
- border:  3px solid black;
- width: 70px;
- height: 70px;
- font-weight: bold;
- color: black;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 145px;
-  margin-right: -60px;
+    align-items: center;
+    font-size: 32px;
+    justify-content: center;
+    border-radius: 50%;
+    border:  3px solid black;
+    width: 70px;
+    height: 70px;
+    font-weight: bold;
+    color: black;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 145px;
+    margin-right: -60px;
 
 }
 
@@ -55,9 +63,7 @@ font-size: 32px;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-   background: linear-gradient(to bottom, #dcd4e4 0%, #fafad2 100%);
-
-  
+   background: linear-gradient(to bottom, #dcd4e4 0%, #fafad2 100%);  
 }
 
 form {
