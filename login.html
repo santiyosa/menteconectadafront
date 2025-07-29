@@ -18,11 +18,20 @@
             <form id="loginform">
                 <div class="input">
                     <label for="correo" class="forml-label">Correo Electrónico</label>
-                    <input type="email" class="password" id="correo" placeholder="Ingrese correo" required>
+                   <input class="password" type="email" id="correo" name="correo" placeholder="Ingrese correo electronico" required 
+         oninvalid="this.setCustomValidity('Por favor, escribe un correo válido')" 
+         oninput="this.setCustomValidity('')" >
+                   
+                     
                 </div>
                 <div class="input">
                     <label for="contrasena" class="forml-label">Contraseña</label>
-                    <input type="password" class="password" id="contrasena" placeholder="Ingrese contraseña" required>
+                    <input type="password" class="password" id="contrasena" placeholder="Ingrese contraseña" required
+                      oninvalid="this.setCustomValidity('Por favor, escribe un correo válido')" 
+                  oninput="this.setCustomValidity('')">
+                    
+                 
+                    
                 </div>
                 <button type="submit" class="button1">Ingresar</button>
                  <div class="divregister">

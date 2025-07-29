@@ -108,3 +108,7 @@ form {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   cursor: pointer;
 }
+input:invalid{
+  border-color: rgba(255, 40, 49, 1);
+}
+
