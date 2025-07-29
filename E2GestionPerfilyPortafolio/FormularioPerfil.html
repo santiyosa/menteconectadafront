@@ -39,7 +39,7 @@
             <div class="file">
               <input type="file" name="foto de perfil">
             </div>
-            <button class="guardar">Guardar</button>
+            
           </div>
           <!-- Bloque 1 -->
           <div class="informacionBasica">
@@ -66,18 +66,23 @@
             </div>
           </div>
 
-          <!-- Bloque 2 -->
+     
+          <div>
+          <label for="especialidad"> Indica tu especialidad (obligatorio):</label><br>
+          <textarea id="especialidad" name="especialidad" rows="3" cols="40" required></textarea><br><br>
+          </div>
+          
 
-          <p><em>Espacio para especialidad (HU003C5)</em></p>
+          <div class="biografia">
+            <p><em>Escribe tu breve biografia:</em></p>
+          <textarea id="miTextarea" minlength="250" rows="5" cols="50"
+            placeholder="Escribe sobre ti aquí (minimo 250 caracteres)..."></textarea>
+          </div>
 
-
-
-
-          <!-- Bloque 4 -->
-          <p><em>Espacio para biografia (HU006C5)</em></p>
-          <!-- Aqui va la parte de Tatiana -->
-
-
+          <div class="boton-guardar">
+            <button class="guardar">Guardar</button>
+          </div>
+          
         </form>
       </section>
     </div>

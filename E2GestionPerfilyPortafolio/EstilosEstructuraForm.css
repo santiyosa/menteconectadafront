@@ -211,6 +211,10 @@ gap: 17px;
         }
     }
 
+.boton-guardar {
+    align-items: center;
+}    
+
 .guardar {
         padding: 0.75rem 1.5rem;
         border-color: #2c3e50;
@@ -221,6 +225,7 @@ gap: 17px;
         display: inline-block;
         transition: all 0.3s ease;
         text-align: center;
+        width: 100px;
 }
  .guardar:hover {
     background-color: var(--primary-color);
