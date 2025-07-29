@@ -9,6 +9,8 @@
     --border-radius: 12px;
 }
 
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -33,8 +35,7 @@ padding: 20px;
 background-color: #7772e7;
 display: flex;
 gap: 25%;
-margin-left: 20px;
-margin-right: 20px;
+
 
 }
 .ContactarBoton{
