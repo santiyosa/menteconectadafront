@@ -1,0 +1,74 @@
+:root {
+    --primary-color: #7772e7;
+    --secondary-color: #e2e772;
+    --background-color: #e2e772;
+    --text-dark: #2c3e50;
+    --text-light: #555;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    scroll-behavior: smooth;
+}
+
+
+.tarjeta {
+    border: 2px solid black;
+    height: 400px;
+    width: 800px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    margin-right: 90px;
+    margin-left: 250px;
+}
+
+.contenedorBotones {
+padding: 20px;
+background-color: #7772e7;
+display: flex;
+gap: 25%;
+margin-left: 20px;
+margin-right: 20px;
+
+}
+.ContactarBoton{
+    border-radius: 10px;
+    height: 50px;  
+    text-align: center;
+}
+.enviarBoton{
+border-radius: 10px;
+text-align: center;
+}
+.DestinatarioBoton{
+border-radius: 10px;
+}
+
+.caja {
+    border: 2px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 50px ;
+}
+
+.caja2 {
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 50px ;
+
+}
+
+.contenedorCajas {
+    display: flex;
+    gap: 10px;
+    
+}
