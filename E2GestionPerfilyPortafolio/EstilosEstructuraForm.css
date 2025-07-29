@@ -118,15 +118,24 @@
     }
 
     .containerMain {
-        width: 50%;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
         height: 100vh;
         background-color: rgba(255, 255, 240, 0.85);
         display: flex;
         flex-direction: column;
-        align-items: start;
+        justify-content: center;
+        align-items: center;
         border-radius: 20px;
         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
 
+    }
+
+    .tituloFormulario {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .formulario-contenedor {
@@ -136,11 +145,12 @@
         border-radius: 20px;
         text-align: center;
         height: 100%;
-        padding-bottom: 35px;
+        padding-bottom: 60px;
+        justify-content: center;
     }
 
     .formulario {
-        
+
         height: 90%;
         border: 2px dashed #aaa;
         border-radius: 10px;
@@ -160,22 +170,55 @@
         align-self: center;
     }
 
-    .contenedorInputs{
-                       display: flex;
-flex-direction: column;
-gap: 17px;
+    .contenedorInputs {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
     }
 
     .campo {
         display: flex;
         align-self: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
-    /* Para que todos los labels tengan el mismo ancho */
-    .campo label {
-        width: 160px;
-        /* ajusta este valor según necesites */
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
 
+
+
+    .campo label {
+        width: 200px;
+        font-weight: 500;
+    }
+
+    .campo input {
+        flex: 1;
+        padding: 0.5rem;
+        font-size: 1rem;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+        .campo {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .campo label {
+            width: 100%;
+            margin-bottom: 0.3rem;
+        }
+
+        .campo input {
+            width: 100%;
+        }
     }
 
 
@@ -189,33 +232,57 @@ gap: 17px;
         gap: 15px;
     }
 
-    .file{
-        border:2px dashed #1f1f1f7c ;
-        height: 100px;
-        width: 90%;
+    .file {
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100px;
+        width: 90%;
+        border: 2px dashed #1f1f1f7c;
+    }
+
+    .file-inner {
+        display: inline-block;
+        text-align: center;
     }
 
     .imagenPerfil {
         margin: 20px;
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        /* O usa una medida relativa como max-width: 200px; */
+        max-width: 200px;
+        aspect-ratio: 1 / 1;
         border-radius: 50%;
+        object-fit: cover;
     }
 
-    @media (max-width:500px) {
+    @media (max-width: 500px) {
         .imagenPerfil {
-            width: 70px;
+            width: 40vw;
+            max-width: 120px;
+            min-width: 90px;
         }
     }
 
-.boton-guardar {
-    align-items: center;
-}    
+    #especialidad {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: calc(100% - 60px);
+        box-sizing: border-box;
+    }
 
-.guardar {
+    #biografia {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: calc(100% - 60px);
+        box-sizing: border-box;
+    }
+
+    .boton-guardar {
+        align-items: center;
+    }
+
+    .guardar {
         padding: 0.75rem 1.5rem;
         border-color: #2c3e50;
         border-radius: var(--border-radius);
@@ -226,10 +293,13 @@ gap: 17px;
         transition: all 0.3s ease;
         text-align: center;
         width: 100px;
-}
- .guardar:hover {
-    background-color: var(--primary-color);
-  }
+    }
+
+    .guardar:hover {
+        background-color: var(--primary-color);
+    }
+
+
 
     /* FIN INICIOS MAIN */
     /* INICIO ESTILOS FOOTER */

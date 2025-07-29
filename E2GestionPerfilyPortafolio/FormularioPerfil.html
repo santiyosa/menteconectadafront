@@ -28,7 +28,7 @@
   <main>
     <div class="containerMain">
       <section class="formulario-contenedor">
-        <h2>FORMULARIO DE PERFIL</h2>
+        <h2 class="tituloFormulario">FORMULARIO DE PERFIL</h2>
         <form class="formulario">
           <!-- Aqui se agregan los elementos -->
           <!-- Bloque 3 -->
@@ -37,9 +37,11 @@
               src="/E2GestionPerfilyPortafolio/img/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg"
               alt="imagen de perfil">
             <div class="file">
-              <input type="file" name="foto de perfil">
+              <div class="file-inner">
+                <input type="file" name="foto de perfil">
+              </div>
             </div>
-            
+
           </div>
           <!-- Bloque 1 -->
           <div class="informacionBasica">
@@ -66,23 +68,24 @@
             </div>
           </div>
 
-     
-          <div>
-          <label for="especialidad"> Indica tu especialidad (obligatorio):</label><br>
-          <textarea id="especialidad" name="especialidad" rows="3" cols="40" required></textarea><br><br>
+
+          <div class="contenedorEspecialidad">
+            <label for="especialidad"> Indica tu especialidad (obligatorio):</label>
+            <textarea id="especialidad" name="especialidad" rows="3" cols="40" required
+              placeholder="Ej: Psicologo"></textarea>
           </div>
-          
+
 
           <div class="biografia">
             <p><em>Escribe tu breve biografia:</em></p>
-          <textarea id="miTextarea" minlength="250" rows="5" cols="50"
-            placeholder="Escribe sobre ti aquí (minimo 250 caracteres)..."></textarea>
+            <textarea id="biografia" minlength="250" rows="5" cols="50"
+              placeholder="Escribe sobre ti aquí (minimo 250 caracteres)..."></textarea>
           </div>
 
           <div class="boton-guardar">
             <button class="guardar">Guardar</button>
           </div>
-          
+
         </form>
       </section>
     </div>
