@@ -520,6 +520,7 @@
       display: block;
       width: max-content; 
       margin: 0 auto;
+      text-decoration: none;
   }
 
   fieldset {
