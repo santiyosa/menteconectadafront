@@ -8,36 +8,49 @@
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --border-radius: 12px;
 }
-
-
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     scroll-behavior: smooth;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*los laterales horizontal*/
+  justify-content: center; /*los arriba abajo horizontal*/
 }
 
 
 .tarjeta {
     border: 2px solid black;
+    border-radius: 10px;
     height: 400px;
     width: 800px;
-    margin-top: 90px;
-    margin-bottom: 90px;
-    margin-right: 90px;
-    margin-left: 250px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .contenedorBotones {
 padding: 20px;
-background-color: #7772e7;
+background-color: #9896C3;
 display: flex;
-gap: 25%;
+color: black;
+justify-content: space-evenly;
+} 
 
-
+.DestinatarioBoton{
+    border-radius: 10px;
 }
+
+.contenedorCajas {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+ 
 .ContactarBoton{
     border-radius: 10px;
     height: 50px;  
@@ -47,29 +60,43 @@ gap: 25%;
 border-radius: 10px;
 text-align: center;
 }
-.DestinatarioBoton{
-border-radius: 10px;
+
+.contenedorCajas{
+    background-color:#D0D486;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 310px;
 }
 
 .caja {
     border: 2px solid black;
     border-radius: 10px;
-    display: inline-block;
-    margin-top: 50px;
-    margin-left: 50px ;
+       height: 200px;
+    width: 400px;
+    color: black;
+    padding-left: 10px;
 }
 
 .caja2 {
     border-radius: 10px;
     background-color: white;
-    margin-top: 50px;
-    margin-right: 20px;
-    margin-left: 50px ;
-
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
+    border: solid gray;
 }
 
-.contenedorCajas {
-    display: flex;
-    gap: 10px;
-    
+.inputcaja2{
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    margin-left: 5px;
+}
+
+.opcion{
+ 
 }

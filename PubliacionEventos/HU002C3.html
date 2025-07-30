@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="estilos" rel="stylesheet" href="/Base/estilos-alternativo.css" />
+    <title>HU002C3</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+          <div class="logo-container">
+            <div class="logo">Z</div>
+            <span style="font-weight: bold; color: var(--primary-color);">Zenith</span>
+          </div>
+          <div class="nav-buttons">
+            <a href="#login" class="btn btn-outline">Login</a>
+            <a href="#register" class="btn btn-primary">Registrarse</a>
+          </div>
+        </div>
+      </header>
+      <h1>Crear un nuevo evento</h1>
+
+    <main class="formulario-Eventos">
+        <form class="Publicar-Evento" action="/publicar-evento" method="post">
+            <fieldset>
+                <legend>Detalles del Evento</legend>
+
+                <section>
+                    <label for="titulo">Título del Evento:</label>
+                    <input type="text" id="titulo" name="titulo" required aria-describedby="titulo-ayuda">
+                    <small id="titulo-ayuda">Ingresa un título claro y conciso para tu evento.</small>
+                </section>
+
+                <section>
+                    <label for="fecha">Fecha del Evento:</label>
+                    <input type="date" id="fecha" name="fecha" required aria-describedby="fecha-ayuda">
+                    <small id="fecha-ayuda">Selecciona la fecha en que se realizará el evento.</small>
+                </section>
+
+                <section>
+                    <label for="descripcion">Descripción del Evento:</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" required aria-describedby="descripcion-ayuda"></textarea>
+                    <small id="descripcion-ayuda">Proporciona una descripción detallada de lo que trata el evento.</small>
+                </section>
+            </fieldset>
+
+            <button type="submit" class="btn-primary">Publicar Evento</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+          <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+          <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
+        </div>
+      </footer>
+
+</body>
+</html>
