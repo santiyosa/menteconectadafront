@@ -23,6 +23,11 @@
         scroll-behavior: smooth;
     }
 
+    h1{
+        padding-top: 25px;
+        text-align: center;
+    }
+
     .header {
     background-color: white;
     padding: 15px;
@@ -32,13 +37,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
     }
     .logo-container {
     display: flex;
-    gap: 20px;
+    gap: 80px;
     align-items: center;
+    padding-left: 5%;
     }
     .logo-container a {
     text-decoration: none;
@@ -55,6 +60,16 @@
     justify-content: center;
     padding: 20px;
     }
+
+    .card-container{
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+    padding-top: 2%;
+    }
+
     .card {
     background-color: white;
     padding: 20px;
@@ -62,7 +77,14 @@
     width: 300px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(115, 148, 239, 0.4);
+    }
+
     .card img {
     width: 100px;
     height: 100px;
@@ -84,7 +106,7 @@
     }
     
     button {
-    background-color: #7772e7;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border: none;
     padding: 10px 20px;
@@ -92,3 +114,8 @@
     cursor: pointer;
     margin-top: 15px;
     }  
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(115, 148, 239, 0.4);
+    }

@@ -1,12 +1,28 @@
+    :root {
+      --primary-color: #7772e7;
+      --secondary-color: #e2e772;
+      --background-color: #e2e772;
+      --text-dark: #2c3e50;
+      --text-light: #555;
+      --white: #ffffff;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+    }
+
 body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background-color: #f9f9f9;
+      background: linear-gradient(135deg, var(--background-color) 0%, #e8f4f8 100%);
+    }
+
+    h1{
+      color: var(--primary-color);
     }
 
     h2 {
       border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
+      color: var(--primary-color);
     }
 
     .grid {
@@ -22,6 +38,12 @@ body {
       border-radius: 8px;
       padding: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(115, 148, 239, 0.4);
     }
 
     .card h3 {
@@ -34,8 +56,9 @@ body {
       color: #555;
     }
 
+
     .card button {
-      background-color: #007BFF;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       border: none;
       color: white;
       padding: 8px 12px;
@@ -44,5 +67,6 @@ body {
     }
 
     .card button:hover {
-      background-color: #0056b3;
+       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(115, 148, 239, 0.4);
     }
