@@ -160,7 +160,7 @@
   flex-wrap: wrap;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  margin-left: 5rem; 
+  margin-left: 5.4rem; 
 }
 .tarjeta-rect {
   background: #fff;
@@ -233,59 +233,96 @@
   stroke: #bdbd7d;
   opacity: 0.8;
 }
-
+/* -------------------------------------- MARIANA ----------------------------------*/
 /* Estilo para el contenedor de estadísticas de cada desarrollador */
 .grid-estadisticas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  gap: 3rem;
   padding: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .tarjeta-estadistica {
-  background: var(--blanco);
+  position: relative;
+  background: linear-gradient(135deg, #fff 70%, #e2e77222 100%);
   border-radius: var(--radio);
-  padding: 1.5rem;
-  box-shadow: var(--sombra);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 6px 32px 0 rgba(119, 114, 231, 0.10), 0 1.5px 6px rgba(0,0,0,0.06);
+  transition: 
+    transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), 
+    box-shadow 0.35s, 
+    background 0.35s;
+  /* Centra el contenido de la tarjeta y lo organiza en columna */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: visible;
+  border: 2px solid transparent;
 }
 
 .tarjeta-estadistica:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(119, 114, 231, 0.15);
+  transform: translateY(-14px) scale(1.06);
+  box-shadow: 0 24px 64px 0 rgba(119, 114, 231, 0.22), 0 4px 16px rgba(226,231,114,0.13);
+  background: linear-gradient(120deg, #e2e772 0%, #fff 90%);
+  border: 2px solid var(--primario);
+  cursor: pointer;
+  filter: brightness(1.07) saturate(1.13);
+}
+
+.icono-estadistica {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primario) 60%, var(--secundario) 100%);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(119, 114, 231, 0.13);
+  transition: background 0.35s, box-shadow 0.35s;
+  z-index: 2;
+}
+
+.icono-estadistica .material-icons {
+  color: #fff;
+  font-size: 2.2rem;
+  transition: color 0.35s;
+}
+
+.tarjeta-estadistica:hover .icono-estadistica {
+  background: linear-gradient(135deg, var(--secundario) 40%, var(--primario) 100%);
+  box-shadow: 0 12px 32px rgba(226, 231, 114, 0.18);
+}
+
+.tarjeta-estadistica:hover .icono-estadistica .material-icons {
+  color: var(--primario);
 }
 
 .valor-estadistica {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primario);
-  margin: 0.5rem 0;
+  font-size: 3.5rem;
+  font-weight: 700; 
   font-family: "Urbanist", sans-serif;
   background: linear-gradient(135deg, var(--primario), var(--secundario));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: 
+    transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), 
+    text-shadow 0.4s, 
+    filter 0.4s;
+  text-shadow: 0 2px 12px rgba(119, 114, 231, 0.10);
+  margin-top: 1.2rem;
+  filter: brightness(1.18) drop-shadow(0 0 8px var(--primario)88);
 }
 
-.titulo-estadistica {
-  font-size: 1.1rem;
-  color: var(--oscuro);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-family: "Urbanist", sans-serif;
-}
-
-.descripcion-estadistica {
-  font-size: 0.9rem;
-  color: var(--claro);
-  line-height: 1.5;
-  font-family: "Urbanist", sans-serif;
+.tarjeta-estadistica:hover .valor-estadistica {
+  transform: scale(1.13);
+  text-shadow: 0 8px 32px rgba(119, 114, 231, 0.18), 0 2px 8px rgba(0,0,0,0.08);
 }
 
 /* Estilo para la sección del equipo en el landing */
