@@ -360,10 +360,35 @@
 }
 
 /* Parte de Andrea */
-.carrusel {
-  position: relative;
-  width: 100%;
+.galeria {
+  margin-top: 80px; 
+  margin-left: 100px; 
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
+}
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.frase-final {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.2rem;
+  color: var(--oscuro);
+  text-align: center;
+  margin: 20px auto 0 auto; 
+  font-style: italic;
+  width: 100%;              
+  display: block;
 }
