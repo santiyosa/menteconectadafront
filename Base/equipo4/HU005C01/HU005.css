@@ -1,0 +1,44 @@
+:root {
+  --primary-color: #7772e7;
+  --secondary-color: #e2e772;
+  --background-color: #e2e772;
+  --text-dark: #2c3e50;
+  --text-light: #555;
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+.boton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  cursor: pointer;
+  padding: 0;
+  color: white;
+  font-size: 80px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(115, 148, 239, 0.4);
+}
