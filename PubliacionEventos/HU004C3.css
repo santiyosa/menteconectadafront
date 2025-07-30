@@ -12,12 +12,18 @@ body {
 
 .nav-buttons a {
   text-decoration: none;
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #e2e772;
   color: #333;
   padding: 8px 18px;
   border-radius: 20px;
   font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons a:hover {
+  background-color: #7772e7;
+  color: white;
 }
 
 .container {
