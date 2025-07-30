@@ -39,7 +39,39 @@
     </header>
     <main class="principal">
         <section>
-           
+           <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador de Sesiones</title>
+  <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Contributors/Diego/style.css" />
+</head>
+<body>
+  <div class="card">
+    <h2>Bienvenido 👋</h2>
+    <p class="description">Iniciaste sesión las siguientes veces:</p>
+    <div id="counter" class="counter">0</div>
+    <button id="loginBtn">Iniciar sesión</button>
+    <button id="landingBtn" href="/Equipo5-PanelEstadisticas/landing/index.html">Volver</button>
+  </div>
+
+  <script>
+
+    document.getElementById('landingBtn').addEventListener('click', function() {
+  window.location.href = '/Equipo5-PanelEstadisticas/landing/index.html';
+});
+    let contador = 0;
+
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      contador++;
+      document.getElementById('counter').textContent = contador;
+
+      
+    });
+  </script>
+</body>
+</html>
         </section>
     </main>
 </body>
