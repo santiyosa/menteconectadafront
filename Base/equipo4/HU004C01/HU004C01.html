@@ -13,15 +13,22 @@
     <div class="tarjeta">
 
         <div class="contenedorBotones">
+            <label for="menu">Ver detalle</label>
+            <select id="menu" name="menu">
+                <option value="opcion1">Mensajes recibidos</option>
+                <option value="opcion2">Fecha y hora</option>
+                <option value="opcion3">Enviados</option>
+            </select>
             <button class="ContactarBoton">Contactar</button>
             <button class="enviarBoton">Enviar</button>
             <input class="DestinatarioBoton" "text" placeholder="Destinatario">
         </div>
 
         <div class="contenedorCajas">
+
             <div class="caja">
                 <p>HIJ04C01 MEDICO</p>
-                    <p>revisar los mensajes recibidos</p>
+                <p>revisar los mensajes recibidos</p>
                 <ul>
                     <li>se muestra en listas o tarjetas </li>
                     <li>cada mensaje tiene remitente, resumen y fecha </li>
@@ -30,7 +37,7 @@
             </div>
 
             <div class="caja2">
-                <p>Introduce tu mensaje</p>
+                <textarea class="inputcaja2" placeholder="Redactar mensaje..."></textarea>
             </div>
         </div>
 
