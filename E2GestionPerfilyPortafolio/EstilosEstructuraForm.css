@@ -249,7 +249,6 @@
     .imagenPerfil {
         margin: 20px;
         width: 100%;
-        /* O usa una medida relativa como max-width: 200px; */
         max-width: 200px;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
@@ -290,7 +289,7 @@
         font-weight: 500;
         text-decoration: none;
         display: inline-block;
-        transition: all 0.3s ease;
+        transition: all 0.3s;
         text-align: center;
         width: 100px;
     }
