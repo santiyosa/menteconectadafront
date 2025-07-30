@@ -508,7 +508,7 @@
       min-height: 100px;
   }
 
-  button {
+.btn-primary {
       background-color: #007bff;
       color: white;
       padding: 12px 20px;
@@ -517,9 +517,11 @@
       cursor: pointer;
       font-size: 16px;
       width: 100%;
+      display: block;
+      width: max-content; 
+      margin: 0 auto;
   }
 
-  /* Estilos para accesibilidad y semántica */
   fieldset {
       border: 1px solid #ddd;
       border-radius: 8px;
