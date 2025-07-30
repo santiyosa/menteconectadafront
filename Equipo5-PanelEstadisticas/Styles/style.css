@@ -413,3 +413,129 @@
   margin-top: 0.2rem;
   line-height: 1.4;
 }
+
+
+/* ==============================
+   TITULO CENTRAL Y TARJETAS
+============================== */
+
+:root {
+  --primary-color: #7772e7;
+  --secondary-color: #e2e772;
+  --color-hero: #5AAAFD;
+  --color-acento: #A8449F;
+  --color-tarjeta: #ffffff;
+  --color-texto-principal: #222222;
+  --white: #232020;
+}
+
+
+.contenido-central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.titulo-principal {
+  font-size: 32px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.panel-tarjetas {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tarjeta-individual {
+    background: linear-gradient(135deg, var(--secondary-color), #ffffff); /* Amarillo a blanco */
+  border: 3px solid var(--color-hero);
+  border-radius: 16px;
+  padding: 32px 40px; /* más espacio interno vertical y horizontal */
+  width: 320px; /* o más, por ejemplo 360px si deseas mucho más grande */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  color: var(--white); /* Contraste con el fondo */
+}
+
+.tarjeta-individual:hover {
+  transform: translateY(-15px);
+}
+
+/* Estilo para los títulos internos de las tarjetas */
+.tarjeta-individual h3 {
+  color: var(--color-texto-principal); /* Color por defecto para títulos */
+  font-size: 28px;                     /* Más grande que antes */
+  margin-bottom: 12px;
+}
+
+/* Estilo especial solo para los títulos “Sesiones” y “Colaboraciones” */
+.tarjeta-individual h3.sesiones,
+.tarjeta-individual h3.colaboraciones {
+  color: var(--primary-color); /* Color del título principal del panel */
+}
+
+.tarjeta-individual p {
+  color: var(--white); /* Contraste con fondo */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tarjeta-individual .highlight {
+  font-weight: 700;
+  color: var(--color-acento);
+  font-size: 32px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-hero); /* o #7772e7 */
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #5a57c7; /* o usa otra tonalidad */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--color-hero); /* asegúrate que esté definida en :root */
+}
+
+.btn-primary:hover {
+  background-color: #5a57c7;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 600px) {
+  .panel-tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-individual {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .tarjeta-individual h3 {
+    font-size: 20px;
+  }
+}
+
