@@ -143,16 +143,18 @@
         border-radius: 5px;
     }
 
-    /*ELIMINAR*/
+    /*ELIMINAR O COMENTAR*/
     .contenedorEliminable{
         display: flex;
         gap: 200px;
     }
-    /*ELIMINAR*/
+
+    /*ELIMINAR O COMENTAR*/
     .comentarioeliminable{
         color: green;
     }
-    /*ELIMINAR*/
+
+    /*ELIMINAR O COMENTAR*/
     .temporalLinkseliminable{
         display: flex;
         flex-direction: column;

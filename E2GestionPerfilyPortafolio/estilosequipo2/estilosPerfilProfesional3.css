@@ -130,7 +130,8 @@
         text-align: center;
     }
 
-    .comentarioEliminar{
+    /*ELIMINAR O COMENTAR*/
+    .comentarioEliminar {
         color: green;
     }
 
