@@ -114,21 +114,27 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 130px 0px 60px 0px;
+        margin: 100px 0px 20px 0px;
     }
 
     .containerMain {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         gap: 40px;
-        width: 80%;
+        width: 90%;
+        padding-top: 100px;
         height: 100vh;
         border-radius: 20px;
         background-color: #FFFDD0;
         text-align: center;
     }
+
+    .comentarioEliminar{
+        color: green;
+    }
+
+
 
     /* FIN INICIOS MAIN */
     /* INICIO ESTILOS FOOTER */
