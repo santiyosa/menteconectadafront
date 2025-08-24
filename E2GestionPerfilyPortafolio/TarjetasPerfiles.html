@@ -4,65 +4,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pagina Perfil</title>
-  <link rel="stylesheet" href="/E2GestionPerfilyPortafolio/estilosequipo2/estilosPerfiles.css" />
+  <title>Profesionales</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" href="/E2GestionPerfilyPortafolio/img/logoZenith.png">
 </head>
 
-<body>
+<body
+  class="min-h-screen bg-gradient-to-br from-lime-100 via-lime-100 from-yellow-200 flex flex-col justify-center items-center">
 
-  <header class="header">
-    <div class="nav-container">
-      <div class="logo-container">
-        <div class="logo">Z</div>
-        <span style="font-weight: bold; color: var(--primary-color);">Zenith</span>
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur-[10px] z-[1000] py-4 shadow-sm">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 md:gap-0 gap-1">
+
+      <div class="flex items-center gap-3">
+        <a href="/Base/index.html">
+          <img class="w-16 h-auto" src="/E2GestionPerfilyPortafolio/img/logoZenith.png" alt="Zogo pagina zenith">
+        </a>
+        <span class="text-3xl font-bold text-[#6b63ff]">Zenith</span>
       </div>
-      <div class="nav-buttons">
-        <a href="#login" class="btn btn-outline">Login</a>
-        <a href="#register" class="btn btn-primary">Registrarse</a>
+
+      <div class="flex gap-4">
+        <a href="#login"
+          class="px-5 py-2 rounded-lg font-medium border-2 border-[#6b63ff] text-[#6b63ff] hover:bg-[#6b63ff] hover:text-white transition">
+          Login
+        </a>
+        <a href="#register"
+          class="px-5 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
+          Registrarse
+        </a>
       </div>
+
     </div>
   </header>
 
-  <main>
-    <div class="containerMain">
-      <div class="contenedorTituloBotonPrincipal">
-        <h2>PAGINA TAJETAS DE VARIOS PROFESIONALES</h2>
-        <a href="/E2GestionPerfilyPortafolio/FormularioPerfil.html">Agregar especialista</a>
+  <main
+    class="bg-[rgba(255,_255,_240,_0.85)] lg:w-[90%] h-auto shadow-lg shadow-stone-500 rounded-xl flex flex-col items-center mt-[120px] mb-[17px] py-[150px] w-[90%]">
+    <div class="flex justify-center items-center gap-8">
+      <h2 class="font-semibold text-gray-800 text-center text-2xl md:text-2xl">PAGINA TARJETAS DE VARIOS PROFESIONALES
+      </h2>
+      <a class="bg-[#8e89ef] md:px-4 md:py-2 sm:px-6 py-2 px-3 md:py-2 rounded-lg hover:bg-[#726be0] transition"
+        href="/E2GestionPerfilyPortafolio/FormularioPerfil.html">Agregar especialista</a>
+    </div>
+    <!-- ELIMINAR O COMENTAR SI ESTORBA -->
+    <div class="flex justify-center items-center gap-50 mt-6 ">
+      <!-- ELIMINAR O COMENTAR SI ESTORBA -->
+      <div class="flex-col flex justify-center items-center text-green-700 gap-1">
+        <h4>PAGINA DE TARJETA DE ESPECIALISTAS</h4>
+        <p> Historias que posiblemente van aca: </p>
+        <li>HU002C5</li>
+        <li>HU012C5</li>
+        <li>HU014C5</li>
+        <li>HU020C5</li>
+
       </div>
       <!-- ELIMINAR O COMENTAR SI ESTORBA -->
-      <div class="contenedorEliminable">
-        <!-- ELIMINAR O COMENTAR SI ESTORBA -->
-        <div class="comentarioeliminable">
-          <h4>PAGINA DE TARJETA DE ESPECIALISTAS</h4>
-          <p> Historias que posiblemente van aca: </p>
-          <li>HU002C5</li>
-          <li>HU012C5</li>
-          <li>HU014C5</li>
-          <li>HU020C5</li>
-
-        </div>
-        <!-- ELIMINAR O COMENTAR SI ESTORBA -->
-        <div class="temporalLinkseliminable">
-          <p>Links necesarios de cada profesional</p>
-          <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional1.html">Ir al perfil del
-            especialista 1</a>
-          <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional2.html">Ir al perfil del
-            especialista 2</a>
-          <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional3.html">Ir al perfil del
-            especialista 3</a>
-          <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional4.html">Ir al perfil del
-            especialista 4</a>
-        </div>
+      <div class="flex-col flex justify-center items-center text-blue-600 gap-1">
+        <p class="text-green-700 no-underline">Links necesarios de cada profesional</p>
+        <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional1.html">Ir al perfil del
+          especialista 1</a>
+        <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional2.html">Ir al perfil del
+          especialista 2</a>
+        <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional3.html">Ir al perfil del
+          especialista 3</a>
+        <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional4.html">Ir al perfil del
+          especialista 4</a>
       </div>
 
     </div>
   </main>
 
-
-
-
-  <footer class="footer">
-    <div class="footer-content">
+  <footer class="bg-[#e9ed92] w-full h-[150px] flex flex-col justify-center items-center mt-9">
+    <div class="flex flex-col justify-center items-center gap-4">
       <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
       <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
       <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>

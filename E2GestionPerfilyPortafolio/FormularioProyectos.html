@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de proyectos</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="/E2GestionPerfilyPortafolio/img/logoZenith.png">
+</head>
+
+<body
+    class="min-h-screen bg-gradient-to-br from-lime-100 via-lime-100 from-yellow-200 flex flex-col justify-center items-center">
+
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-[10px] z-[1000] py-4 shadow-sm">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 md:gap-0 gap-1">
+
+            <div class="flex items-center gap-3">
+                <a href="/Base/index.html">
+                    <img class="w-16 h-auto" src="/E2GestionPerfilyPortafolio/img/logoZenith.png"
+                        alt="Zogo pagina zenith">
+                </a>
+                <span class="text-3xl font-bold text-[#6b63ff]">Zenith</span>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#login"
+                    class="px-5 py-2 rounded-lg font-medium border-2 border-[#6b63ff] text-[#6b63ff] hover:bg-[#6b63ff] hover:text-white transition">
+                    Login
+                </a>
+                <a href="#register"
+                    class="px-5 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
+                    Registrarse
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main
+        class="bg-[rgba(255,_255,_240,_0.85)] lg:w-[50%] h-[auto] shadow-lg shadow-stone-500 rounded-xl flex flex-col items-center mt-28 w-[90%]">
+        <h1 class="text-2xl font-bold text-gray-700 mt-6 flex text-center">AGREGA UN PROYECTO</h1>
+        <div
+            class="bg-transparent w-[80%] h-[auto] rounded-lg mt-6 border-2 border-dashed border-gray-700 mb-6 px-2 py-4">
+            <form action="">
+                <div
+                    class="bg-[#8e89ef] w-[auto] md:w-[278px] sm:w-[auto] h-auto items-center flex justify-center flex-wrap">
+                    <h4 class="font-normal">Añade un proyecto a tu portafolio</h4>
+                </div>
+                <div class="flex flex-col gap-4 sm:ml-3 md:ml-8 mt-10">
+                    <div class="flex flex-wrap gap-3">
+                        <label for="nombreProyecto">Nombre del proyecto:</label>
+                        <input class="bg-gray-200 pl-2 rounded-sm " type="text" id="nombreProyecto"
+                            name="nombreProyecto" required placeholder="Nombre del proyecto">
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <label for="añoProyecto">Año:</label>
+                        <input class="bg-gray-200 pl-2 rounded-sm" type="date" id="añoProyecto" name="añoProyecto"
+                            required placeholder="Año del proyecto">
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <label for="descripcionProyecto">Descripción:</label>
+                        <textarea class="bg-gray-200 pl-2 rounded-sm w-60" id="descripcionProyecto"
+                            name="descripcionProyecto" required placeholder="Descripcion del proyecto"></textarea>
+                    </div>
+                    <div>
+                        <p>Agrega imagenes del proyecto:</p>
+                        <div class="flex gap-2 h-auto flex-wrap pl-1">
+                            <img class="w-[100px] h-auto border-2 border-gray-200 rounded-md"
+                                src="/E2GestionPerfilyPortafolio/img/proyecto1.jpg" alt="Imagen del proyecto 1">
+                            <img class="w-[100px] h-auto border-2 border-gray-200 rounded-md"
+                                src="/E2GestionPerfilyPortafolio/img/proyecto2.jpg" alt="Imagen del proyecto 2">
+                            <img class="w-[100px] h-auto border-2 border-gray-200 rounded-md"
+                                src="/E2GestionPerfilyPortafolio/img/proyecto3.jpg" alt="Imagen del proyecto 3">
+                            <label for="subirArchivo"
+                                class="w-[100px] h-[100px] bg-gray-100 flex items-center justify-center border-2 border-dashed  border-gray-400 rounded-md cursor-pointer  hover:bg-gray-200">
+                                <span class="text-3xl text-gray-500">+</span>
+                            </label>
+                            <input id="subirArchivo" type="file" class="hidden" />
+                        </div>
+                    </div>
+                    <div class=" my-4 flex items-center justify-center sm:gap-8 gap-1">
+                        <a class="bg-[#8e89ef] md:px-4 md:py-2 sm:px-6 py-2 px-3 md:py-2 rounded-lg hover:bg-[#726be0] transition"
+                            href="/E2GestionPerfilyPortafolio/TarjetasPerfiles.html">Inicio</a>
+                        <button type="reset"
+                            class="bg-[#8e89ef] md:px-4 md:py-2 sm:px-6 py-2 px-3 md:py-2 rounded-lg hover:bg-[#726be0] transition">Cancelar</button>
+                        <button type="submit"
+                            class="bg-[#8e89ef] md:px-4 md:py-2 sm:px-6 py-2 px-3 md:py-2 rounded-lg hover:bg-[#726be0] transition">Agregar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-[#e9ed92] w-full h-[150px] flex flex-col justify-center items-center mt-9">
+        <div class="flex flex-col justify-center items-center gap-4">
+            <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+            <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+            <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
