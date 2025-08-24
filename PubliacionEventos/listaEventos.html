@@ -139,6 +139,37 @@
     </div>
   </div>
 
+  <!-- Botón para abrir el modal -->
+  <div class="fixed bottom-8 right-8 z-[9999]">
+    <button id="btn-proximos-eventos"
+      class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white px-6 py-3 rounded-[12px] font-semibold shadow-lg transition hover:scale-105 hover:shadow-2xl hover:ring-4 hover:ring-[#e2e772]/40">
+      Ver próximos eventos
+    </button>
+  </div>
+
+  <!-- Modal de próximos eventos -->
+  <div id="modal-proximos-eventos"
+    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm transition-all duration-300"
+    style="display:none;">
+    <div class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative"
+      onclick="event.stopPropagation();">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">Próximos eventos</h2>
+      <div class="flex gap-4 mb-6 justify-center items-center">
+        <label class="text-white font-medium">Desde:
+          <input type="date" id="filtro-desde" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50]">
+        </label>
+        <label class="text-white font-medium">Hasta:
+          <input type="date" id="filtro-hasta" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50]">
+        </label>
+        <button id="btn-filtrar-fechas"
+          class="bg-[#7772e7] text-white px-3 py-1 rounded font-semibold hover:bg-[#16a34a] transition">Filtrar</button>
+        <button id="btn-limpiar-filtro"
+          class="bg-[#ef4444] text-white px-3 py-1 rounded font-semibold hover:bg-[#b91c1c] transition">Limpiar filtro</button>
+      </div>
+      <ul id="lista-proximos-eventos" class="space-y-3"></ul>
+    </div>
+  </div>
+
   <script>
     const featuredContainer = document.getElementById('featuredEvents');
     const maxFeatured = 3;
@@ -196,6 +227,88 @@
           btn.textContent = "Inscribirme";
         }, 4000);
       });
+    });
+
+    // Funcionalidad del modal de próximos eventos
+    const btnProximosEventos = document.getElementById('btn-proximos-eventos');
+    const modalProximosEventos = document.getElementById('modal-proximos-eventos');
+
+    btnProximosEventos.addEventListener('click', () => {
+      modalProximosEventos.style.display = 'flex';
+    });
+
+    modalProximosEventos.addEventListener('click', () => {
+      modalProximosEventos.style.display = 'none';
+    });
+
+    // Filtrar eventos por fecha
+    document.getElementById('btn-filtrar-fechas').addEventListener('click', () => {
+      const fechaDesde = document.getElementById('filtro-desde').value;
+      const fechaHasta = document.getElementById('filtro-hasta').value;
+      const listaEventos = document.getElementById('lista-proximos-eventos');
+
+      // Limpiar lista
+      listaEventos.innerHTML = '';
+
+      // Aquí deberías filtrar los eventos según las fechas seleccionadas
+      // Este es un ejemplo estático, deberías reemplazarlo con tu lógica de eventos
+      const eventosEjemplo = [
+        {
+          fecha: '2025-08-25',
+          titulo: 'Taller de Resiliencia: Adaptarse y Crecer',
+          descripcion: 'Aprende a superar la adversidad y salir fortalecido. Descubre cómo enfrentar los desafíos de la vida con una mentalidad flexible y de crecimiento.'
+        },
+        {
+          fecha: '2025-08-26',
+          titulo: 'Webinar sobre el Manejo del Estrés Crónico',
+          descripcion: 'Comprende cómo el estrés prolongado te afecta. Aprende técnicas efectivas para identificar sus fuentes, reducir sus efectos y restaurar tu bienestar.'
+        },
+        {
+          fecha: '2025-08-27',
+          titulo: 'Conversatorio: Desafíos y Estrategias para la Salud Mental Masculina',
+          descripcion: 'Un espacio para abordar los desafíos que enfrentan los hombres. Fomenta el diálogo y ofrece estrategias para buscar ayuda y cuidarse.'
+        },
+         {
+          fecha: '2025-08-28',
+          titulo: 'Jornada de Psicología Positiva: Construyendo el Bienestar',
+          descripcion: 'Explora la psicología positiva para cultivar la felicidad. Aprende a enfocarte en tus fortalezas y a construir una vida más plena.'
+        },
+        {
+          fecha: '2025-08-29',
+          titulo: 'Charla sobre la Relación entre Sueño y Salud Mental',
+          descripcion: 'Descubre por qué un buen descanso es vital. Aprende cómo la falta de sueño afecta tu estado de ánimo y obtén consejos para mejorar tus hábitos.'
+        },
+        {
+          fecha: '2025-09-01',
+          titulo: 'Grupo de Apoyo para Familias de Personas con Trastornos de la Conducta Alimentaria',
+          descripcion: 'Un entorno de apoyo para familiares donde pueden compartir experiencias, recibir orientación y cuidar de su propio bienestar emocional.'
+        }
+      ];
+
+      const eventosFiltrados = eventosEjemplo.filter(evento => {
+        return (!fechaDesde || evento.fecha >= fechaDesde) && (!fechaHasta || evento.fecha <= fechaHasta);
+      });
+
+      eventosFiltrados.forEach(evento => {
+        const li = document.createElement('li');
+        li.className = "bg-white rounded-lg shadow p-4";
+        li.innerHTML = `
+          <h3 class="text-[#2c3e50] font-semibold">${evento.titulo}</h3>
+          <p class="text-[#555]">${evento.descripcion}</p>
+          <span class="text-xs text-[#777]">${evento.fecha}</span>
+        `;
+        listaEventos.appendChild(li);
+      });
+
+      if (eventosFiltrados.length === 0) {
+        listaEventos.innerHTML = '<li class="text-center text-[#777] py-2">No se encontraron eventos para las fechas seleccionadas.</li>';
+      }
+    });
+
+    document.getElementById('btn-limpiar-filtro').addEventListener('click', () => {
+      document.getElementById('filtro-desde').value = '';
+      document.getElementById('filtro-hasta').value = '';
+      document.getElementById('lista-proximos-eventos').innerHTML = '';
     });
   </script>
 </body>
