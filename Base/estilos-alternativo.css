@@ -457,3 +457,80 @@
         font-size: 0.9rem;
       }
     }
+
+
+    /*Mi parte*/
+
+   .Publicar-Evento{
+      background-color: #fff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: auto;
+  }
+
+  .formulario-Eventos{
+      margin-top: 70px; 
+      margin-bottom: 50px;
+  }
+
+  h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+  }
+
+  section {
+      margin-bottom: 20px;
+  }
+
+  label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box; /* Para incluir padding y borde en el ancho */
+  }
+
+  textarea {
+      resize: vertical; /* Permite redimensionar verticalmente */
+      min-height: 100px;
+  }
+
+.btn-primary {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      display: block;
+      width: max-content; 
+      margin: 0 auto;
+  }
+
+  fieldset {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+  }
+  legend {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+      padding: 0 10px;
+  }
