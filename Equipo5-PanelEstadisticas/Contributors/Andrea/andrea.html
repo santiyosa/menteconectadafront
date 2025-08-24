@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="transition-colors">
 
 <head>
     <meta charset="UTF-8">
@@ -10,43 +10,87 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7772e7',
+                        secondary: '#e2e772',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+    </style>
+
+    <!-- Inicialización de tema ANTES de que cargue el contenido -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- Flowbite para Tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </head>
 
-<body class="fondo">
-    <nav class="barra-lateral">
-        <ul>
-            <li><a class="logo" href="/Base/index.html">Z
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/landing/index.html" class="icono-nav">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 12L12 3l9 9" stroke="#7772e7" stroke-width="2" />
-                        <rect x="6" y="12" width="12" height="8" rx="2" stroke="#7772e7" stroke-width="2" />
-                    </svg>
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Andrea Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono"
-                        class="icono-avatar">
-                </a></li>
+<body class="bg-secondary dark:bg-[#121212] min-h-screen transition-colors">
+    <!-- Barra lateral -->
+    <nav class="fixed top-5 left-5 bottom-5 w-20 bg-primary dark:bg-[#5751a8] flex flex-col items-center py-4 z-50 rounded-2xl shadow-lg overflow-y-auto">
+        <ul class="flex flex-col gap-5 h-full justify-start">
+            <li>
+                <a class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-2xl no-underline" href="/Base/index.html">Z</a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/landing/index.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-gray-700 shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <span class="material-icons text-primary dark:text-[#a8a4e9] text-3xl">home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Mateo Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
         </ul>
     </nav>
-    <header class="barra-superior">
-        <h1 class="titulo"> Análisis mensual de eventos 🗓️ </h1>
+
+    <header class="fixed left-32 top-5 right-5 h-20 bg-gradient-to-r from-primary to-secondary dark:from-[#5751a8] dark:to-[#b3b747] flex items-center gap-4 px-8 shadow-lg z-40 rounded-2xl">
+        <h1 class="text-white text-3xl font-extrabold m-0">Panel de Estadísticas</h1>
+
+        <!-- Botón de Modo Oscuro -->
+        <button id="theme-toggle" type="button" class="ml-auto text-white bg-white/10 rounded-full p-2 transition-colors">
+            <span class="material-icons dark:hidden">light_mode</span>
+            <span class="material-icons hidden dark:block">dark_mode</span>
+        </button>
     </header>
     <div class="galeria">
         <div class="imagen1">
@@ -60,6 +104,19 @@
         </div>
     </div>
      <p class="frase-final">“Cuidar tu salud mental también es una forma de amor propio.” 💚</p>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    localStorage.setItem('color-theme', 'light');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

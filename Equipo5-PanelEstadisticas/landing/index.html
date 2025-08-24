@@ -1,82 +1,178 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="transition-colors">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Estadísticas</title>
-    <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Mariana - Panel de Estadísticas</title>
+
+    <!-- Tailwind vía CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7772e7',
+                        secondary: '#e2e772',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+      body { font-family: 'Urbanist', sans-serif; }
+      
+      .team-section {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .team-section::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 220px;
+        width: 100%;
+        background: 
+          linear-gradient(
+            to bottom, 
+            rgba(226,231,114,0.0) 30%, 
+            rgba(226,231,114,0.95) 85%, 
+            #e2e772 100%
+          ),
+          url('/Equipo5-PanelEstadisticas/landing/assets/images/fondoDev.png') center top/cover no-repeat;
+        z-index: 0;
+        pointer-events: none;
+      }
+      
+      .dark .team-section::before {
+        background: 
+          linear-gradient(
+            to bottom, 
+            rgba(31,41,55,0.0) 30%, 
+            rgba(31,41,55,0.95) 85%, 
+            #1f2937 100%
+          ),
+          url('/Equipo5-PanelEstadisticas/landing/assets/images/fondoDev.png') center top/cover no-repeat;
+      }
+    </style>
+
+    <!-- Inicialización de tema ANTES de que cargue el contenido -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- Flowbite para Tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </head>
-<body class="fondo">
-    <nav class="barra-lateral">
-        <ul>
-            <li><a class="logo" href="/Base/index.html">Z
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/landing/index.html" class="icono-nav" >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 3l9 9" stroke="#7772e7" stroke-width="2"/><rect x="6" y="12" width="12" height="8" rx="2" stroke="#7772e7" stroke-width="2"/></svg>
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="icono-nav" >
-                <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="icono-nav" >
-                 <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Andrea Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="icono-nav">
-                 <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="icono-nav" >
-                <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="icono-nav" >
-                <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="icono-avatar">
-            </a></li>
+<body class="bg-secondary dark:bg-[#121212] min-h-screen transition-colors">
+    <!-- Barra lateral -->
+    <nav class="fixed top-5 left-5 bottom-5 w-20 bg-primary dark:bg-[#5751a8] flex flex-col items-center py-4 z-50 rounded-2xl shadow-lg overflow-y-auto">
+        <ul class="flex flex-col gap-5 h-full justify-start">
+            <li>
+                <a class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-2xl no-underline" href="/Base/index.html">Z</a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/landing/index.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-gray-700 shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <span class="material-icons text-primary dark:text-[#a8a4e9] text-3xl">home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Mateo Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-[#5751a8] transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
         </ul>
     </nav>
-    <header class="barra-superior">
-        <h1 class="titulo">Panel de Estadisticas</h1>
-        <form class="busqueda-header" action="#" method="get">
-            <svg class="icono-lupa" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke-width="2"/></svg>
-            <input class="input-busqueda" type="search" placeholder="Buscar..." aria-label="Buscar">
-        </form>
-    </header>
-    <main>
-        <section>
-            <h2 class="subtitulo">Toma control sobre tus metricas</h2>
-            <p class="texto">Aquí puedes encontrar una variedad de herramientas y recursos para ayudarte a analizar y mejorar tus métricas.</p>
 
-            <div class="tarjetas-rectangulares" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-                <div class="tarjeta-rect">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img1.png" alt="Imagen 1" class="rect-img">
-                    <div class="rect-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci aut necessitatibus autem nemo dolorem neque impedit non labore accusantium excepturi.</div>
+    <!-- Cabecera -->
+    <header class="fixed left-32 top-5 right-5 h-20 bg-gradient-to-r from-primary to-secondary dark:from-[#5751a8] dark:to-[#b3b747] flex items-center gap-4 px-8 shadow-lg z-40 rounded-2xl">
+        <h1 class="text-white text-3xl font-extrabold m-0">Panel de Estadísticas</h1>
+
+        <!-- Botón de Modo Oscuro -->
+        <button id="theme-toggle" type="button" class="ml-auto text-white bg-white/10 rounded-full p-2 transition-colors">
+            <span class="material-icons dark:hidden">light_mode</span>
+            <span class="material-icons hidden dark:block">dark_mode</span>
+        </button>
+    </header>
+
+<main class="pt-24 pl-32 pr-8">
+        <!-- Sección de métricas -->
+        <section>
+            <h2 class="text-2xl font-bold text-[#7772e7] dark:text-secondary text-center mt-10">Toma control sobre tus métricas</h2>
+            <p class="text-center text-[#555] dark:text-gray-300 text-lg mt-2 mb-8 max-w-2xl mx-auto">Aquí puedes encontrar una variedad de herramientas y recursos para ayudarte a analizar y mejorar tus métricas.</p>
+            <div class="flex flex-wrap gap-8 justify-center mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg w-60 flex flex-col items-center overflow-hidden transition hover:scale-105">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img1.png" alt="Imagen 1" class="w-full h-56 object-cover rounded-t-2xl" />
+                    <div class="bg-white dark:bg-gray-800 w-full text-[#555] dark:text-gray-300 text-center p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
                 </div>
-                <div class="tarjeta-rect">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img2.png" alt="Imagen 2" class="rect-img">
-                    <div class="rect-texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, vel eos. Sequi eligendi tempore maiores dolorem maxime fugit. Ipsum unde quibusdam illum </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg w-60 flex flex-col items-center overflow-hidden transition hover:scale-105">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img2.png" alt="Imagen 2" class="w-full h-56 object-cover rounded-t-2xl" />
+                    <div class="bg-white dark:bg-gray-800 w-full text-[#555] dark:text-gray-300 text-center p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, vel eos. Sequi eligendi tempore maiores dolorem maxime fugit. Ipsum unde quibusdam illum </div>
                 </div>
-                <div class="tarjeta-rect">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img3.png" alt="Imagen 3" class="rect-img">
-                    <div class="rect-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sint ipsa autem eos optio, fugit officiis error quos? Quas in nihil quos earum asperiores hic </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg w-60 flex flex-col items-center overflow-hidden transition hover:scale-105">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img3.png" alt="Imagen 3" class="w-full h-56 object-cover rounded-t-2xl" />
+                    <div class="bg-white dark:bg-gray-800 w-full text-[#555] dark:text-gray-300 text-center p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sint ipsa autem eos optio, fugit officiis error quos? Quas in nihil quos earum asperiores hic </div>
                 </div>
-                <div class="tarjeta-rect">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img4.png" alt="Imagen 4" class="rect-img">
-                    <div class="rect-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sint ipsa autem eos optio, fugit officiis error quos? Quas in nihil quos earum asperiores hic </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg w-60 flex flex-col items-center overflow-hidden transition hover:scale-105">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/img4.png" alt="Imagen 4" class="w-full h-56 object-cover rounded-t-2xl" />
+                    <div class="bg-white dark:bg-gray-800 w-full text-[#555] dark:text-gray-300 text-center p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sint ipsa autem eos optio, fugit officiis error quos? Quas in nihil quos earum asperiores hic </div>
                 </div>
             </div>
         </section>
-        <section class="team-section">
-            <div class="team-content">
-                <h2 class="team-title">Team Devs</h2>
-                <p class="team-description">
-                    Conoce al equipo detrás del Panel de Estadísticas. 
-                    Desarrolladores apasionados por crear soluciones 
-                    que mejoran la experiencia en <b class="highlight">Mente Conectada</b>
-                </p>
+        
+        <!-- Sección Team con CSS ajustado para dark mode -->
+        <section class="team-section bg-[#e2e772] dark:bg-gray-800 rounded-2xl flex flex-col md:flex-row items-center justify-between p-10 mt-16 shadow-lg">
+            <div class="flex-1 z-10">
+                <h2 class="text-5xl font-extrabold text-[#7772e7] dark:text-secondary mb-4">Team Devs</h2>
+                <p class="text-[#2c3e50] dark:text-gray-300 text-lg max-w-xl leading-relaxed">Conoce al equipo detrás del Panel de Estadísticas. Desarrolladores apasionados por crear soluciones que mejoran la experiencia en <b class="text-[#7772e7] dark:text-secondary">Mente Conectada</b></p>
             </div>
-            <img src="/Equipo5-PanelEstadisticas/landing/assets/images/Grupo.png" alt="Equipo" class="team-image">
-          
+            <img src="/Equipo5-PanelEstadisticas/landing/assets/images/Grupo.png" alt="Equipo" class="max-w-xl w-full h-auto z-10 mt-8 md:mt-0" />
         </section>
     </main>
+
+    <!-- Script para activar toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    localStorage.setItem('color-theme', 'light');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
