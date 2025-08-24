@@ -5,134 +5,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Listado de Eventos</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="/PubliacionEventos/listaEventos.css" />
-  <style>
-    .switcher {
-      margin: 1rem;
-      padding: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header class="header">
-    <div class="nav-container">
-      <div class="logo-container">
-        <div class="logo">Z</div>
-        <span style="font-weight: bold; color: var(--primary-color);">Zenith</span>
+<body class="font-sans text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8]">
+  <header class="sticky top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-lg transition-all">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
+      <div class="flex items-center gap-4">
+        <div class="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-xl">Z</div>
+        <span class="font-bold text-[#7772e7]">Zenith</span>
       </div>
-      <div class="nav-buttons">
-        <a href="#login" class="btn btn-outline">Login</a>
-        <a href="#register" class="btn btn-primary">Registrarse</a>
+      <div class="flex gap-4">
+        <a href="#login" class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5">Login</a>
+        <a href="#register" class="px-4 py-2 rounded-[12px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-medium transition hover:-translate-y-0.5 hover:shadow-lg">Registrarse</a>
       </div>
     </div>
   </header>
 
-  <!-- Eventos destacados vacíos inicialmente -->
-  <section class="featured-events-section">
-    <h2 class="featured-title">🌟 Eventos Destacados</h2>
-    <div class="featured-events" id="featuredEvents"></div>
+  <section class="py-8 bg-[#e2e772]">
+    <h2 class="text-2xl font-bold mb-4 text-[#7772e7] text-center">🌟 Eventos Destacados</h2>
+    <div class="flex gap-4 justify-center flex-wrap" id="featuredEvents"></div>
   </section>
 
   <section>
-    <h1 class="tittle-events">Eventos de la semana</h1>
-    <a href="HU002C3.html" class="btn-formulario">Crear Formulario</a>
-    <div class="week-events">
-      <div class="box">
-        <div class="event-info">
-          <span class="clock-icon">🕒</span>
-          <span class="event-hour">09:00</span>
-          <span class="calendar-icon">📅</span>
-          <span class="event-date">18/08/2025</span>
+    <h1 class="text-center text-4xl text-[#7772e7] mb-12 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-br after:from-[#7772e7] after:to-[#e2e772] after:rounded"></h1>
+    <a href="HU002C3.html" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer block w-max mx-auto mb-8 font-medium transition hover:-translate-y-0.5 hover:shadow-lg">Crear Formulario</a>
+    <div class="flex flex-wrap justify-center items-stretch gap-5 px-8">
+      <!-- Evento Lunes -->
+      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
+        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
+          <span class="text-[#7772e7]">🕒</span>
+          <span class="mr-2">09:00</span>
+          <span class="text-[#e2e772]">📅</span>
+          <span class="ml-1">18/08/2025</span>
         </div>
-        <h3 class="tittle-day">Lunes</h3>
-        <h5>Taller de Control Emocional</h5>
-        <p>Aprende técnicas prácticas para gestionar tus emociones. Identifica, comprende y transforma tus reacciones para una vida más equilibrada.</p>
-        <a href="" class="btn-opcions">Talleres</a>
-        <button class="btn-destacar">Destacar</button>
+        <h3 class="text-2xl">Lunes</h3>
+        <h5 class="font-semibold">Taller de Control Emocional</h5>
+        <p class="text-base">Aprende técnicas prácticas para gestionar tus emociones. Identifica, comprende y transforma tus reacciones para una vida más equilibrada.</p>
+        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Talleres</a>
+        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
       </div>
-
-      <div class="box">
-        <div class="event-info">
-          <span class="clock-icon">🕒</span>
-          <span class="event-hour">10:00</span>
-          <span class="calendar-icon">📅</span>
-          <span class="event-date">19/08/2025</span>
+      <!-- Evento Martes -->
+      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
+        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
+          <span class="text-[#7772e7]">🕒</span>
+          <span class="mr-2">10:00</span>
+          <span class="text-[#e2e772]">📅</span>
+          <span class="ml-1">19/08/2025</span>
         </div>
-        <h3 class="tittle-day">Martes</h3>
-        <h5>Seminario sobre Trastorno Límite de la Personalidad (TLP)</h5>
-        <p>Profundiza en el TLP: sus síntomas, causas y estrategias efectivas para el manejo. Un enfoque claro para entender y apoyar a quienes lo padecen.</p>
-        <a href="" class="btn-opcions">Seminarios</a>
-        <button class="btn-destacar">Destacar</button>
+        <h3 class="text-2xl">Martes</h3>
+        <h5 class="font-semibold">Seminario sobre Trastorno Límite de la Personalidad (TLP)</h5>
+        <p class="text-base">Profundiza en el TLP: sus síntomas, causas y estrategias efectivas para el manejo. Un enfoque claro para entender y apoyar a quienes lo padecen.</p>
+        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Seminarios</a>
+        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
       </div>
-
-      <div class="box">
-        <div class="event-info">
-          <span class="clock-icon">🕒</span>
-          <span class="event-hour">11:00</span>
-          <span class="calendar-icon">📅</span>
-          <span class="event-date">20/08/2025</span>
+      <!-- Evento Miércoles -->
+      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
+        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
+          <span class="text-[#7772e7]">🕒</span>
+          <span class="mr-2">11:00</span>
+          <span class="text-[#e2e772]">📅</span>
+          <span class="ml-1">20/08/2025</span>
         </div>
-        <h3 class="tittle-day">Miércoles</h3>
-        <h5>Jornada de Mindfulness y Ansiedad</h5>
-        <p>Descubre el poder del mindfulness para reducir la ansiedad. Practica la atención plena y encuentra calma en el presente.</p>
-        <a href="" class="btn-opcions">Jornadas de apoyo</a>
-        <button class="btn-destacar">Destacar</button>
+        <h3 class="text-2xl">Miércoles</h3>
+        <h5 class="font-semibold">Jornada de Mindfulness y Ansiedad</h5>
+        <p class="text-base">Descubre el poder del mindfulness para reducir la ansiedad. Practica la atención plena y encuentra calma en el presente.</p>
+        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Jornadas de apoyo</a>
+        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
       </div>
-
-      <div class="box">
-        <div class="event-info">
-          <span class="clock-icon">🕒</span>
-          <span class="event-hour">12:00</span>
-          <span class="calendar-icon">📅</span>
-          <span class="event-date">21/08/2025</span>
+      <!-- Evento Jueves -->
+      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
+        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
+          <span class="text-[#7772e7]">🕒</span>
+          <span class="mr-2">12:00</span>
+          <span class="text-[#e2e772]">📅</span>
+          <span class="ml-1">21/08/2025</span>
         </div>
-        <h3 class="tittle-day">Jueves</h3>
-        <h5>Charla sobre Depresión y Autoestima</h5>
-        <p>Explora la conexión entre la depresión y la autoestima. Obtén herramientas para fortalecer tu valoración personal y recuperar el bienestar.</p>
-        <a href="" class="btn-opcions">Charlas</a>
-        <button class="btn-destacar">Destacar</button>
+        <h3 class="text-2xl">Jueves</h3>
+        <h5 class="font-semibold">Charla sobre Depresión y Autoestima</h5>
+        <p class="text-base">Explora la conexión entre la depresión y la autoestima. Obtén herramientas para fortalecer tu valoración personal y recuperar el bienestar.</p>
+        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Charlas</a>
+        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
       </div>
-
-      <div class="box">
-        <div class="event-info">
-          <span class="clock-icon">🕒</span>
-          <span class="event-hour">13:00</span>
-          <span class="calendar-icon">📅</span>
-          <span class="event-date">22/08/2025</span>
+      <!-- Evento Viernes -->
+      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
+        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
+          <span class="text-[#7772e7]">🕒</span>
+          <span class="mr-2">13:00</span>
+          <span class="text-[#e2e772]">📅</span>
+          <span class="ml-1">22/08/2025</span>
         </div>
-        <h3 class="tittle-day">Viernes</h3>
-        <h5>Grupo de Apoyo para Jóvenes con Ansiedad</h5>
-        <p>Un espacio seguro y confidencial donde jóvenes pueden compartir experiencias, aprender estrategias y sentir el respaldo de una comunidad.</p>
-        <a href="" class="btn-opcions">Grupos de apoyo</a>
-        <button class="btn-destacar">Destacar</button>
+        <h3 class="text-2xl">Viernes</h3>
+        <h5 class="font-semibold">Grupo de Apoyo para Jóvenes con Ansiedad</h5>
+        <p class="text-base">Un espacio seguro y confidencial donde jóvenes pueden compartir experiencias, aprender estrategias y sentir el respaldo de una comunidad.</p>
+        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Grupos de apoyo</a>
+        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
       </div>
-
-      <div class="box">
-        <div class="event-info">
-          <span class="clock-icon">🕒</span>
-          <span class="event-hour">14:00</span>
-          <span class="calendar-icon">📅</span>
-          <span class="event-date">23/08/2025</span>
+      <!-- Evento Sábado -->
+      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
+        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
+          <span class="text-[#7772e7]">🕒</span>
+          <span class="mr-2">14:00</span>
+          <span class="text-[#e2e772]">📅</span>
+          <span class="ml-1">23/08/2025</span>
         </div>
-        <h3 class="tittle-day">Sábado</h3>
-        <h5>Conferencia: Salud Mental en el Trabajo</h5>
-        <p>Analiza el impacto del entorno laboral en nuestra salud mental. Identifica desafíos y descubre cómo fomentar un ambiente de trabajo saludable y productivo.</p>
-        <a href="" class="btn-opcions">Conferencias</a>
-        <button class="btn-destacar">Destacar</button>
+        <h3 class="text-2xl">Sábado</h3>
+        <h5 class="font-semibold">Conferencia: Salud Mental en el Trabajo</h5>
+        <p class="text-base">Analiza el impacto del entorno laboral en nuestra salud mental. Identifica desafíos y descubre cómo fomentar un ambiente de trabajo saludable y productivo.</p>
+        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Conferencias</a>
+        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
-      <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
-      <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
+  <footer class="bg-[#e9ed92] text-[#555] py-12 px-8 text-center">
+    <div class="max-w-[1200px] mx-auto">
+      <p class="mb-4 opacity-90">&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+      <p class="mb-4 opacity-90">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+      <p class="mb-4 opacity-90">Encuentra nuestros <a href="#terms" target="_blank" class="text-[#e2e772] hover:underline">términos y condiciones aquí</a></p>
     </div>
   </footer>
 
@@ -142,7 +132,7 @@
 
     document.querySelectorAll('.btn-destacar').forEach(button => {
       button.addEventListener('click', () => {
-        const parentBox = button.closest('.box');
+        const parentBox = button.closest('.box') || button.closest('div');
         const title = parentBox.querySelector('h5').textContent.trim();
         const description = parentBox.querySelector('p').textContent.trim();
 
@@ -159,11 +149,11 @@
 
         // Crear nueva tarjeta destacada
         const featuredBox = document.createElement('div');
-        featuredBox.classList.add('featured-box');
+        featuredBox.className = "relative bg-gradient-to-br from-[#7772e7] to-[#e2e772] p-4 rounded-[10px] w-[300px] shadow text-[#1f2937] transition hover:-translate-y-1";
         featuredBox.innerHTML = `
-          <h4>${title}</h4>
-          <p>${description}</p>
-          <button class="btn-eliminar">Eliminar</button>
+          <h4 class="mb-2 text-lg font-semibold text-[#2c3e50]">${title}</h4>
+          <p class="text-base text-[#2c3e50]">${description}</p>
+          <button class="absolute top-2 right-2 bg-[#ef4444] text-white px-2 py-1 text-xs rounded cursor-pointer border-none btn-eliminar">Eliminar</button>
         `;
         featuredContainer.appendChild(featuredBox);
 
