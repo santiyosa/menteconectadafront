@@ -1,46 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="EstilosLogin.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Animación personalizada para mensajes */
+    @keyframes desaparecer {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+
+    .success-message {
+      display: none;
+      animation: desaparecer 3s forwards;
+    }
+
+    form:valid .success-message {
+      display: block;
+    }
+
+    /* Validación de inputs */
+    input:invalid {
+      border-color: #ef4444; /* rojo */
+    }
+
+    input:valid {
+      border-color: #22c55e; /* verde */
+    }
+  </style>
 </head>
-<body>
-    <div>
-        <div>
-            <img src="/logolisto-removebg-preview.png" class="logo" alt="logo">
+<body class="min-h-screen flex flex-col items-center justify-center font-sans font-bold bg-gradient-to-b from-[#dcd4e4] to-[#fafad2]">
+
+  <!-- Logo -->
+  <div>
+    <img src="logolisto-removebg-preview.png" alt="logo" class="w-40 h-auto mx-auto my-12">
+  </div>
+
+  <!-- Tarjeta del formulario -->
+  <div class="w-80 p-6 rounded-xl shadow-lg bg-gradient-to-b from-[#dcd4e4] to-[#fafad2]">
+    
+    <!-- Tabs -->
+    <ul class="flex mb-6 border-b-2 border-indigo-300">
+      <li class="mr-2">
+        <a href="#" onclick="showTab(event, 'login')" class="tab-link px-5 py-2 rounded-t-lg font-bold bg-indigo-300 text-white">Iniciar Sesión</a>
+      </li>
+      <li>
+        <a href="#" onclick="showTab(event, 'register')" class="tab-link px-5 py-2 rounded-t-lg font-bold bg-[#dcd4e4] text-black">Registrarse</a>
+      </li>
+    </ul>
+
+    <!-- Login -->
+    <div id="login" class="tab-content block">
+      <h2 class="text-xl font-bold text-center mb-4">Iniciar Sesión</h2>
+      <form id="loginform" class="flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
+          <label for="correo" class="text-sm">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="Ingrese correo electrónico"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
         </div>
-            <div class="containerZ">
-    </div>
-        <div class="cartaform">
-            <h2 class="title2">Iniciar Sesión</h2>
-            <form id="loginform">
-                <div class="input">
-                    <label for="correo" class="forml-label">Correo Electrónico</label>
-                   <input class="password" type="email" id="correo" name="correo" placeholder="Ingrese correo electronico" required 
-         oninvalid="this.setCustomValidity('Por favor, escribe un correo válido')" 
-         oninput="this.setCustomValidity('')" >
-                   
-                     
-                </div>
-                <div class="input">
-                    <label for="contrasena" class="forml-label">Contraseña</label>
-                    <input type="password" class="password" id="contrasena" placeholder="Ingrese contraseña" required
-                      oninvalid="this.setCustomValidity('Por favor, escribe un correo válido')" 
-                  oninput="this.setCustomValidity('')">
-                    
-                 
-                    
-                </div>
-                <button type="submit" class="button1">Ingresar</button>
-                 <div class="divregister">
-                    ¿No tienes cuenta?
-            <button class="registerbutton">Registrate aquí</button>
+        <div class="flex flex-col gap-1 relative">
+          <label for="contrasena" class="text-sm">Contraseña</label>
+
+          <!-- Checkbox oculto -->
+          <input type="checkbox" id="toggleLogin" class="hidden peer">
+
+          <!-- Input contraseña oculto -->
+          <input type="password" id="contrasena" placeholder="Ingrese contraseña" minlength="6"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 peer-checked:hidden" required>
+
+          <!-- Input texto visible al activar 👁 -->
+          <input type="text" id="contrasena-text" placeholder="Ingrese contraseña" minlength="6"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 hidden peer-checked:block" required>
+
+          <!-- Botón ojo -->
+          <label for="toggleLogin" class="absolute right-3 top-9 cursor-pointer text-gray-600">👁</label>
+          <span class="text-xs text-gray-600">Mínimo 6 caracteres</span>
         </div>
-            </form>
-        </div>
+
+        <button type="submit" class="bg-indigo-300 text-white font-bold px-4 py-2 rounded-md hover:bg-indigo-700 transition mx-auto">Ingresar</button>
+        <div class="success-message text-center mt-3 p-2 rounded-md font-bold bg-green-600 text-white">Inicio Éxitoso</div>
+        <a href="#recover" class="text-sm text-blue-600 hover:underline text-center">¿Olvidaste tu contraseña?</a>
+      </form>
     </div>
 
+    <!-- Registro -->
+    <div id="register" class="tab-content hidden">
+      <h2 class="text-xl font-bold text-center mb-4">Registrarse</h2>
+      <form id="registerform" class="flex flex-col gap-4">
+        
+        <!-- Usuario -->
+        <div class="flex flex-col gap-1">
+          <label for="Usuario" class="text-sm">Nombre</label>
+          <input type="text" id="Usuario" name="Usuario" placeholder="Ingrese Usuario"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+
+        <!-- Especialidad -->
+        <div class="flex flex-col gap-1">
+          <label for="especialidad" class="text-sm">Especialidad</label>
+          <select id="especialidad" name="especialidad" required
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="profesional">Profesional</option>
+            <option value="paciente">Paciente</option>
+            <option value="moderador">Moderador</option>
+          </select>
+        </div>
+
+        <!-- Correo -->
+        <div class="flex flex-col gap-1">
+          <label for="regcorreo" class="text-sm">Correo Electrónico</label>
+          <input type="email" id="regcorreo" name="regcorreo" placeholder="Ingrese correo electrónico"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+
+        <!-- Contraseña con 👁 -->
+        <div class="flex flex-col gap-1 relative">
+          <label for="regcontrasena" class="text-sm">Contraseña</label>
+
+          <!-- Checkbox oculto -->
+          <input type="checkbox" id="toggleReg" class="hidden peer">
+
+          <!-- Input contraseña -->
+          <input type="password" id="regcontrasena" name="regcontrasena" placeholder="Cree una contraseña" minlength="6"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 peer-checked:hidden" required>
+
+          <!-- Input texto -->
+          <input type="text" id="regcontrasena-text" placeholder="Cree una contraseña" minlength="6"
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 hidden peer-checked:block" required>
+
+          <!-- Botón ojo -->
+          <label for="toggleReg" class="absolute right-3 top-9 cursor-pointer text-gray-600">👁</label>
+          <span class="text-xs text-gray-600">Mínimo 6 caracteres</span>
+        </div>
+
+        <button type="submit" class="bg-indigo-300 text-white font-bold px-4 py-2 rounded-md hover:bg-indigo-700 transition mx-auto">Registrarse</button>
+        <div class="success-message text-center mt-3 p-2 rounded-md font-bold bg-green-600 text-white">Registro Exitoso</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal recuperación -->
+  <div id="recover" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4">
+    <div class="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg relative text-center">
+      <h3 class="text-lg font-bold mb-3">Recuperar contraseña</h3>
+      <p class="text-sm mb-4">Por favor, ingrese su dirección de correo electrónico para continuar con la recuperación de su contraseña</p>
+      <form class="flex flex-col gap-3">
+        <label for="recoverEmail" class="text-sm">Correo electrónico</label>
+        <input id="recoverEmail" type="email" placeholder="tucorreo@.com"
+          class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        <button type="submit" class="bg-indigo-300 text-white font-bold px-4 py-2 rounded-md hover:bg-indigo-700 transition">Enviar enlace</button>
+      </form>
+      <a href="#" class="absolute top-2 right-3 text-xl font-bold text-gray-700 hover:text-indigo-700">x</a>
+    </div>
+  </div>
+
+  <script>
+    function showTab(event, tabId) {
+      event.preventDefault();
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('block');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+      document.getElementById(tabId).classList.add('block');
+
+      document.querySelectorAll('.tab-link').forEach(el => {
+        el.classList.remove('bg-indigo-300', 'text-white');
+        el.classList.add('bg-[#dcd4e4]', 'text-black');
+      });
+      event.target.classList.add('bg-indigo-300', 'text-white');
+      event.target.classList.remove('bg-[#dcd4e4]', 'text-black');
+    }
+  </script>
 </body>
 </html>
