@@ -25,13 +25,22 @@
       display: block;
     }
 
-    /* Validación de inputs */
     input:invalid {
-      border-color: #ef4444; /* rojo */
+      border-color: #ef4444; 
     }
 
     input:valid {
-      border-color: #22c55e; /* verde */
+      border-color: #22c55e; 
+    }
+
+    /* Mostrar modal de éxito cuando se active con #exito */
+    #exito:target {
+      display: flex;
+    }
+
+    /* Mostrar modal recuperar contraseña */
+    #recover:target {
+      display: flex; 
     }
   </style>
 </head>
@@ -92,7 +101,8 @@
     <!-- Registro -->
     <div id="register" class="tab-content hidden">
       <h2 class="text-xl font-bold text-center mb-4">Registrarse</h2>
-      <form id="registerform" class="flex flex-col gap-4">
+      <!-- Aquí va el truco: enviamos a #exito -->
+      <form id="registerform" action="#exito" method="get" class="flex flex-col gap-4">
         
         <!-- Usuario -->
         <div class="flex flex-col gap-1">
@@ -141,13 +151,12 @@
         </div>
 
         <button type="submit" class="bg-indigo-300 text-white font-bold px-4 py-2 rounded-md hover:bg-indigo-700 transition mx-auto">Registrarse</button>
-        <div class="success-message text-center mt-3 p-2 rounded-md font-bold bg-green-600 text-white">Registro Exitoso</div>
       </form>
     </div>
   </div>
 
   <!-- Modal recuperación -->
-  <div id="recover" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4">
+  <div id="recover" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 hidden">
     <div class="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg relative text-center">
       <h3 class="text-lg font-bold mb-3">Recuperar contraseña</h3>
       <p class="text-sm mb-4">Por favor, ingrese su dirección de correo electrónico para continuar con la recuperación de su contraseña</p>
@@ -158,6 +167,15 @@
         <button type="submit" class="bg-indigo-300 text-white font-bold px-4 py-2 rounded-md hover:bg-indigo-700 transition">Enviar enlace</button>
       </form>
       <a href="#" class="absolute top-2 right-3 text-xl font-bold text-gray-700 hover:text-indigo-700">x</a>
+    </div>
+  </div>
+
+  <!-- Modal éxito -->
+  <div id="exito" class="hidden fixed inset-0 flex items-center justify-center bg-black/50">
+    <div class="bg-green-600 text-white p-4 rounded-lg shadow-lg text-center">
+      ✅ Registro exitoso
+      <br>
+      <a href="#" class="mt-2 inline-block text-sm underline">Cerrar</a>
     </div>
   </div>
 
@@ -179,5 +197,30 @@
       event.target.classList.remove('bg-[#dcd4e4]', 'text-black');
     }
   </script>
+
+  <!-- Preguntas Frecuentes -->
+  <section class="max-w-2xl mx-auto mt-10 p-6">
+    <h2 class="text-2xl font-bold mb-4 text-center">Preguntas Frecuentes</h2>
+    
+    <div class="space-y-4">
+      <!-- Pregunta 1 -->
+      <details class="border rounded-lg p-4">
+        <summary class="cursor-pointer font-semibold">¿Cómo puedo registrarme?</summary>
+        <p class="mt-2 text-gray-600">Puedes registrarte en la pestaña de "Registro" dentro del formulario principal.</p>
+      </details>
+
+      <!-- Pregunta 2 -->
+      <details class="border rounded-lg p-4">
+        <summary class="cursor-pointer font-semibold">¿Como puedo recuperar mi contraseña?</summary>
+        <p class="mt-2 text-gray-600">Cuando vayas a iniciar sesión, en caso de que olvides tu contraseña, dale al link "¿olvidaste tu contraseña?", justo abajo del boton "Ingresar", te pediremos tu correo, y luego recibirás un enlace en tu bandeja de entrada para que puedas restablecer tu contraseña.</p>
+      </details>
+
+      <!-- Pregunta 3 -->
+      <details class="border rounded-lg p-4">
+        <summary class="cursor-pointer font-semibold">¿Dónde puedo contactar soporte?</summary>
+        <p class="mt-2 text-gray-600">Puedes escribirnos al correo soportementeconectada@gmail.com o en la sección de contacto.</p>
+      </details>
+    </div>
+  </section>
 </body>
 </html>
