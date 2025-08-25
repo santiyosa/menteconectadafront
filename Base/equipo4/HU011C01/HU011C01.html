@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HU011C01 - Administración de colaboradores</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+
+  <h1 class="text-2xl font-bold mb-6">Administración de colaboradores</h1>
+
+  <!-- === SOLICITUD === -->
+  <div class="w-full max-w-md">
+    <div class="p-4 rounded-lg shadow bg-white border transition" id="solicitud1">
+      <h2 class="font-semibold text-lg mb-2">Solicitud de Laura Gómez</h2>
+      <p class="text-sm text-gray-600 mb-4">Colaborar en el módulo de bienestar emocional.</p>
+
+      <!-- Botones -->
+      <div class="flex gap-2">
+        <button 
+          onclick="responder('solicitud1','aceptada')" 
+          class="px-3 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700 transition">
+          Aceptar
+        </button>
+        <button 
+          onclick="responder('solicitud1','rechazada')" 
+          class="px-3 py-2 rounded-lg bg-red-600 text-white text-sm hover:bg-red-700 transition">
+          Rechazar
+        </button>
+      </div>
+
+      <!-- Mensaje de confirmación (se llena con JS) -->
+      <p id="mensaje-solicitud1" class="mt-3 text-sm font-medium hidden"></p>
+    </div>
+  </div>
+
+  <script>
+    function responder(id, accion) {
+      const tarjeta = document.getElementById(id);
+      const mensaje = document.getElementById("mensaje-" + id);
+
+      if (accion === "aceptada") {
+        tarjeta.classList.remove("bg-white", "border", "border-red-400", "bg-red-50");
+        tarjeta.classList.add("bg-green-50", "border-green-400");
+        mensaje.textContent = "✅ Colaboración aceptada";
+        mensaje.className = "mt-3 text-sm font-medium text-green-700";
+      } else {
+        tarjeta.classList.remove("bg-white", "border", "border-green-400", "bg-green-50");
+        tarjeta.classList.add("bg-red-50", "border-red-400");
+        mensaje.textContent = "❌ Colaboración rechazada";
+        mensaje.className = "mt-3 text-sm font-medium text-red-700";
+      }
+    }
+  </script>
+
+</body>
+</html>
