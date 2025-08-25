@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HU017C01 - Ayuda Colaborar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans leading-relaxed text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8] scroll-smooth">
+
+  <!-- Header fijo -->
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 py-4 shadow-md">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-6">
+      <h1 class="text-xl font-bold text-[#7772e7]">Mi Sitio</h1>
+      <ul class="flex gap-6">
+        <li><a href="#" class="text-gray-600 hover:text-[#7772e7]">Inicio</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-[#7772e7]">Acerca</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-[#7772e7]">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="pt-24 px-6 min-h-screen flex items-center justify-center">
+    <section class="max-w-3xl mx-auto text-center bg-white/90 rounded-2xl shadow-lg p-8">
+      <h2 class="text-3xl font-bold mb-6 text-[#2c3e50]">HU017C01 - Ayuda colaborar</h2>
+      <p class="text-[#555] mb-6">Haz clic para ver cómo colaborar dentro de la plataforma.</p>
+
+      <!-- Botón para abrir la sección de ayuda -->
+      <button id="abrirAyuda"
+        class="px-6 py-3 bg-[#7772e7] text-white rounded-lg shadow-md hover:bg-indigo-600 transition">
+        Ver Ayuda
+      </button>
+
+      <!-- Sección desplegable -->
+      <div id="ayuda" class="hidden mt-6 text-left bg-[#f9fafb] p-6 rounded-xl shadow-inner">
+        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+          Cómo colaborar:
+        </h3>
+
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#7772e7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+            Haz clic en <strong>"Nueva colaboración"</strong>.
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8M8 11h8M8 15h4"/>
+            </svg>
+            Completa el formulario con tus aportes.
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 13V7a2 2 0 00-2-2h-4l-2-2H7a2 2 0 00-2 2v6"/>
+            </svg>
+            Revisa las solicitudes de otros usuarios.
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Acepta o rechaza colaboraciones según corresponda.
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 13V7a2 2 0 00-2-2h-4l-2-2H7a2 2 0 00-2 2v6"/>
+            </svg>
+            Recibirás notificaciones de actualizaciones.
+          </li>
+        </ul>
+
+        <!-- Botón para cerrar -->
+        <div class="mt-6 text-right">
+          <button id="cerrarAyuda" 
+            class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#e9ed92] text-[#555] px-8 pt-12 pb-8 text-center">
+    <div class="max-w-6xl mx-auto">
+      <p class="mb-4 opacity-90">© 2025 ZENITH Salud Mental & Profesionalismo</p>
+      <p class="mb-4 opacity-90">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+      <p class="mb-4 opacity-90">
+        Encuentra nuestros 
+        <a href="#" class="text-yellow-600 hover:text-orange-500 font-semibold underline">
+          términos y condiciones aquí
+        </a>
+      </p>
+      <a href="#" class="text-[#e2e772] hover:underline">Política de Privacidad</a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const abrirBtn = document.getElementById('abrirAyuda');
+    const cerrarBtn = document.getElementById('cerrarAyuda');
+    const ayuda = document.getElementById('ayuda');
+
+    abrirBtn.addEventListener('click', () => {
+      ayuda.classList.remove('hidden');
+    });
+
+    cerrarBtn.addEventListener('click', () => {
+      ayuda.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

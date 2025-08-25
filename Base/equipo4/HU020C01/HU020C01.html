@@ -8,7 +8,7 @@
 </head>
 <body class="font-sans leading-relaxed text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8] scroll-smooth">
 
-  <!-- Header fijo, tipo navbar de toda la vida -->
+  <!-- HEADER (igual que en HU017C01) -->
   <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 py-4 shadow-md">
     <nav class="max-w-6xl mx-auto flex justify-between items-center px-6">
       <h1 class="text-xl font-bold text-[#7772e7]">Mi Sitio</h1>
@@ -20,10 +20,10 @@
     </nav>
   </header>
 
-  <!-- Contenido principal (le meto un padding arriba para que no tape el header) -->
+  <!-- MAIN -->
   <main class="pt-24 px-6 min-h-screen flex items-center justify-center">
-    <section class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Bienvenido a mi página</h2>
+    <section class="max-w-4xl mx-auto text-center bg-white/80 backdrop-blur-md rounded-2xl p-10 shadow-lg">
+      <h2 class="text-3xl font-bold mb-4 text-[#2c3e50]">Modal emergente</h2>
       <p class="text-[#555] mb-8">Ejemplo con modal funcional: abre, escribe y envía.</p>
 
       <!-- Botón que abre el modal -->
@@ -37,23 +37,23 @@
     </section>
   </main>
 
-  <!-- Modal: es como un overlay oscuro + caja flotante -->
+  <!-- MODAL -->
   <div id="modal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50 px-4">
-    <!-- Cajita blanca del modal -->
     <div role="dialog" aria-modal="true" aria-labelledby="modalTitle"
          class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md relative">
-      <!-- Botón X para cerrar -->
+      <!-- Botón X -->
       <button id="cerrarModal" type="button" aria-label="Cerrar"
         class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
-        <!-- La crucecita SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" 
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+                stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
       <h2 id="modalTitle" class="text-xl font-bold text-gray-800 mb-4">Responder mensaje</h2>
 
-      <!-- Form con textarea, súper sencillo -->
+      <!-- Formulario -->
       <form id="formRespuesta" class="space-y-4">
         <label for="respuesta" class="sr-only">Escribe tu respuesta</label>
         <textarea id="respuesta" name="respuesta" rows="4"
@@ -70,12 +70,11 @@
     </div>
   </div>
 
-  <!-- Footer chill -->
+  <!-- FOOTER -->
   <footer class="bg-[#e9ed92] text-[#555] px-8 pt-12 pb-8 text-center">
     <div class="max-w-6xl mx-auto">
       <p class="mb-4 opacity-90">© 2025 ZENITH Salud Mental & Profesionalismo</p>
       <p class="mb-4 opacity-90">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
-      <!-- Aquí lo convertí en un link con color amarillo/naranja -->
       <p class="mb-4 opacity-90">
         Encuentra nuestros 
         <a href="#" class="text-yellow-600 hover:text-orange-500 font-semibold underline">
@@ -86,9 +85,8 @@
     </div>
   </footer>
 
-  <!-- Script para manejar el modal (abrir/cerrar y esas cosas) -->
+  <!-- SCRIPT -->
   <script>
-    // agarro los elementos del HTML pa’ controlarlos
     const abrirBtn = document.getElementById('abrirModal');
     const modal = document.getElementById('modal');
     const cerrarBtn = document.getElementById('cerrarModal');
@@ -97,41 +95,31 @@
     const textarea = document.getElementById('respuesta');
     const sentMessage = document.getElementById('sentMessage');
 
-    // abrir modal
     function openModal() {
       modal.classList.remove('hidden');          
       document.body.classList.add('overflow-hidden'); 
       setTimeout(() => textarea.focus(), 50);
     }
 
-    // cerrar modal
     function closeModal() {
       modal.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
     }
 
-    // cuando le doy click al botón de abrir
     abrirBtn.addEventListener('click', openModal);
-
-    // cierro con la X
     cerrarBtn.addEventListener('click', closeModal);
-
-    // cierro con cancelar
     cancelarBtn.addEventListener('click', closeModal);
 
-    // si hago click fuera de la caja, también se cierra
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
 
-    // si le pego a la tecla Escape, también se cierra
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();
       }
     });
 
-    // cuando envío el form
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const value = textarea.value.trim();
@@ -141,14 +129,12 @@
         return;
       }
 
-      // aquí en verdad se mandaría al server, pero por ahora solo muestro un mensajito
       sentMessage.textContent = "Respuesta enviada: " + value;
       sentMessage.classList.remove('hidden');
 
       textarea.value = "";
       closeModal();
 
-      // el mensajito desaparece solito en 3 seg
       setTimeout(() => {
         sentMessage.classList.add('hidden');
         sentMessage.textContent = "";
