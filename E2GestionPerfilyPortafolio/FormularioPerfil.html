@@ -6,23 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulario de Perfil</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/E2GestionPerfilyPortafolio/img/logoZenith.png">
 </head>
 
-<body class="font-sans leading-relaxed text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8] scroll-smooth flex flex-col min-h-screen">
+<body
+  class="font-sans leading-relaxed text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8] scroll-smooth flex flex-col min-h-screen">
 
-  
+
   <header class="fixed top-0 w-full bg-white/95 backdrop-blur-[10px] z-[1000] py-4 shadow-sm">
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 md:gap-0 gap-1">
 
-      
       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#6b63ff] to-[#e2e772] flex items-center justify-center">
-          <span class="text-white font-bold text-lg">Z</span>
-        </div>
-        <span class="font-bold text-[#6b63ff]">Zenith</span>
+        <a href="/Base/index.html">
+          <img class="w-16 h-auto" src="/E2GestionPerfilyPortafolio/img/logoZenith.png" alt="Zogo pagina zenith">
+        </a>
+        <span class="text-3xl font-bold text-[#6b63ff]">Zenith</span>
       </div>
 
-      
       <div class="flex gap-4">
         <a href="#login"
           class="px-5 py-2 rounded-lg font-medium border-2 border-[#6b63ff] text-[#6b63ff] hover:bg-[#6b63ff] hover:text-white transition">
@@ -33,10 +33,11 @@
           Registrarse
         </a>
       </div>
+
     </div>
   </header>
 
-  
+
   <main class="flex-grow flex justify-center items-start pt-28 pb-12">
     <section class="bg-[#fffff0] border-2 border-dashed border-gray-400 rounded-xl p-8 shadow-lg max-w-xl w-full">
 
@@ -44,43 +45,42 @@
 
       <form class="flex flex-col gap-6">
 
-        
+
         <div class="flex flex-col items-center gap-4">
           <img class="w-40 h-40 rounded-full object-cover"
-            src="img/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg"
-            alt="imagen de perfil">
+            src="/E2GestionPerfilyPortafolio/img/FotoFormularioPerfil.jpg" alt="imagen de perfil">
 
           <div class="border-2 border-dashed border-gray-400 p-4 rounded-lg w-full flex justify-center">
             <input type="file" name="foto" class="text-sm">
           </div>
         </div>
 
-        
+
         <div class="flex flex-col">
           <label for="nombre" class="font-medium">Nombre:</label>
-          <input type="text" id="nombre" placeholder="Ingresa tus nombres"required
+          <input type="text" id="nombre" placeholder="Ingresa tus nombres" required
             class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6b63ff]">
         </div>
 
         <div class="flex flex-col">
           <label for="apellido" class="font-medium">Apellido:</label>
-          <input type="text" id="apellido" placeholder="Ingresa tus apellidos"required
+          <input type="text" id="apellido" placeholder="Ingresa tus apellidos" required
             class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6b63ff]">
         </div>
 
         <div class="flex flex-col">
           <label for="email" class="font-medium">Correo electrónico:</label>
-          <input type="email" id="email" placeholder="correo"required
+          <input type="email" id="email" placeholder="correo" required
             class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6b63ff]">
         </div>
 
         <div class="flex flex-col">
           <label for="fechaNacimiento" class="font-medium">Fecha de nacimiento:</label>
-          <input type="date" id="fechaNacimiento"required
+          <input type="date" id="fechaNacimiento" required
             class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6b63ff]">
         </div>
 
-        
+
         <div class="flex flex-col">
           <label for="especialidad" class="font-medium">Indica tu especialidad (obligatorio):</label>
           <textarea id="especialidad" rows="3" required
@@ -88,7 +88,7 @@
             placeholder="Ej: Psicólogo"></textarea>
         </div>
 
-        
+
         <div class="flex flex-col">
           <p><em>Escribe tu breve biografía:</em></p>
           <textarea id="biografia" minlength="250" rows="5"
@@ -96,7 +96,7 @@
             placeholder="Escribe sobre ti aquí (mínimo 250 caracteres)..."></textarea>
         </div>
 
-        
+
         <div class="flex justify-center">
           <button type="submit"
             class="px-6 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
@@ -108,7 +108,7 @@
     </section>
   </main>
 
-  
+
   <footer class="bg-yellow-200 w-full h-[150px] flex flex-col justify-center items-center">
     <div class="flex flex-col justify-center items-center gap-4">
       <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
@@ -120,4 +120,5 @@
   </footer>
 
 </body>
+
 </html>
