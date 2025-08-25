@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Contactos por Categoría</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<header class="fixed top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-md transition-all">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 gap-4 sm:gap-0">
+        <div class="flex items-center gap-2 sm:gap-4">
+            <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                Z</div>
+            <span class="font-bold text-[color:#7772e7] text-base sm:text-lg">Zenith</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+            <a href="#login"
+                class="px-4 sm:px-6 py-2 border-2 border-[#7772e7] text-[#7772e7] rounded-[12px] font-medium transition-all hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5 text-center">Login</a>
+            <a href="#register"
+                class="px-4 sm:px-6 py-2 rounded-[12px] font-medium bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)] text-center">Registrarse</a>
+        </div>
+    </div>
+</header>
+
+
+
+<body class="bg-gray-100 min-h-screen flex flex-col min-h-screen">
+
+    <div class="w-full max-w-xl bg-white rounded-lg shadow p-6 mx-auto mt-32 mb-8">
+    <h1 class="text-2xl font-bold mb-4 text-center">Filtrar contactos por categoría</h1>
+        <div class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <label for="categoria" class="font-medium">Especialidad o sector:</label>
+            <select id="categoria"
+                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <option value="todos">Todos</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="devops">DevOps</option>
+                <option value="qa">QA/QC</option>
+            </select>
+        </div>
+        <div class="mb-2 text-gray-700" id="contador"></div>
+        <ul id="lista-contactos" class="space-y-3"></ul>
+    </div>
+
+
+    <footer
+        class="w-full bg-[#e9ed92] text-[#555] flex flex-col justify-center items-center pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-8 text-center flex-grow">
+        <p class="mb-2 sm:mb-4 opacity-90 text-sm sm:text-base">&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+        <p class="mb-2 sm:mb-4 opacity-90 text-sm sm:text-base">Tu Bienestar es Nuestra Prioridad - Empatía -
+            Confidencialidad - Crecimiento Personal</p>
+        <p class="opacity-90 text-sm sm:text-base">Encuentra nuestros <a href="#terms" target="_blank"
+                class="text-[#e2e772] no-underline hover:underline">términos y condiciones aquí</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
