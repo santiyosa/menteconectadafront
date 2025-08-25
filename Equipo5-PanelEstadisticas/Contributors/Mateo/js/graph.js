@@ -5,7 +5,7 @@ const data = {
   datasets: [{
     label: 'Interacciones',
     data: [25, 30, 20, 25],
-    backgroundColor: ['#f87171', '#60a5fa', '#facc15', '#34d399'],
+    backgroundColor: ['#f87171', '#60a5fa', '#facc15', '#8cff7dff'],
     borderWidth: 1
   }]
 };
