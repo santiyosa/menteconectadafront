@@ -42,7 +42,7 @@
 </head>
 <body class="bg-secondary dark:bg-[#121212] min-h-screen transition-colors">
     <!-- Barra lateral -->
-      <nav class="fixed top-5 left-5 bottom-5 w-20 bg-primary dark:bg-[#5751a8] flex flex-col items-center py-4 z-50 rounded-2xl shadow-lg overflow-y-auto">
+    <nav class="fixed top-5 left-5 bottom-5 w-20 bg-primary dark:bg-[#5751a8] flex flex-col items-center py-4 z-50 rounded-2xl shadow-lg overflow-y-auto">
         <ul class="flex flex-col gap-5 h-full justify-start">
             <li>
                 <a class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-2xl no-underline" href="/Base/index.html">Z</a>
@@ -89,24 +89,26 @@
             <span class="material-icons hidden dark:block">dark_mode</span>
         </button>
     </header>
+
     <main class="principal">
         <section class="grid-estadisticas">
             <div class="tarjeta-estadistica text-center">
                 <h3 class="texto">Tipos de Interacciones Semanales</h3>
                 <div style="overflow: hidden;">
-                    <iframe src="/Equipo5-PanelEstadisticas/Contributors/Mateo/html/graph.html"
-                            width="100%"
-                            height="320"
-                            scrolling="si"
-                            style="border: none; border-radius: 1rem; display: block;">
+                    <iframe src="/Equipo5-PanelEstadisticas/Contributors/Mateo/html/graph.html" width="100%"
+                        height="320" scrolling="si" style="border: none; border-radius: 1rem; display: block;">
                     </iframe>
                 </div>
             </div>
-            <div class="tarjeta-estadistica">
-                <h3 class="titulo-estadistica"></h3>
-                <div class="valor-estadistica"></div>
-                <p class="descripcion-estadistica"></p>
+            <div class="tarjeta-estadistica text-center">
+                <h3 class="texto mb-4">Medidor de Progreso de Objetivos</h3>
+                <div style="overflow: hidden;">
+                    <iframe src="/Equipo5-PanelEstadisticas/Contributors/Mateo/html/progress.html" width="100%"
+                        height="320" scrolling="si" style="border: none; border-radius: 1rem; display: block;">
+                    </iframe>
+                </div>
             </div>
+
             <div class="tarjeta-estadistica">
                 <h3 class="titulo-estadistica"></h3>
                 <div class="valor-estadistica"></div>

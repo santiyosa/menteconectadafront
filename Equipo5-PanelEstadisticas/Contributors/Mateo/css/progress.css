@@ -1,0 +1,37 @@
+.progress-ring circle {
+  transition: stroke-dashoffset 0.6s ease, stroke 0.6s ease;
+}
+
+/* Grupo relativo */
+.group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 100%; /* Aparece a la derecha del mini círculo */
+  transform: translateY(-50%);
+  background-color: #1f2937;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 50; /* <- esto asegura que pase por encima */
+}
+
+
+/* Hover */
+.group:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0.25rem); /* pequeño desplazamiento al aparecer */
+}
