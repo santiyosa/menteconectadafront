@@ -1,51 +1,94 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="transition-colors">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página 3 - Panel de Estadísticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7772e7',
+                        secondary: '#e2e772',
+                    }
+                }
+            }
+        }
+    </script>
 
-<body class="fondo">
-    <nav class="barra-lateral">
-        <ul>
-            <li><a class="logo" href="/Base/index.html">Z</a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/landing/index.html" class="icono-nav">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 12L12 3l9 9" stroke="#7772e7" stroke-width="2" />
-                        <rect x="6" y="12" width="12" height="8" rx="2" stroke="#7772e7" stroke-width="2" />
-                    </svg>
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Andrea Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono"
-                        class="icono-avatar">
-                </a></li>
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+    </style>
+
+    <!-- Inicialización de tema ANTES de que cargue el contenido -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- Flowbite para Tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-secondary dark:bg-[#121212] min-h-screen transition-colors">
+    <!-- Barra lateral -->
+      <nav class="fixed top-5 left-5 bottom-5 w-20 bg-primary dark:bg-[#5751a8] flex flex-col items-center py-4 z-50 rounded-2xl shadow-lg overflow-y-auto">
+        <ul class="flex flex-col gap-5 h-full justify-start">
+            <li>
+                <a class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-2xl no-underline" href="/Base/index.html">Z</a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/landing/index.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-gray-700 shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <span class="material-icons text-primary dark:text-[#a8a4e9] text-3xl">home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Mateo Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
         </ul>
     </nav>
-    <header class="barra-superior">
-        <h1 class="titulo">Mateo - Panel de Estadísticas</h1>
+
+    <header class="fixed left-32 top-5 right-7 h-20 bg-gradient-to-r from-primary to-secondary dark:from-[#5751a8] dark:to-[#b3b747] flex items-center gap-4 px-8 shadow-lg z-40 rounded-2xl">
+        <h1 class="text-white text-3xl font-extrabold m-0">Panel de Estadísticas</h1>
+
+        <!-- Botón de Modo Oscuro -->
+        <button id="theme-toggle" type="button" class="ml-auto text-white bg-white/10 rounded-full p-2 transition-colors">
+            <span class="material-icons dark:hidden">light_mode</span>
+            <span class="material-icons hidden dark:block">dark_mode</span>
+        </button>
     </header>
     <main class="principal">
         <section class="grid-estadisticas">
@@ -83,6 +126,47 @@
             </div>
         </section>
     </main>
+
+    <footer class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 p-4 mt-10"
+        style="margin-left: 130px; margin-right: 30px; margin-bottom: 20px;">
+        <div class="max-w-7xl mx-auto mt-2 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between">
+            <div>© 2025 Panel de Estadísticas. Todos los derechos reservados.</div>
+            <div class="flex items-center gap-4">
+                <a class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-[#e2e772] dark:hover:bg-secondary transition-colors"
+                   href="#" aria-label="facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-gray-700 dark:text-gray-200">
+                        <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.09 5.66 21.17 10.44 21.92v-6.86H7.9v-2.99h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.62.77-1.62 1.56v1.88h2.77l-.44 2.99h-2.33V21.92C18.34 21.17 22 17.09 22 12.07z"/>
+                    </svg>
+                </a>
+                <a class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-[#e2e772] dark:hover:bg-secondary transition-colors"
+                   href="#" aria-label="instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-gray-700 dark:text-gray-200">
+                        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6.3-.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+                    </svg>
+                </a>
+                <a class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-[#e2e772] dark:hover:bg-secondary transition-colors"
+                   href="https://github.com/santiyosa/menteconectadafront/tree/Developer" aria-label="github">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-gray-700 dark:text-gray-200">
+                        <path d="M12 .5A12 12 0 0 0 0 12.7c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.5-1.5-1.9-1.5-1.9-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.1 1.4 3.9 1 .1-.8.5-1.4.9-1.7-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C18.6 5 19.6 5.3 19.6 5.3c.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.5-5.3 5.8.5.4.9 1.1.9 2.3v3.4c0 .3.2.8.9.6A12 12 0 0 0 12 .5z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    localStorage.setItem('color-theme', 'light');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
