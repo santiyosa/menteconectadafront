@@ -331,20 +331,47 @@
     // Inscribirme botón funcionalidad
     document.querySelectorAll('.btn-inscribirme').forEach(btn => {
       btn.addEventListener('click', function () {
-        // Cambia el color a verde
+        // Cambia el color a verde y el texto a "Inscrito"
         btn.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]');
-        btn.classList.add('bg-[#16a34a]');
+        btn.classList.add('bg-[#16a34a]', 'text-white');
         btn.textContent = "Inscrito";
+        btn.disabled = true;
+
+        // Cambia el fondo y texto del evento
+        const eventoDiv = btn.closest('div.flex-grow');
+        if (eventoDiv) {
+          eventoDiv.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]', 'text-[#2c3e50]');
+          eventoDiv.classList.add('bg-[#7772e7]', 'text-white');
+
+          // Cambia el div de fecha/hora a amarillo y texto morado
+          const infoDiv = eventoDiv.querySelector('div.flex.items-center');
+          if (infoDiv) {
+            infoDiv.classList.remove('bg-gradient-to-r', 'from-[#7772e7]', 'to-[#e2e772]', 'text-[#2c3e50]');
+            infoDiv.classList.add('bg-[#e2e772]', 'text-[#7772e7]');
+          }
+
+          // Cambia el botón "Destacar" a amarillo y texto morado
+          const btnDestacar = eventoDiv.querySelector('.btn-destacar');
+          if (btnDestacar) {
+            btnDestacar.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]', 'text-white');
+            btnDestacar.classList.add('bg-[#e2e772]', 'text-[#7772e7]');
+          }
+
+          // Cambia el <a> después del <p> a amarillo y texto morado
+          const links = eventoDiv.querySelectorAll('a');
+          if (links.length > 0) {
+            // El primer <a> después del <p>
+            const mainLink = links[0];
+            mainLink.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]', 'text-white');
+            mainLink.classList.add('bg-[#e2e772]', 'text-[#7772e7]');
+          }
+        }
 
         // Mostrar alerta
         const alerta = document.getElementById('alert-inscripcion');
         alerta.style.display = 'flex';
         setTimeout(() => {
           alerta.style.display = 'none';
-          // Restaurar botón después de alerta
-          btn.classList.remove('bg-[#16a34a]');
-          btn.classList.add('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]');
-          btn.textContent = "Inscribirme";
         }, 4000);
       });
     });
