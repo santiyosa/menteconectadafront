@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Colaboraciones</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+
+    
+
+
+<body class="min-h-screen bg-gradient-to-br from-[#7772e7] to-[#e2e772]">  
+    
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-md transition-all">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 gap-4 sm:gap-0">
+            <div class="flex items-center gap-2 sm:gap-4">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-lg sm:text-xl">Z</div>
+                <span class="font-bold text-[color:#7772e7] text-base sm:text-lg">Zenith</span>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+                <a href="#login"
+                    class="px-4 sm:px-6 py-2 border-2 border-[#7772e7] text-[#7772e7] rounded-[12px] font-medium transition-all hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5 text-center">Login</a>
+                <a href="#register"
+                    class="px-4 sm:px-6 py-2 rounded-[12px] font-medium bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)] text-center">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex justify-center items-start pt-32 pb-12 min-h-[70vh]">
+        <div class="bg-white bg-opacity-80 rounded-lg shadow-lg p-4 sm:p-8 w-full max-w-2xl">
+            <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Historial de Colaboraciones</h1>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                            <th class="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rol</th>
+                            <th class="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Dariannys Zambrano</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Desarrolladora</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">2025-07-10</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Javier Martinez</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Tester</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">2025-08-15</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Sara Alvarez</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Lider de Proyecto</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">2025-09-25</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Sofia Muñoz</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Desarrolladora Front</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">2025-10-30</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Jose Jesus Vargas</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">Desarrollador Backend</td>
+                            <td class="px-4 sm:px-6 py-4 whitespace-nowrap">2025-11-30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="w-full min-h-[30vh] bg-[#e9ed92] text-[#555] flex flex-col justify-center items-center pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-8 text-center mt-12">
+        <p class="mb-2 sm:mb-4 opacity-90 text-sm sm:text-base">&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+        <p class="mb-2 sm:mb-4 opacity-90 text-sm sm:text-base">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+        <p class="opacity-90 text-sm sm:text-base">Encuentra nuestros <a href="#terms" target="_blank" class="text-[#e2e772] no-underline hover:underline">términos y condiciones aquí</a></p>
+    </footer>
+
+</body>
+
+
+</html>
