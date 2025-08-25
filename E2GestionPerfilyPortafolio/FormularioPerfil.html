@@ -41,8 +41,11 @@
   <main class="flex-grow flex justify-center items-start pt-28 pb-12">
     <section class="bg-[#fffff0] border-2 border-dashed border-gray-400 rounded-xl p-8 shadow-lg max-w-xl w-full">
 
-      <h2 class="text-2xl font-bold text-center mb-6">FORMULARIO DE PERFIL</h2>
-
+      <h2 class="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text 
+  bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 
+  drop-shadow-sm tracking-wide">
+        FORMULARIO DE PERFIL
+      </h2>
       <form class="flex flex-col gap-6">
 
 
@@ -96,13 +99,24 @@
             placeholder="Escribe sobre ti aquí (mínimo 250 caracteres)..."></textarea>
         </div>
 
+        <div class="flex justify-center space-x-4">
+          <a href="/E2GestionPerfilyPortafolio/TarjetasPerfiles.html"
+            class="px-6 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition text-center">
+            Inicio
+          </a>
 
-        <div class="flex justify-center">
+          <button type="reset"
+            class="px-6 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
+            Limpiar
+          </button>
+
           <button type="submit"
             class="px-6 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
             Guardar
           </button>
+
         </div>
+
 
       </form>
     </section>

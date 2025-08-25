@@ -9,125 +9,232 @@
     <link rel="icon" href="/E2GestionPerfilyPortafolio/img/logoZenith.png">
 </head>
 
-<body
-    class="min-h-screen bg-gradient-to-br from-lime-100 via-lime-100 from-yellow-200 flex flex-col justify-center items-center">
-</body>
+<body class="min-h-screen bg-gradient-to-br from-lime-100 via-lime-100 from-yellow-200 flex flex-col items-center">
 
-<header class="fixed top-0 w-full bg-white/95 backdrop-blur-[10px] z-[1000] py-4 shadow-sm">
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 md:gap-0 gap-1">
 
-        <div class="flex items-center gap-3">
-            <a href="/Base/index.html">
-                <img class="w-16 h-auto" src="/E2GestionPerfilyPortafolio/img/logoZenith.png" alt="Zogo pagina zenith">
-            </a>
-            <span class="text-3xl font-bold text-[#6b63ff]">Zenith</span>
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-[10px] z-[1000] py-4 shadow-sm">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 md:gap-0 gap-1">
+
+            <div class="flex items-center gap-3">
+                <a href="/Base/index.html">
+                    <img class="w-16 h-auto" src="/E2GestionPerfilyPortafolio/img/logoZenith.png"
+                        alt="Zogo pagina zenith">
+                </a>
+                <span class="text-3xl font-bold text-[#6b63ff]">Zenith</span>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#login"
+                    class="px-5 py-2 rounded-lg font-medium border-2 border-[#6b63ff] text-[#6b63ff] hover:bg-[#6b63ff] hover:text-white transition">
+                    Login
+                </a>
+                <a href="#register"
+                    class="px-5 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
+                    Registrarse
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="w-[100%] h-auto flex flex-col items-center">
+        <div class="mt-27 w-[85%] h-auto flex items-center justify-between">
+            <div class="flex gap-1">
+                <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional3.html"
+                    class="top-5 left-5 bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
+                    ← Anterior
+                </a>
+                <a href="/E2GestionPerfilyPortafolio/TarjetasPerfiles.html"
+                    class="top-5 right-5 bg-[#8e89ef] hover:hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
+                    Inicio
+                </a>
+                <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional5.html"
+                    class="top-5 right-5 bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
+                    Siguiente perfil →
+                </a>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text 
+  bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 
+  drop-shadow-sm tracking-wide"> Perfil profesional</h2>
         </div>
 
-        <div class="flex gap-4">
-            <a href="#login"
-                class="px-5 py-2 rounded-lg font-medium border-2 border-[#6b63ff] text-[#6b63ff] hover:bg-[#6b63ff] hover:text-white transition">
-                Login
-            </a>
-            <a href="#register"
-                class="px-5 py-2 rounded-lg font-medium text-white bg-gradient-to-br from-[#6b63ff] to-[#e2e772] hover:opacity-90 transition">
-                Registrarse
-            </a>
-        </div>
+        <div
+            class="bg-[#EAF4FB] lg:w-[77%] h-auto shadow-lg shadow-stone-500 rounded-xl flex flex-col items-center w-[90%] mt-4">
 
-    </div>
-</header>
+            <div class="flex justify-evenly w-[100%] py-14 px-9 gap-6">
+                <div class="w-[250px] flex flex-col justify-center items-center gap-3">
+                    <img class="rounded-t-xl h-[300px] w-[100%]"
+                        src="/E2GestionPerfilyPortafolio/img/fotosprofesionales/FotoPerfilProfesional4.jpg"
+                        alt="Imagen de foto de perfil profesional">
 
-<main
-    class="bg-[#FFFDD0] lg:w-[90%] h-[auto] shadow-lg shadow-stone-500 rounded-xl flex flex-col items-center mt-30 py-15 w-[90%]">
-   
-    <div class="text-green-700 flex flex-col justify-center items-center my-15">
-        <a href="/E2GestionPerfilyPortafolio/TarjetasPerfiles.html"
-            class="top-5 right-5 bg-[#8e89ef] hover:hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
-            ↑ Inicio
-        </a>
-    </div>
-    <div class="w-full max-w-4xl mx-auto grid grid-cols-1 gap-2">
+                    <a class="bg-[#8e89ef] text-white text-center w-full px-3 py-2 rounded-b-xl hover:bg-[#C8AAF0] transition"
+                        href="/E2GestionPerfilyPortafolio/FormularioPerfil.html">
+                        editar perfil</a>
 
-        <div class="flex justify-between items-center">
-            <img src="../img/EscuchaActiva.png" alt="Escucha Activa" class="w-[100px] h-[100px]">
-            <img src="../img/mentorEnCresimiento.png" alt="mentor en crecimiento" class="w-[100px] h-[100px]">
-        </div>
+                </div>
 
-        <div class="relative w-full">
+                <div class="bg-white shadow-md rounded-lg p-4 w-4/7 h-auto">
+                    <h3 class="text-3xl font-bold text-gray-800 ">Dr. Andrés Felipe Morales
+                    </h3>
 
-            <div class="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400"></div>
+                    <p class="font-semibold text-gray-700 mb-4">
+                        Especialidad: Psicología infantil y adolescente
+                    </p>
+                    <p class="font-semibold text-gray-700 bg-blue-100 px-2 py-0.5 rounded-md w-45 mb-1">Correo
+                        electrónico:
+                    </p>
+                    <p class="ml-3 mb-0.5">andres.morales@zenith.com</p>
+                    <p class="font-semibold text-gray-700 bg-blue-100 px-2 py-0.5 rounded-md w-45 mb-1">Edad:</p>
+                    <p class="ml-3 mb-0.5">31 años</p>
+                    <p class="font-semibold text-gray-700 bg-blue-100 px-2 py-0.5 rounded-md w-45 mb-1">Biografia:</p>
+                    <p class="ml-3 mb-0.5">Psicólogo especializado en la atención a niños y adolescentes, con
+                        experiencia en contextos clínicos y educativos. Ha trabajado en programas de orientación y
+                        acompañamiento en etapas de desarrollo, intervención en dificultades de aprendizaje y apoyo en
+                        casos de problemas de conducta y adaptación escolar.</p>
+                </div>
+            </div>
 
-            <div class="w-[92%] flex justify-between items-center relative mx-auto">
-                <p class="text-gray-700 font-medium">2023</p>
-                <p class="text-gray-700 font-medium">2025</p>
+            <div></div>
+
+            <div class="text-left w-[100%] h-auto px-14 font-semibold">
+
+                <p
+                    class="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-700 drop-shadow-sm tracking-wide mb-3">
+                    Linea de tiempo:
+                </p>
+
+                <div class="w-full max-w-4xl mx-auto grid grid-cols-1 bg-blue-100 rounded-lg">
+
+                    <div class="flex justify-between items-center">
+                        <img src="../img/EscuchaActiva.png" alt="Escucha Activa" class="w-[100px] h-[100px]">
+                        <img src="../img/mentorEnCresimiento.png" alt="mentor en crecimiento"
+                            class="w-[100px] h-[100px]">
+                    </div>
+
+                    <div class="relative w-full">
+
+                        <div class="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400"></div>
+
+                        <div class="w-[92%] flex justify-between items-center relative mx-auto">
+                            <p class="text-gray-700 font-medium">2023</p>
+                            <p class="text-gray-700 font-medium">2025</p>
+                        </div>
+
+
+                        <div class="flex justify-center mt-8">
+                            <p class="text-gray-700 font-medium">2024</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex justify-center bg">
+                        <img src="../img/conexionHumana.png" alt="Conexión Humana" class="w-[100px] h-[100px]">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="w-[100%] px-14 h-auto flex items-center justify-between mt-3 ">
+                <p
+                    class="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-700 drop-shadow-sm tracking-wide">
+                    Proyectos:
+                </p>
+
+                <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
+                    href="/E2GestionPerfilyPortafolio/FormularioProyectos.html"> + Agrega un proyecto</a>
+            </div>
+
+            <div class=" w-[100%] h-auto px-14 mb-12">
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+
+                    <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
+                        <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto Horizonte</h2>
+                        <p class="text-gray-600 mb-4">Programa integral de prevención de la ansiedad en universidades
+                            mediante
+                            talleres y acompañamiento psicológico.</p>
+                        <span class="text-sm text-gray-500 font-medium">Año: 2024</span>
+                    </div>
+                    <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
+                        <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto MindCare</h2>
+                        <p class="text-gray-600 mb-4">Plataforma digital con inteligencia artificial para brindar
+                            orientación
+                            emocional inicial y canalizar a profesionales.</p>
+                        <span class="text-sm text-gray-500 font-medium">Año: 2024</span>
+                    </div>
+                    <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
+                        <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto Armonía</h2>
+                        <p class="text-gray-600 mb-4">Red comunitaria que conecta a voluntarios y psicólogos para
+                            ofrecer
+                            acompañamiento emocional gratuito.</p>
+                        <span class="text-sm text-gray-500 font-medium">Año: 2025</span>
+                    </div>
+                    <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
+                        <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto Equilibrio</h2>
+                        <p class="text-gray-600 mb-4">Aplicación enfocada en el bienestar laboral con recursos de
+                            mindfulness,
+                            control del estrés y coaching emocional.</p>
+                        <span class="text-sm text-gray-500 font-medium">Año: 2025</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="w-[100%] px-14 mb-6 justify-left ">
+                <p
+                    class="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-700 drop-shadow-sm tracking-wide">
+                    Otros profesionales con la misma especialidad:
+                </p>
+            </div>
+            <div class="w-[100%] px-14 mb-12 flex justify-evenly">
+
+                <div>
+                    <div
+                        class="flex h-[90px] gap-5 bg-blue-100 rounded-lg border border-blue-400 shadow-md hover:shadow-lg transition">
+                        <img class="rounded-lg"
+                            src="/E2GestionPerfilyPortafolio/img/fotosprofesionales/FotoPerfilProfesional5.jpg"
+                            alt="Imagen foto profesional">
+                        <div class="flex flex-col justify-center pr-4 gap-0.5 ">
+                            <p>Dra. Natalia Rojas Castillo</p>
+                            <p>Psicología infantil y adolescente</p>
+                            <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional5.html"
+                                class=" w-[110px] inline-block bg-[#8e89ef] text-white text-sm font-medium px-4 py-0.5 rounded-lg shadow-md hover:bg-[#C8AAF0] transition">
+                                Ver perfil →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div
+                        class="flex h-[90px] gap-5 bg-blue-100 rounded-lg border border-blue-400 shadow-md hover:shadow-lg transition">
+                        <img class="rounded-lg"
+                            src="/E2GestionPerfilyPortafolio/img/fotosprofesionales/FotoPerfilProfesional9.jpg"
+                            alt="Imagen foto profesional">
+                        <div class="flex flex-col justify-center pr-4 gap-0.5 ">
+                            <p>Dr. Daniel Hernández Muñoz</p>
+                            <p>Psicología infantil y adolescente</p>
+                            <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional9.html"
+                                class=" w-[110px] inline-block bg-[#8e89ef] text-white text-sm font-medium px-4 py-0.5 rounded-lg shadow-md hover:bg-[#C8AAF0] transition">
+                               Ver perfil →</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
 
-            <div class="flex justify-center mt-8">
-                <p class="text-gray-700 font-medium">2024</p>
-            </div>
         </div>
+    </main>
 
-
-        <div class="flex justify-center">
-            <img src="../img/conexionHumana.png" alt="Conexión Humana" class="w-[100px] h-[100px]">
+    <footer class="bg-[#e9ed92] w-full h-[150px] flex flex-col justify-center items-center mt-9">
+        <div class="flex flex-col justify-center items-center gap-4">
+            <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+            <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+            <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
         </div>
-
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
-
-        <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
-            <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto Horizonte</h2>
-            <p class="text-gray-600 mb-4">Programa integral de prevención de la ansiedad en universidades mediante
-                talleres y acompañamiento psicológico.</p>
-            <span class="text-sm text-gray-500 font-medium">Año: 2024</span>
-        </div>
-
-
-        <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
-            <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto MindCare</h2>
-            <p class="text-gray-600 mb-4">Plataforma digital con inteligencia artificial para brindar orientación
-                emocional inicial y canalizar a profesionales.</p>
-            <span class="text-sm text-gray-500 font-medium">Año: 2024</span>
-        </div>
-
-
-        <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
-            <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto Armonía</h2>
-            <p class="text-gray-600 mb-4">Red comunitaria que conecta a voluntarios y psicólogos para ofrecer
-                acompañamiento emocional gratuito.</p>
-            <span class="text-sm text-gray-500 font-medium">Año: 2025</span>
-        </div>
-
-
-        <div class="bg-white  rounded-2xl p-6 flex flex-col justify-between hover:scale-105 transition">
-            <h2 class="text-xl font-bold text-[#6b63ff] mb-2">Proyecto Equilibrio</h2>
-            <p class="text-gray-600 mb-4">Aplicación enfocada en el bienestar laboral con recursos de mindfulness,
-                control del estrés y coaching emocional.</p>
-            <span class="text-sm text-gray-500 font-medium">Año: 2025</span>
-        </div>
-
-    </div>
-
-    <a class="text-blue-600 underline" href="/E2GestionPerfilyPortafolio/FormularioProyectos.html">Agrega un
-        proyecto</a>
-    <a class="bg-[#8e89ef] text-white px-3 py-2 rounded-lg hover:bg-[#C8AAF0] transition"
-        href="/E2GestionPerfilyPortafolio/FormularioPerfil.html">
-        editar perfil</a>
-    </div>
-
-    
-    </div>
-
-</main>
-
-<footer class="bg-[#e9ed92] w-full h-[150px] flex flex-col justify-center items-center mt-9">
-    <div class="flex flex-col justify-center items-center gap-4">
-        <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
-        <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
-        <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
-    </div>
-</footer>
+    </footer>
 </body>
 
 </html>
