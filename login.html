@@ -26,11 +26,11 @@
     }
 
     input:invalid {
-      border-color: #ef4444; 
+      border-color: #ef4444;
     }
 
     input:valid {
-      border-color: #22c55e; 
+      border-color: #22c55e;
     }
 
     /* Mostrar modal de éxito cuando se active con #exito */
@@ -40,7 +40,22 @@
 
     /* Mostrar modal recuperar contraseña */
     #recover:target {
-      display: flex; 
+      display: flex;
+    }
+
+    .terminos {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.98em;
+      color: #000000;
+    }
+    .link-terminos {
+      color: rgb(37 99 235);
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+    .link-terminos:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -53,7 +68,7 @@
 
   <!-- Tarjeta del formulario -->
   <div class="w-80 p-6 rounded-xl shadow-lg bg-gradient-to-b from-[#dcd4e4] to-[#fafad2]">
-    
+
     <!-- Tabs -->
     <ul class="flex mb-6 border-b-2 border-indigo-300">
       <li class="mr-2">
@@ -76,7 +91,7 @@
         <div class="flex flex-col gap-1 relative">
           <label for="contrasena" class="text-sm">Contraseña</label>
 
-          <!-- Checkbox oculto -->
+          <!-- Checkbox oculto para mostrar/ocultar contraseña -->
           <input type="checkbox" id="toggleLogin" class="hidden peer">
 
           <!-- Input contraseña oculto -->
@@ -89,7 +104,15 @@
 
           <!-- Botón ojo -->
           <label for="toggleLogin" class="absolute right-3 top-9 cursor-pointer text-gray-600">👁</label>
-          <span class="text-xs text-gray-600">Mínimo 6 caracteres</span>
+
+          <!-- Recordarme y mínimo caracteres -->
+          <div class="flex items-center justify-between mt-2">
+            <span class="text-xs text-gray-600">Mínimo 6 caracteres</span>
+            <div class="flex items-center recordar">
+              <input type="checkbox" id="remember" name="remember" checked class="accent-indigo-400 mr-1">
+              <label for="remember" class="text-xs text-gray-700 select-none cursor-pointer">Recordarme</label>
+            </div>
+          </div>
         </div>
 
         <button type="submit" class="bg-indigo-300 text-white font-bold px-4 py-2 rounded-md hover:bg-indigo-700 transition mx-auto">Ingresar</button>
@@ -103,7 +126,7 @@
       <h2 class="text-xl font-bold text-center mb-4">Registrarse</h2>
       <!-- Aquí va el truco: enviamos a #exito -->
       <form id="registerform" action="#exito" method="get" class="flex flex-col gap-4">
-        
+
         <!-- Usuario -->
         <div class="flex flex-col gap-1">
           <label for="Usuario" class="text-sm">Nombre</label>
@@ -198,10 +221,18 @@
     }
   </script>
 
+  <!--Terminos y Condiciones-->
+  <p class="terminos">
+    Al continuar, aceptas nuestros
+    <a href="terminos-y-condiciones.html" target="_blank" rel="noopener noreferrer" class="link-terminos">
+      Términos y condiciones
+    </a>.
+  </p>
+
   <!-- Preguntas Frecuentes -->
   <section class="max-w-2xl mx-auto mt-10 p-6">
     <h2 class="text-2xl font-bold mb-4 text-center">Preguntas Frecuentes</h2>
-    
+
     <div class="space-y-4">
       <!-- Pregunta 1 -->
       <details class="border rounded-lg p-4">
@@ -218,7 +249,7 @@
       <!-- Pregunta 3 -->
       <details class="border rounded-lg p-4">
         <summary class="cursor-pointer font-semibold">¿Dónde puedo contactar soporte?</summary>
-        <p class="mt-2 text-gray-600">Puedes escribirnos al correo soportementeconectada@gmail.com o en la sección de contacto.</p>
+        <p class="mt-2 text-gray-600">Puedes escribirnos al correo <a href="mailto:soportementeconectada@gmail.com" class="underline text-blue-600">soportementeconectada@gmail.com</a> o en la sección de contacto.</p>
       </details>
     </div>
   </section>
