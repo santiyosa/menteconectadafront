@@ -17,7 +17,7 @@ goals.forEach((goal, index) => {
                   stroke-dashoffset="${2 * Math.PI * 14}"/>
         </svg>
       </div>
-      <span class="tooltip">${goal}</span>
+      <span id="tooltip${index}" class="tooltip">${goal}: 0%</span>
     </div>
   `;
 });
@@ -32,7 +32,6 @@ mainCircle.style.strokeDashoffset = mainCircumference;
 
 let values = new Array(goals.length).fill(0);
 
-// Animación de progreso
 function updateProgress() {
   let total = 0;
 
@@ -41,6 +40,7 @@ function updateProgress() {
     if (newVal > 100) newVal = 100;
 
     const circle = document.getElementById(`goalCircle${i}`);
+    const tooltip = document.getElementById(`tooltip${i}`);
     const circumference = 2 * Math.PI * 14;
     const offset = circumference - (newVal / 100) * circumference;
     circle.style.strokeDashoffset = offset;
@@ -48,6 +48,8 @@ function updateProgress() {
     if (newVal < 40) circle.setAttribute("stroke", "#ef4444");
     else if (newVal < 70) circle.setAttribute("stroke", "#f59e0b");
     else circle.setAttribute("stroke", "#22c55e");
+
+    tooltip.textContent = `${goals[i]}: ${newVal}%`;
 
     total += newVal;
     return newVal;

@@ -2,7 +2,6 @@
   transition: stroke-dashoffset 0.6s ease, stroke 0.6s ease;
 }
 
-/* Grupo relativo */
 .group {
   position: relative;
   display: flex;
@@ -10,11 +9,10 @@
   gap: 0.5rem;
 }
 
-/* Tooltip */
 .tooltip {
   position: absolute;
   top: 50%;
-  left: 100%; /* Aparece a la derecha del mini círculo */
+  left: 100%;
   transform: translateY(-50%);
   background-color: #1f2937;
   color: white;
@@ -26,12 +24,11 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 50; /* <- esto asegura que pase por encima */
+  z-index: 50;
 }
 
 
-/* Hover */
 .group:hover .tooltip {
   opacity: 1;
-  transform: translateY(-50%) translateX(0.25rem); /* pequeño desplazamiento al aparecer */
+  transform: translateY(-50%) translateX(0.25rem);
 }
