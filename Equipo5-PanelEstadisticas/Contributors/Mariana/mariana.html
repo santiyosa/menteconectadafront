@@ -29,7 +29,6 @@
         body { font-family: 'Urbanist', sans-serif; }
     </style>
 
-    <!-- Inicialización de tema ANTES de que cargue el contenido -->
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || 
             (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -96,54 +95,89 @@
         <div class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg">
             <!-- Tabs -->
             <div class="sm:hidden">
-                <select id="tabs" class="bg-gray-50 dark:bg-gray-700 border-0 border-b border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-t-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                <select id="tabs" class="bg-gray-50 dark:bg-gray-700 border-0 border-b border-gray-200 dark:border-gray-700 text-gray-900 dark:text-secondary text-sm rounded-t-lg focus:ring-primary focus:border-primary block w-full p-2.5">
                     <option>Estadísticas</option>
                     <option>Servicios</option>
                     <option>Preguntas</option>
                 </select>
             </div>
-            <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-t-2xl sm:flex rtl:divide-x-reverse dark:text-gray-400 dark:divide-gray-700" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
+            <ul class="hidden text-lg font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-t-2xl sm:flex rtl:divide-x-reverse dark:text-gray-400 dark:divide-gray-700" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
                 <li class="w-full">
-                    <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-primary dark:text-[#a8a4e9] hover:text-secondary">Estadísticas</button>
+                    <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-primary dark:text-gray-100">Estadísticas</button>
                 </li>
                 <li class="w-full">
-                    <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-primary dark:text-[#a8a4e9] hover:text-secondary">Servicios</button>
+                    <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-primary dark:text-gray-100 ">Servicios</button>
                 </li>
                 <li class="w-full">
-                    <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-se-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-primary dark:text-[#a8a4e9] hover:text-secondary">Preguntas</button>
+                    <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-se-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-primary dark:text-gray-100">Preguntas</button>
                 </li>
             </ul>
 
             <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-700">
-                <!-- Estadísticas -->
-                <div class="p-4 bg-[#1f2937] rounded-lg md:p-8" id="stats" role="tabpanel">
-                    <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-white sm:grid-cols-3 xl:grid-cols-3">
-                        <div class="flex flex-col items-center justify-center p-6">
-                            <dt class="mb-2 text-4xl md:text-5xl font-extrabold text-secondary">73M+</dt>
-                            <dd class="text-lg font-medium text-white">Desarrolladores</dd>
+                <div class="p-4 bg-white dark:bg-[#1f2937] rounded-lg md:p-8" id="stats" role="tabpanel">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                        <div>
+                            <h2 class="text-gray-900 dark:text-white text-2xl font-extrabold">Estadísticas — Salud Mental</h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Filtra por rango de fechas para ver las métricas del período.</p>
                         </div>
-                        <div class="flex flex-col items-center justify-center p-6">
-                            <dt class="mb-2 text-4xl md:text-5xl font-extrabold text-secondary">100M+</dt>
-                            <dd class="text-lg font-medium text-white">Repositorios</dd>
+
+                        <!-- Selector de rango (fecha inicio / fin) -->
+                        <div class="flex items-center gap-2">
+                            <label class="sr-only" for="mariana-start">Fecha inicio</label>
+                            <input id="mariana-start" type="date" class="px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 text-sm" />
+
+                            <label class="sr-only" for="mariana-end">Fecha fin</label>
+                            <input id="mariana-end" type="date" class="px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 text-sm" />
+
+                            <button id="mariana-update" class="px-4 py-2 rounded-lg bg-secondary text-white text-sm hover:brightness-90">Actualizar</button>
                         </div>
-                        <div class="flex flex-col items-center justify-center p-6">
-                            <dt class="mb-2 text-4xl md:text-5xl font-extrabold text-secondary">1000s</dt>
-                            <dd class="text-lg font-medium text-white">Proyectos</dd>
+                    </div>
+
+                    <!-- Métricas: 3 columnas en sm+, 2 en xs -->
+                    <dl class="grid gap-6 grid-cols-2 sm:grid-cols-3">
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-secondary" id="m-pacientes">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Pacientes Activos</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-pacientes-sub">—</div>
                         </div>
-                        <div class="flex flex-col items-center justify-center p-6">
-                            <dt class="mb-2 text-4xl md:text-5xl font-extrabold text-primary">1B+</dt>
-                            <dd class="text-lg font-medium text-white">Contribuidores</dd>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-[#e2e772]" id="m-sesiones">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Sesiones Realizadas</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sesiones-sub">—</div>
                         </div>
-                        <div class="flex flex-col items-center justify-center p-6">
-                            <dt class="mb-2 text-4xl md:text-5xl font-extrabold text-primary">90+</dt>
-                            <dd class="text-lg font-medium text-white">Empresas</dd>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-primary" id="m-phq">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Índice Promedio (PHQ-9)</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-phq-sub">—</div>
                         </div>
-                        <div class="flex flex-col items-center justify-center p-6">
-                            <dt class="mb-2 text-4xl md:text-5xl font-extrabold text-primary">4M+</dt>
-                            <dd class="text-lg font-medium text-white">Organizaciones</dd>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-[#F97316]" id="m-canceladas">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Citas Canceladas</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-canceladas-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-[#10B981]" id="m-sat">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Satisfacción</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sat-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-[#6366F1]" id="m-deriv">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Derivaciones a especialista</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-deriv-sub">—</div>
                         </div>
                     </dl>
+
+                    <!-- Acción / nota -->
+                    <div class="mt-6 text-sm text-gray-600 dark:text-gray-400 flex items-center justify-between">
+                        <span>Los valores son simulados; conectar con API para datos reales.</span>
+                    </div>
                 </div>
+
                 <!-- Servicios -->
                 <div class="hidden p-4 bg-white dark:bg-gray-800 rounded-lg md:p-8" id="about" role="tabpanel">
                     <h2 class="text-2xl font-extrabold text-primary dark:text-[#a8a4e9] mb-4">Servicios Ofrecidos</h2>
@@ -194,6 +228,102 @@
                 }
             });
         });
+    </script>
+
+    <!-- Script local para manejar selector y métricas (solo afecta esta sección) -->
+    <script>
+    (function(){
+        // utilidades
+        function pad(n){ return n<10 ? '0'+n : n; }
+        function formatDate(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+
+        // elementos
+        const startEl = document.getElementById('mariana-start');
+        const endEl = document.getElementById('mariana-end');
+        const btnUpdate = document.getElementById('mariana-update');
+        const btnExport = document.getElementById('mariana-export');
+
+        // establecer rango por defecto: últimos 30 días
+        const end = new Date();
+        const start = new Date();
+        start.setDate(end.getDate() - 29);
+        if (startEl) startEl.value = formatDate(start);
+        if (endEl) endEl.value = formatDate(end);
+
+        // función que actualiza métricas (simulación)
+        function updateMetrics(startDate, endDate){
+            const s = new Date(startDate);
+            const e = new Date(endDate);
+            if (isNaN(s) || isNaN(e)) return;
+
+            // calcular días inclusivos
+            const diff = Math.round((e.setHours(0,0,0,0) - s.setHours(0,0,0,0)) / (1000*60*60*24)) + 1;
+            const days = Math.max(1, diff);
+
+            // simulación: valores dependientes del tamaño del rango
+            const pacientes = 300 + days * 6 + Math.round(Math.random()*80);
+            const sesiones = Math.round(days * (18 + Math.random()*12));
+            const phq = (5 + Math.random()*9).toFixed(1);
+            const cancelPct = (4 + Math.random()*10).toFixed(1) + '%';
+            const sat = (72 + Math.random()*22).toFixed(1) + '%';
+            const deriv = Math.round(days * (1 + Math.random()*4));
+
+            // actualizar DOM
+            document.getElementById('m-pacientes').textContent = pacientes.toLocaleString();
+            document.getElementById('m-pacientes-sub').textContent = `${days} días (${formatDate(s)} → ${formatDate(e)})`;
+
+            document.getElementById('m-sesiones').textContent = sesiones.toLocaleString();
+            document.getElementById('m-sesiones-sub').textContent = `≈ ${(sesiones/days).toFixed(1)} / día`;
+
+            document.getElementById('m-phq').textContent = phq;
+            document.getElementById('m-phq-sub').textContent = `promedio (0-27)`;
+
+            document.getElementById('m-canceladas').textContent = cancelPct;
+            document.getElementById('m-canceladas-sub').textContent = 'porcentaje';
+
+            document.getElementById('m-sat').textContent = sat;
+            document.getElementById('m-sat-sub').textContent = 'valoración promedio';
+
+            document.getElementById('m-deriv').textContent = deriv.toLocaleString();
+            document.getElementById('m-deriv-sub').textContent = `total en ${days} días`;
+        }
+
+        // inicializar con rango por defecto
+        updateMetrics(start, end);
+
+        // evento actualizar
+        if (btnUpdate) {
+            btnUpdate.addEventListener('click', () => {
+                const s = startEl.value;
+                const e = endEl.value;
+                if (!s || !e) return alert('Selecciona fecha de inicio y fin.');
+                updateMetrics(s, e);
+            });
+        }
+
+        // export CSV sencillo
+        if (btnExport) {
+            btnExport.addEventListener('click', () => {
+                const rows = [
+                    ['Métrica','Valor'],
+                    ['Pacientes Activos', document.getElementById('m-pacientes').textContent.trim()],
+                    ['Sesiones Realizadas', document.getElementById('m-sesiones').textContent.trim()],
+                    ['Índice PHQ-9', document.getElementById('m-phq').textContent.trim()],
+                    ['Citas Canceladas', document.getElementById('m-canceladas').textContent.trim()],
+                    ['Satisfacción', document.getElementById('m-sat').textContent.trim()],
+                    ['Derivaciones', document.getElementById('m-deriv').textContent.trim()]
+                ];
+                const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'metricas_salud_mental.csv';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+    })();
     </script>
 </body>
 </html>
