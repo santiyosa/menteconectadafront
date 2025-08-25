@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="Formulario.css">
+    <form class="pleaseWork">
+        <fieldset>
+            <legend>Información de registro: </legend>
+        <div class="grid">
+            <div>
+                <label for="Sociedad">Tipo Sociedad</label>
+                <select id="Sociedad" name="tipo_sociedad">
+                    <option value="natural">Persona natural</option>
+                    <option value="juridica">Persona juridica</option>
+                </select>
+            </div>
+            <div>
+                <label for="Doc">Tipo Documento</label>
+                <select name="tipo_doc" id="Doc">
+                    <option value="t.i">Tarjeta de identidad</option>
+                    <option value="c.c">Cedula de ciudadania</option>
+                </select>
+            </div>
+            <div>
+                <label for="Num_id">Numero de identificación</label>
+                <input type="number" name="Num_id" id="num_id">
+            </div>
+            <div>
+                <label for="Razon">Nombre o razón social</label>
+                <input type="text" name="Razon" id="Razon">
+            </div>
+            <div>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido">
+            </div>
+            <div>   
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="Contraseña">Contraseña</label>
+                <input type="password" name="Contraseña" id="Contraseña">
+            </div>
+            <div>
+                <label for="Sector">Sector</label>
+                <select name="Sector" id="Sector">
+                    <option value="servicios">Servicios</option>
+                    <option value="comercio">Comercio</option>
+                    <option value="industria">Industria</option>
+                </select>
+            </div>
+            <div>
+                <label for="empresa">Tipo de empresa</label>
+                <select id="empresa" name="empresa">
+                    <option value="micro">Micro</option>
+                    <option value="pequeña">Pequeña</option>
+                    <option value="mediana">Mediana</option>
+                    <option value="grande">Grande</option>
+                    <option value="otros"></option>
+                </select>
+            </div>
+            
+            <button type="reset">Limpiar</button>
+            <button type="submit">Registrar</button>
+
+        </div>
+</fieldset>
+    </form>
+
+</body>
+</html>
