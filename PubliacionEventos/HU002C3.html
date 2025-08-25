@@ -3,60 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="estilos" rel="stylesheet" href="/Base/estilos-alternativo.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  <!-- Tailwind CDN -->
     <title>HU002C3</title>
+
+     <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B46C1', 
+                        secondary: '#4A5568', 
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'], 
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
-<body>
+<body class="font-inter antialiased bg-gray-50 text-gray-800">
 
-    <header class="header">
-        <div class="nav-container">
-          <div class="logo-container">
-            <div class="logo">Z</div>
-            <span style="font-weight: bold; color: var(--primary-color);">Zenith</span>
-          </div>
-          <div class="nav-buttons">
-            <a href="#login" class="btn btn-outline">Login</a>
-            <a href="#register" class="btn btn-primary">Registrarse</a>
-          </div>
+
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+        
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-primary text-white font-bold text-xl rounded-full">Z</div>
+                <span class="font-bold text-xl text-primary">Zenith</span>
+            </div>
+           
+            <div class="flex space-x-4">
+                <a href="#login" class="px-4 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-colors duration-300">Login</a>
+                <a href="#register" class="px-4 py-2 bg-primary text-white rounded-full hover:bg-purple-700 transition-colors duration-300">Registrarse</a>
+            </div>
         </div>
-      </header>
-      <h1>Crear un nuevo evento</h1>
+    </header>
 
-    <main class="formulario-Eventos">
-        <form class="Publicar-Evento" action="/publicar-evento" method="post">
-            <fieldset>
-                <legend>Detalles del Evento</legend>
+    
+    <h1 class="text-4xl font-extrabold text-center mt-10 mb-8 text-secondary">Crear un nuevo evento</h1>
 
+   
+    <main class="container mx-auto px-4 py-8 max-w-2xl bg-white rounded-xl shadow-lg mb-10">
+        <form class="space-y-6" action="/publicar-evento" method="post">
+            <fieldset class="border border-gray-300 rounded-lg p-6 space-y-4">
+                <legend class="text-2xl font-semibold text-secondary px-2 -ml-2">Detalles del Evento</legend>
+
+                
                 <section>
-                    <label for="titulo">Título del Evento:</label>
-                    <input type="text" id="titulo" name="titulo" required aria-describedby="titulo-ayuda">
-                    <small id="titulo-ayuda">Ingresa un título claro y conciso para tu evento.</small>
+                    <label for="titulo" class="block text-lg font-medium text-gray-700 mb-1">Título del Evento:</label>
+                    <input type="text" id="titulo" name="titulo" required aria-describedby="titulo-ayuda"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200">
+                    <small id="titulo-ayuda" class="block text-sm text-gray-500 mt-1">Ingresa un título claro y conciso para tu evento.</small>
                 </section>
 
+              
                 <section>
-                    <label for="fecha">Fecha del Evento:</label>
-                    <input type="date" id="fecha" name="fecha" required aria-describedby="fecha-ayuda">
-                    <small id="fecha-ayuda">Selecciona la fecha en que se realizará el evento.</small>
+                    <label for="fecha" class="block text-lg font-medium text-gray-700 mb-1">Fecha del Evento:</label>
+                    <input type="date" id="fecha" name="fecha" required aria-describedby="fecha-ayuda"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200">
+                    <small id="fecha-ayuda" class="block text-sm text-gray-500 mt-1">Selecciona la fecha en que se realizará el evento.</small>
                 </section>
 
+               
                 <section>
-                    <label for="descripcion">Descripción del Evento:</label>
-                    <textarea id="descripcion" name="descripcion" rows="5" required aria-describedby="descripcion-ayuda"></textarea>
-                    <small id="descripcion-ayuda">Proporciona una descripción detallada de lo que trata el evento.</small>
+                    <label for="descripcion" class="block text-lg font-medium text-gray-700 mb-1">Descripción del Evento:</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" required aria-describedby="descripcion-ayuda"
+                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200 resize-y"></textarea>
+                    <small id="descripcion-ayuda" class="block text-sm text-gray-500 mt-1">Proporciona una descripción detallada de lo que trata el evento.</small>
                 </section>
             </fieldset>
-            <a href="/PubliacionEventos/listaEventos.html" class="btn-primary">Publicar Evento</a>
-            
+
+         
+            <a href="/PubliacionEventos/listaEventos.html"
+               class="inline-block w-full text-center px-6 py-3 border border-purple-500 hover:bg-violet-400 text-black font-semibold rounded-lg shadow-md  transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Publicar Evento
+            </a>
         </form>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-          <p>&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
-          <p>Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
-          <p>Encuentra nuestros <a href="#terms" target="_blank">términos y condiciones aquí</a></p>
+   
+    <footer class="bg-amber-200 text-white py-6 mt-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
+            <p class="mb-2 text-gray-400">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+            <p class="text-gray-400">Encuentra nuestros <a href="#terms" target="_blank" class="text-primary hover:underline">términos y condiciones aquí</a></p>
         </div>
-      </footer>
+    </footer>
 
 </body>
 </html>
