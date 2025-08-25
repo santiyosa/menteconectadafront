@@ -192,39 +192,39 @@
                     <!-- Métricas: 3 columnas en sm+, 2 en xs -->
                     <dl class="grid gap-6 grid-cols-2 sm:grid-cols-3">
                         <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
-                            <dt class="text-3xl font-extrabold text-secondary" id="m-pacientes">--</dt>
+                            <dt class="text-3xl font-extrabold text-secondary" id="m-pacientes">1023</dt>
                             <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Pacientes Activos</dd>
-                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-pacientes-sub">—</div>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-pacientes-sub">En los ultimos 30 días</div>
                         </div>
 
                         <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
-                            <dt class="text-3xl font-extrabold text-primary" id="m-sesiones">--</dt>
+                            <dt class="text-3xl font-extrabold text-primary" id="m-sesiones">2856</dt>
                             <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Sesiones Realizadas</dd>
-                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sesiones-sub">—</div>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sesiones-sub">≈95.2/día</div>
                         </div>
 
                         <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
-                            <dt class="text-3xl font-extrabold text-gray-900 dark:text-white" id="m-phq">--</dt>
+                            <dt class="text-3xl font-extrabold text-gray-900 dark:text-white" id="m-phq">8.4</dt>
                             <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Índice Promedio (PHQ-9)</dd>
-                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-phq-sub">—</div>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-phq-sub">ndica depresión moderada</div>
                         </div>
 
                         <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
-                            <dt class="text-3xl font-extrabold text-secondary" id="m-canceladas">--</dt>
+                            <dt class="text-3xl font-extrabold text-secondary" id="m-canceladas">6.8%</dt>
                             <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Citas Canceladas</dd>
-                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-canceladas-sub">—</div>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-canceladas-sub">208 cancelaciones</div>
                         </div>
 
                         <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
-                            <dt class="text-3xl font-extrabold text-primary" id="m-sat">--</dt>
+                            <dt class="text-3xl font-extrabold text-primary" id="m-sat">92.5%</dt>
                             <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Satisfacción</dd>
-                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sat-sub">—</div>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sat-sub">basado en 942 valoraciones</div>
                         </div>
 
                         <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
-                            <dt class="text-3xl font-extrabold text-gray-900 dark:text-white" id="m-deriv">--</dt>
+                            <dt class="text-3xl font-extrabold text-gray-900 dark:text-white" id="m-deriv">78</dt>
                             <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Derivaciones a especialista</dd>
-                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-deriv-sub">—</div>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-deriv-sub">7.6% del total de pacientes</div>
                         </div>
                     </dl>
 
@@ -413,100 +413,5 @@
         });
     </script>
 
-    <!-- Script local para manejar selector y métricas (solo afecta esta sección) -->
-    <script>
-    (function(){
-        // utilidades
-        function pad(n){ return n<10 ? '0'+n : n; }
-        function formatDate(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
-
-        // elementos
-        const startEl = document.getElementById('mariana-start');
-        const endEl = document.getElementById('mariana-end');
-        const btnUpdate = document.getElementById('mariana-update');
-        const btnExport = document.getElementById('mariana-export');
-
-        // establecer rango por defecto: últimos 30 días
-        const end = new Date();
-        const start = new Date();
-        start.setDate(end.getDate() - 29);
-        if (startEl) startEl.value = formatDate(start);
-        if (endEl) endEl.value = formatDate(end);
-
-        // función que actualiza métricas (simulación)
-        function updateMetrics(startDate, endDate){
-            const s = new Date(startDate);
-            const e = new Date(endDate);
-            if (isNaN(s) || isNaN(e)) return;
-
-            // calcular días inclusivos
-            const diff = Math.round((e.setHours(0,0,0,0) - s.setHours(0,0,0,0)) / (1000*60*60*24)) + 1;
-            const days = Math.max(1, diff);
-
-            // simulación: valores dependientes del tamaño del rango
-            const pacientes = 300 + days * 6 + Math.round(Math.random()*80);
-            const sesiones = Math.round(days * (18 + Math.random()*12));
-            const phq = (5 + Math.random()*9).toFixed(1);
-            const cancelPct = (4 + Math.random()*10).toFixed(1) + '%';
-            const sat = (72 + Math.random()*22).toFixed(1) + '%';
-            const deriv = Math.round(days * (1 + Math.random()*4));
-
-            // actualizar DOM
-            document.getElementById('m-pacientes').textContent = pacientes.toLocaleString();
-            document.getElementById('m-pacientes-sub').textContent = `${days} días (${formatDate(s)} → ${formatDate(e)})`;
-
-            document.getElementById('m-sesiones').textContent = sesiones.toLocaleString();
-            document.getElementById('m-sesiones-sub').textContent = `≈ ${(sesiones/days).toFixed(1)} / día`;
-
-            document.getElementById('m-phq').textContent = phq;
-            document.getElementById('m-phq-sub').textContent = `promedio (0-27)`;
-
-            document.getElementById('m-canceladas').textContent = cancelPct;
-            document.getElementById('m-canceladas-sub').textContent = 'porcentaje';
-
-            document.getElementById('m-sat').textContent = sat;
-            document.getElementById('m-sat-sub').textContent = 'valoración promedio';
-
-            document.getElementById('m-deriv').textContent = deriv.toLocaleString();
-            document.getElementById('m-deriv-sub').textContent = `total en ${days} días`;
-        }
-
-        // inicializar con rango por defecto
-        updateMetrics(start, end);
-
-        // evento actualizar
-        if (btnUpdate) {
-            btnUpdate.addEventListener('click', () => {
-                const s = startEl.value;
-                const e = endEl.value;
-                if (!s || !e) return alert('Selecciona fecha de inicio y fin.');
-                updateMetrics(s, e);
-            });
-        }
-
-        // export CSV sencillo
-        if (btnExport) {
-            btnExport.addEventListener('click', () => {
-                const rows = [
-                    ['Métrica','Valor'],
-                    ['Pacientes Activos', document.getElementById('m-pacientes').textContent.trim()],
-                    ['Sesiones Realizadas', document.getElementById('m-sesiones').textContent.trim()],
-                    ['Índice PHQ-9', document.getElementById('m-phq').textContent.trim()],
-                    ['Citas Canceladas', document.getElementById('m-canceladas').textContent.trim()],
-                    ['Satisfacción', document.getElementById('m-sat').textContent.trim()],
-                    ['Derivaciones', document.getElementById('m-deriv').textContent.trim()]
-                ];
-                const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
-                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'metricas_salud_mental.csv';
-                a.click();
-                URL.revokeObjectURL(url);
-            });
-        }
-    })();
-    </script>
 </body>
 </html>
