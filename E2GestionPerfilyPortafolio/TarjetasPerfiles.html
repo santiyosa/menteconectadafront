@@ -43,407 +43,521 @@
       <div class=" flex items-center justify-between gap-8 mt-[40px] w-[90%]">
         <h2
           class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 drop-shadow-sm tracking-wide">
-          TODOS NUESTROS PROFESIONALES
+          NUESTROS PROFESIONALES
         </h2>
 
-        <a class="bg-[#8e89ef] md:px-4 md:py-2 sm:px-6 py-2 px-3 rounded-lg hover:bg-[#726be0] transition"
+        <a class="text-white font-bold bg-[#8e89ef] md:px-4 md:py-2 sm:px-6 py-2 px-3 rounded-lg hover:bg-[#726be0] transition"
           href="/E2GestionPerfilyPortafolio/FormularioPerfil.html">
           Agregar especialista
         </a>
       </div>
     </div>
 
-    <div class="w-[100%] h-auto flex flex-wrap justify-center items-center my-[50px] gap-10">
+    <div class="w-[100%] h-auto flex flex-wrap items-stretch justify-center items-center my-[50px] gap-10">
 
       <!-- profesional 1 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
-        <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 1 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
-            alt="Imagen de valoracion 5.0">
-        </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional1.html">
-          ver perfil</a>
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#D6EAF8] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
 
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+        <img
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional1.jpg" alt="Foto de Dra. Andrea Martínez López">
+
+        <h3 class="text-2xl font-bold mb-2">Dra. Andrea Martínez López</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología Clínica</p>
+          <p><span class="font-bold">Correo electrónico:</span> andrea.martinez@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 37 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicólogo clínico con más de 5 años de experiencia en terapia
+            cognitivo-conductual. Ha trabajado en el acompañamiento de jóvenes y adultos en procesos de manejo de
+            ansiedad, depresión y crecimiento personal.</p>
+        </div>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional1.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 2 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#F3E5F5] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 2 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion45.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional2.jpg" alt="Foto de Dra. Laura Gómez Ramírez">
+
+        <h3 class="text-2xl font-bold mb-2">Dra. Laura Gómez Ramírez</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología educativa</p>
+          <p><span class="font-bold">Correo electrónico:</span> laura.gomez@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 42 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicóloga educativa con más de 10 años de experiencia en
+            orientación escolar
+            y acompañamiento a docentes. Ha trabajado en programas de inclusión educativa y en el diseño de
+            estrategias de aprendizaje para estudiantes con dificultades cognitivas y emocionales.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional2.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional2.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 3 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#D6EAF8] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 3 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion45.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional3.jpg" alt="Foto de Dr. Juan Esteban Rodríguez">
+
+        <h3 class="text-2xl font-bold mb-2">Dr. Juan Esteban Rodríguez</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología Clínica</p>
+          <p><span class="font-bold">Correo electrónico:</span> juan.rodriguez@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 46 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicólogo clínico con más de 12 años de experiencia en terapia
+            individual y
+            de pareja. Especialista en el manejo de ansiedad, depresión y procesos de duelo, utilizando
+            enfoques cognitivo-conductuales y humanistas.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional3.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional3.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 4 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#E0F5E0] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 4 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion46.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional4.jpg" alt="Foto de Dr. Andrés Felipe Morales">
+
+        <h3 class="text-2xl font-bold mb-2">Dr. Andrés Felipe Morales</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología infantil y adolescente</p>
+          <p><span class="font-bold">Correo electrónico:</span> andres.morales@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 31 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicólogo especializado en la atención a niños y adolescentes,
+            con experiencia en contextos clínicos y educativos. Ha trabajado en programas de orientación y
+            acompañamiento en etapas de desarrollo, intervención en dificultades de aprendizaje y apoyo en
+            casos de problemas de conducta y adaptación escolar.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional4.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional4.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 5 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
-        <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 5 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
-            alt="Imagen de valoracion 5.0">
-        </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional5.html">
-          ver perfil</a>
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#E0F5E0] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
 
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+        <img
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional5.jpg" alt="Foto de Dra. Natalia Rojas Castillo">
+
+        <h3 class="text-2xl font-bold mb-2">Dra. Natalia Rojas Castillo</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología infantil y adolescente</p>
+          <p><span class="font-bold">Correo electrónico:</span> natalia.rojas@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 39 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicóloga especialista en el desarrollo emocional y conductual de
+            niños y adolescentes. Ha trabajado en contextos clínicos y educativos, con experiencia en intervención
+            en casos de TDAH, dificultades de aprendizaje y problemas de conducta.</p>
+        </div>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional5.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 6 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#FFECC2] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 6 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion48.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional6.jpg" alt="Foto de Dr. Sebastián Torres Mejía">
+
+        <h3 class="text-2xl font-bold mb-2">Dr. Sebastián Torres Mejía</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología organizacional y laboral</p>
+          <p><span class="font-bold">Correo electrónico:</span> sebastian.torres@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 40 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicólogo organizacional con amplia experiencia en gestión del
+            talento
+            humano, clima laboral y liderazgo. Ha asesorado a empresas nacionales en procesos de selección,
+            capacitación y desarrollo de equipos de alto rendimiento.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional6.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional6.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
-      </div>
 
+      </div>
       <!-- profesional 7 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#D6EAF8] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 7 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion46.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional7.jpg" alt="Foto de Dra. Carolina Pérez Torres">
+
+        <h3 class="text-2xl font-bold mb-2">Dra. Carolina Pérez Torres</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología Clínica</p>
+          <p><span class="font-bold">Correo electrónico:</span> andrea.martinez@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 37 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicóloga clínica con experiencia en el diagnóstico y tratamiento
+            de trastornos emocionales y conductuales. Ha trabajado en terapia individual y grupal, acompañando
+            a personas en procesos de manejo de ansiedad, depresión y estrés. Cuenta con formación en
+            terapia cognitivo-conductual y en el fortalecimiento de habilidades de afrontamiento para
+            mejorar la calidad de vida de sus pacientes.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional7.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional7.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 8 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#FFECC2] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 8 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion48.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional8.jpg" alt="Foto de Dr. Ricardo López Castaño">
+
+        <h3 class="text-2xl font-bold mb-2">Dr. Ricardo López Castaño</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología organizacional y laboral</p>
+          <p><span class="font-bold">Correo electrónico:</span> ricardo.lopez@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 43 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicólogo organizacional con amplia experiencia en gestión del
+            talento humano y desarrollo empresarial. Ha trabajado en procesos de selección de personal, capacitación y
+            liderazgo, así como en proyectos de clima laboral y motivación de equipos. Se ha destacado en la
+            creación de estrategias para fortalecer el bienestar de los empleados y mejorar la productividad
+            en entornos corporativos.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional8.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional8.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
+
       </div>
 
       <!-- profesional 9 -->
       <div
-        class="rounded-md border-1 border-[#AED6F1] flex flex-col bg-[#D6EAF8] items-center flex-wrap  shadow-md shadow-[#c8c6ef] h-auto w-[300px]">
+        class="rounded-md border border-[#AED6F1] flex flex-col items-center bg-[#E0F5E0] shadow-md shadow-[#c8c6ef] w-[300px] p-6 text-center">
+
         <img
-          class=" object-cover shadow-md shadow-[#c8c6ef] mb-[15px] mt-[40px] border-1 border-[#d4d2e7] w-60 h-[160px] rounded-[15%]"
-          src="/E2GestionPerfilyPortafolio/img/perfilVacio.webp" alt=" Imagen de profesional">
-        <p>Nombre profesional 9 aca </p>
-        <p class="mb-4 text-gray-400">----------------------------------------</p>
-        <p class="font-semibold">Informacion personal</p>
-        <br>
-        <p>informacion personal 1</p>
-        <p>informacion personal 2</p>
-        <p>informacion personal 3</p>
-        <p>informacion personal 4</p>
-        <p class="text-gray-400">----------------------------------------</p>
-        <div class="flex items-center mt-2">
-          <p class="font-semibold">Valoracion: </p>
-          <img class="w-30 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion45.png"
-            alt="Imagen de valoracion 5.0">
+          class="object-contain shadow-md shadow-[#c8c6ef] mb-4 mt-8 border-1 border-[#d4d2e7] w-40 h-40 rounded-full"
+          src="img/fotosprofesionales/FotoPerfilProfesional9.jpg" alt="Foto de Dr. Daniel Hernández Muñoz">
+
+        <h3 class="text-2xl font-bold mb-2">Dr. Daniel Hernández Muñoz</h3>
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex-grow flex flex-col justify-start w-full text-left space-y-2 text-gray-800">
+          <h2 class="font-semibold text-lg text-center">Información Personal</h2>
+          <p><span class="font-bold">Especialidad:</span> Psicología infantil y adolescente</p>
+          <p><span class="font-bold">Correo electrónico:</span> daniel.hernandez@zenith.com</p>
+          <p><span class="font-bold">Edad:</span> 37 años</p>
+          <p><span class="font-bold">Biografía:</span> Psicólogo infantil y adolescente con más de 10 años de
+            experiencia en el
+            acompañamiento del desarrollo emocional y conductual de niños y jóvenes. Ha trabajado en
+            intervención de casos de TDAH, ansiedad y dificultades de aprendizaje, apoyando tanto a las
+            familias como a instituciones educativas para fortalecer el bienestar integral de los menores.</p>
         </div>
-        <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
-          href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional9.html">
-          ver perfil</a>
-        <div class="grid grid-cols-2">
-          <!-- Icono Editar -->
+
+        <div class="w-full h-px bg-gray-400 my-4"></div>
+
+        <div class="flex flex-col items-center w-full">
+          <div class="flex items-center justify-center mb-4">
+            <p class="font-semibold">Valoración:</p>
+            <img class="w-24 ml-2" src="/E2GestionPerfilyPortafolio/img/PuntajeValoracion50.png"
+              alt="Imagen de valoración 5.0">
+          </div>
+          <a class="bg-[#8e89ef] text-white px-5 py-2 rounded-lg hover:bg-[#C8AAF0] transition duration-300"
+            href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional9.html">
+            Ver perfil
+          </a>
+        </div>
+
+        <div class="flex justify-center mt-4 space-x-4">
           <button class="edit-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Editar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-blue-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
             </svg>
           </button>
-          <!-- Icono Eliminar -->
           <button class="delete-btn p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Eliminar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-red-500" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-red-500" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
-      </div>
 
+      </div>
     </div>
   </main>
 
