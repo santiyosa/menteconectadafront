@@ -160,7 +160,7 @@
   flex-wrap: wrap;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  margin-left: 5.4rem; 
+  margin-left: 5rem; 
 }
 .tarjeta-rect {
   background: #fff;
@@ -234,8 +234,60 @@
   opacity: 0.8;
 }
 
+/* Estilo para el contenedor de estadísticas de cada desarrollador */
+.grid-estadisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-/*------------------------- TEAM SECTION STYLES --------------------------*/
+.tarjeta-estadistica {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tarjeta-estadistica:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(119, 114, 231, 0.15);
+}
+
+.valor-estadistica {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primario);
+  margin: 0.5rem 0;
+  font-family: "Urbanist", sans-serif;
+  background: linear-gradient(135deg, var(--primario), var(--secundario));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titulo-estadistica {
+  font-size: 1.1rem;
+  color: var(--oscuro);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: "Urbanist", sans-serif;
+}
+
+.descripcion-estadistica {
+  font-size: 0.9rem;
+  color: var(--claro);
+  line-height: 1.5;
+  font-family: "Urbanist", sans-serif;
+}
+
 /* Estilo para la sección del equipo en el landing */
 .team-section {
     position: relative;
@@ -307,7 +359,6 @@
 
 }
 
-<<<<<<< HEAD
 /* Parte de Andrea */
 .galeria {
   margin-top: 80px; 
@@ -320,7 +371,7 @@
 }
 .galeria img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 15px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -341,237 +392,3 @@
   width: 100%;              
   display: block;
 }
-=======
-/* ---------------------------------- MARIANA ----------------------------------*/
-/* Estilo para el contenedor de estadísticas */
-.grid-estadisticas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Crea columnas flexibles que se ajustan al tamaño del contenedor */
-  gap: 4rem; /* Espacio entre las tarjetas */
-  padding: 2rem;
-  max-width: 1200px; /* Ancho máximo del contenedor */
-}
-
-.tarjeta-estadistica {
-  position: relative; /* Posicionamiento relativo para el icono */
-  background: linear-gradient(135deg, #fff 70%, #e2e77222 100%);
-  border-radius: var(--radio);
-  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-  box-shadow: 0 6px 32px 0 rgba(119, 114, 231, 0.10), 0 1.5px 6px rgba(0,0,0,0.06);
-
-  /* velocidad de la animación */
-  transition: 
-    transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), 
-    box-shadow 0.35s, 
-    background 0.35s;
-
-  /* Centra el contenido de la tarjeta y lo organiza en columna */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-}
-
-.tarjeta-estadistica:hover {
-  transform: translateY(-14px) scale(1.06);
-  box-shadow: 0 24px 64px 0 rgba(119, 114, 231, 0.22), 0 4px 16px rgba(226,231,114,0.13);
-  background: linear-gradient(120deg, #e2e772 0%, #fff 90%);
-  border: 2px solid var(--primario);
-  cursor: pointer;
-  filter: brightness(1.07) saturate(1.13);
-}
-
-.icono-estadistica {
-  position: absolute;
-  top: -28px; /* sobresalirá hacia arriba */
-  left: 50%; /* centrado horizontal */
-  transform: translateX(-50%); /* centrado horizontal */
-  background: linear-gradient(135deg, var(--primario) 60%, var(--secundario) 100%);
-  border-radius: 50%; /* forma circular */
-  width: 56px;
-  height: 56px;
-  /* Asegura que el icono esté centrado dentro del círculo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.35s, box-shadow 0.35s;
-  z-index: 2; /* Asegura que el icono esté por encima del contenido de la tarjeta */
-}
-
-.icono-estadistica .material-icons {
-  color: #fff;
-  font-size: 2.2rem;
-  transition: color 0.35s;
-}
-
-.tarjeta-estadistica:hover .icono-estadistica {
-  background: linear-gradient(135deg, var(--secundario) 40%, var(--primario) 100%);
-}
-
-.tarjeta-estadistica:hover .icono-estadistica .material-icons {
-  color: var(--primario);
-}
-
-.valor-estadistica {
-  font-size: 3.5rem;
-  font-weight: 700; 
-  font-family: "Urbanist", sans-serif;
-  background: linear-gradient(135deg, var(--primario), var(--secundario));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: 
-    transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), 
-    text-shadow 0.4s, 
-    filter 0.4s;
-  margin-top: 1.2rem;
-  filter: brightness(1.18) drop-shadow(0 0 8px var(--primario)88);
-}
-
-.tarjeta-estadistica:hover .valor-estadistica {
-  transform: scale(1.20);
-}
-
-.titulo-estadistica {
-  font-family: "Urbanist", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--oscuro);
-  margin-top: 1rem;
-}
-
-.descripcion-estadistica {
-  font-family: "Urbanist", sans-serif;
-  font-size: 1rem;
-  color: var(--claro);
-  margin-top: 0.2rem;
-  line-height: 1.4;
-}
-
-
-/* ==============================
-   TITULO CENTRAL Y TARJETAS
-============================== */
-
-:root {
-  --primary-color: #7772e7;
-  --secondary-color: #e2e772;
-  --color-hero: #f18912;
-  --color-acento: #A8449F;
-  --color-tarjeta: #ffffff;
-  --color-texto-principal: #222222;
-  --white: #232020;
-}
-
-
-.contenido-central {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.titulo-principal {
-  font-size: 32px;
-  color: var(--primary-color);
-  text-align: center;
-}
-
-.panel-tarjetas {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tarjeta-individual {
-    background: linear-gradient(135deg, var(--secondary-color), #ffffff); /* Amarillo a blanco */
-  border: 3px solid var(--color-hero);
-  border-radius: 16px;
-  padding: 32px 40px; /* más espacio interno vertical y horizontal */
-  width: 320px; /* o más, por ejemplo 360px si deseas mucho más grande */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease;
-  color: var(--white); /* Contraste con el fondo */
-}
-
-.tarjeta-individual:hover {
-  transform: translateY(-15px);
-}
-
-/* Estilo para los títulos internos de las tarjetas */
-.tarjeta-individual h3 {
-  color: var(--color-texto-principal); /* Color por defecto para títulos */
-  font-size: 28px;                     /* Más grande que antes */
-  margin-bottom: 12px;
-}
-
-/* Estilo especial solo para los títulos “Sesiones” y “Colaboraciones” */
-.tarjeta-individual h3.sesiones,
-.tarjeta-individual h3.colaboraciones {
-  color: var(--primary-color); /* Color del título principal del panel */
-}
-
-.tarjeta-individual p {
-  color: var(--white); /* Contraste con fondo */
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.tarjeta-individual .highlight {
-  font-weight: 700;
-  color: var(--color-acento);
-  font-size: 32px;
-}
-
-.btn {
-  display: inline-block;
-  font-size: 1.1rem;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--color-hero); /* o #7772e7 */
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #5a57c7; /* o usa otra tonalidad */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary {
-  background-color: var(--color-hero); /* asegúrate que esté definida en :root */
-}
-
-.btn-primary:hover {
-  background-color: #5a57c7;
-}
-
-
-/* ==============================
-   RESPONSIVE
-============================== */
-@media (max-width: 600px) {
-  .panel-tarjetas {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tarjeta-individual {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .tarjeta-individual h3 {
-    font-size: 20px;
-  }
-}
-
->>>>>>> 5c25ceeae0fc38144807fa12545308af46275750

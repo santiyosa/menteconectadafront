@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Contributors/Mateo/css/progress.css">
+</head>
+
+<body class="bg-gray-100 font-sans p-6">
+
+    <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-2xl mx-auto">
+
+        <!-- Contenedor horizontal -->
+        <div class="flex items-center gap-12">
+
+            <!-- Barras individuales en vertical -->
+            <div id="goalsList" class="flex flex-col gap-6 items-start">
+            </div>
+
+            <!-- Barra Principal -->
+            <div class="flex-shrink-0 mx-auto">
+                <div class="relative w-28 h-28">
+                    <svg class="progress-ring absolute top-0 left-0 w-full h-full">
+                        <!-- Fondo del círculo -->
+                        <circle class="text-gray-200" stroke-width="12" stroke="currentColor" fill="transparent" r="50"
+                            cx="56" cy="56" />
+                        <!-- Círculo principal -->
+                        <circle id="mainCircle" stroke-width="12" stroke="#3b82f6" fill="transparent" r="50" cx="56"
+                            cy="56" stroke-dasharray="${2 * Math.PI * 50}" stroke-dashoffset="${2 * Math.PI * 50}"
+                            class="transition-all duration-500" />
+                    </svg>
+                    <span id="mainText"
+                        class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-gray-700">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Equipo5-PanelEstadisticas/Contributors/Mateo/js/progress.js"></script>
+</body>
+
+</html>

@@ -1,65 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrea - Panel de Estadísticas</title>
-    <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andrea - Panel de Estadísticas</title>
+  <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Contributors/Andrea/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Urbanist', sans-serif;
+    }
+  </style>
 </head>
-
 <body class="fondo">
-    <nav class="barra-lateral">
-        <ul>
-            <li><a class="logo" href="/Base/index.html">Z
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/landing/index.html" class="icono-nav">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 12L12 3l9 9" stroke="#7772e7" stroke-width="2" />
-                        <rect x="6" y="12" width="12" height="8" rx="2" stroke="#7772e7" stroke-width="2" />
-                    </svg>
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Andrea Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono"
-                        class="icono-avatar">
-                </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="icono-nav">
-                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono"
-                        class="icono-avatar">
-                </a></li>
-        </ul>
-    </nav>
-    <header class="barra-superior">
-        <h1 class="titulo"> Análisis mensual de eventos 🗓️ </h1>
-    </header>
-    <div class="galeria">
-        <div class="imagen1">
-            <img id="imagen1" src="Equipo5-PanelEstadisticas/Contributors/Andrea/img1 (1).jpg" alt="Imagen 1">
-        </div>
-        <div class="imagen2">
-            <img id="imagen2" src="Equipo5-PanelEstadisticas/Contributors/Andrea/img2 (2).jpg" alt="Imagen 2">
-        </div>
-        <div class="imagen3">
-            <img id="imagen3" src="Equipo5-PanelEstadisticas/Contributors/Andrea/img3 (3).jpg" alt="Imagen 3">
-        </div>
-    </div>
-     <p class="frase-final">“Cuidar tu salud mental también es una forma de amor propio.” 💚</p>
-</body>
+  <nav class="barra-lateral">
+    <ul>
+      <li><a class="logo" href="/Base/index.html">Z</a></li>
+      <li>
+        <a href="/Equipo5-PanelEstadisticas/landing/index.html" class="icono-nav">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12L12 3l9 9" stroke="#7772e7" stroke-width="2"/>
+            <rect x="6" y="12" width="12" height="8" rx="2" stroke="#7772e7" stroke-width="2"/>
+          </svg>
+        </a>
+      </li>
+      <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="icono-nav">
+        <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="icono-avatar" />
+      </a></li>
+      <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="icono-nav">
+        <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Mateo Icono" class="icono-avatar" />
+      </a></li>
+      <li><a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="icono-nav">
+        <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="icono-avatar" />
+      </a></li>
+      <li><a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="icono-nav">
+        <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="icono-avatar" />
+      </a></li>
+      <li><a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="icono-nav">
+        <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="icono-avatar" />
+      </a></li>
+    </ul>
+  </nav>
 
+  <header class="barra-superior">
+    <h1 class="titulo">Andrea - Panel de Estadísticas</h1>
+  </header>
+
+  <br><br><br>
+
+  <!-- Sección 1: Análisis mensual -->
+  <section class="py-12 text-center">
+    <h2 class="text-3xl font-semibold mb-8">Análisis mensual de eventos 🗓️</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="bg-blue-500 rounded-lg shadow-lg p-5">
+        <img class="w-64" src="/Equipo5-PanelEstadisticas/Contributors/Andrea/images/img1.jpg" alt="imagen1" />
+      </div>
+      <div class="bg-blue-500 rounded-lg shadow-lg p-5">
+        <img class="w-64" src="/Equipo5-PanelEstadisticas/Contributors/Andrea/images/img2.jpg" alt="imagen2" />
+      </div>
+      <div class="bg-blue-500 rounded-lg shadow-lg p-5">
+        <img class="w-64" src="/Equipo5-PanelEstadisticas/Contributors/Andrea/images/img3.jpg" alt="imagen3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Colaboraciones -->
+  <section class="seccion-colaboraciones text-center">
+    <div class="bg-yellow-200 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          📊 Cantidad de colaboraciones mensuales de salud mental
+        </h2>
+      </div>
+    </div>
+
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Enero</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">44 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Febrero</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">38 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Marzo</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">52 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Abril</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">61 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Mayo</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">55 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Junio</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">78 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Julio</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">64 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Agosto</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">90 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Septiembre</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">72 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Octubre</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">74 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Noviembre</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">81 entrevistas</dd>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+            <dt class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-bold uppercase hover:bg-yellow-200 hover:text-yellow-700 transition">Diciembre</dt>
+            <dd class="mt-4 text-4xl font-bold text-gray-900">87 entrevistas</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: KPIs -->
+  <section class="py-16 px-6">
+    <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">Resumen de KPIs</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="bg-yellow-100 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition">
+        <div class="text-yellow-700 text-6xl mb-4">🧠</div>
+        <h2 class="text-2xl font-semibold text-yellow-800">Sesiones</h2>
+        <p class="mt-2 text-4xl font-bold text-yellow-900">124</p>
+      </div>
+
+      <div class="bg-blue-100 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition">
+        <div class="text-blue-700 text-6xl mb-4">💬</div>
+        <h2 class="text-2xl font-semibold text-blue-800">Interacciones</h2>
+        <p class="mt-2 text-4xl font-bold text-blue-900">587</p>
+      </div>
+
+      <div class="bg-yellow-100 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition">
+        <div class="text-yellow-700 text-6xl mb-4">📅</div>
+        <h2 class="text-2xl font-semibold text-yellow-800">Eventos</h2>
+        <p class="mt-2 text-4xl font-bold text-yellow-900">328</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="barra-inferior text-center py-6">
+    <p>&copy; 2024 Panel de Estadísticas. Todos los derechos reservados.</p>
+  </footer>
 </html>
+
+
+
+
+
+   

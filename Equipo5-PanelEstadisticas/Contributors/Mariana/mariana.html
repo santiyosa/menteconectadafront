@@ -1,70 +1,512 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="transition-colors">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariana - Panel de Estadísticas</title>
-    <link rel="stylesheet" href="/Equipo5-PanelEstadisticas/Styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind vía CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7772e7',
+                        secondary: '#e2e772',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+
+        .actividad-color {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 transparent;
+        }
+        .actividad-color:hover {
+            transform: scale(1.12);
+            box-shadow: 0 0 0 4px #e2e77244;
+            z-index: 1;
+        }
+        .dark .actividad-color-1 { background: #7772e7; }
+        .dark .actividad-color-2 { background: linear-gradient(90deg, #7772e7 60%, #a8a4e9 100%); }
+        .dark .actividad-color-3 { background: linear-gradient(90deg, #a8a4e9 60%, #c7c3f7 100%); }
+        .dark .actividad-color-4 { background: linear-gradient(90deg, #c7c3f7 60%, #e7e7e7 100%); }
+        .dark .actividad-color-5 { background: linear-gradient(90deg, #e7e7e7 60%, #23243a 100%); }
+        /* Modo claro */
+        .actividad-color-1 { background: #e2e772; }
+        .actividad-color-2 { background: #f7e672; }
+        .actividad-color-3 { background: #ffe6a7; }
+        .actividad-color-4 { background: #e7e7e7; }
+        .actividad-color-5 { background: #d1d5db; }
+
+        /* Escala de actividad: barra horizontal cliqueable con hover */
+        .actividad-bar {
+            width: 100%;
+            height: 2.2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 0.7rem;
+            cursor: pointer;
+            transition: box-shadow 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 0 0 transparent;
+            border: 2px solid transparent;
+        }
+        .actividad-bar:hover {
+            box-shadow: 0 2px 12px 0 #e2e77255;
+            border-color: #e2e772;
+            transform: scale(1.03);
+            z-index: 2;
+        }
+        .actividad-bar-1 { background: #e2e772; }
+        .actividad-bar-2 { background: #e1e7728e; }
+        .actividad-bar-3 { background: #e1e77222; }
+        .actividad-bar-4 { background: #e7e7e7; }
+        .actividad-bar-5 { background: #f3f4f6; }
+
+        .dark .actividad-bar-1 { background:  #7772e7; }
+        .dark .actividad-bar-2 { background:  #a8a4e9 ; }
+        .dark .actividad-bar-3 { background: #c7c3f7 ; }
+        .dark .actividad-bar-4 { background: #e7e7e72d ; }
+        .dark .actividad-bar-5 { background:  #0d0d13 ; }
+    </style>
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- Flowbite para Tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </head>
-<body class="fondo">
-    <nav class="barra-lateral">
-         <ul>
-            <li><a class="logo" href="/Base/index.html">Z
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/landing/index.html" class="icono-nav" >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 3l9 9" stroke="#7772e7" stroke-width="2"/><rect x="6" y="12" width="12" height="8" rx="2" stroke="#7772e7" stroke-width="2"/></svg>
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="icono-nav" >
-                <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="icono-nav" >
-                 <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Andrea Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="icono-nav">
-                 <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="icono-nav" >
-                <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="icono-avatar">
-            </a></li>
-            <li><a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="icono-nav" >
-                <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="icono-avatar">
-            </a></li>
+<body class="bg-secondary dark:bg-[#121212] min-h-screen transition-colors">
+    <!-- Barra lateral -->
+    <nav class="fixed top-5 left-5 bottom-5 w-20 bg-primary dark:bg-[#5751a8] flex flex-col items-center py-4 z-50 rounded-2xl shadow-lg overflow-y-auto">
+        <ul class="flex flex-col gap-5 h-full justify-start">
+            <li>
+                <a class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-2xl no-underline" href="/Base/index.html">Z</a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/landing/index.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-gray-700 shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <span class="material-icons text-primary dark:text-[#a8a4e9] text-3xl">home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mariana/mariana.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MARIANA.png" alt="Mariana Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Mateo/mateo.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/MATEO.png" alt="Mateo Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Jhon/jhon.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                     <img src="/Equipo5-PanelEstadisticas/landing/assets/images/JHON.png" alt="Jhon Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Andrea/andrea.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/ANDREA.png" alt="Andrea Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
+            <li>
+                <a href="/Equipo5-PanelEstadisticas/Contributors/Diego/diego.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-secondary shadow hover:bg-secondary dark:hover:bg-white transition">
+                    <img src="/Equipo5-PanelEstadisticas/landing/assets/images/DIEGO.png" alt="Diego Icono" class="w-12 h-12 rounded-full object-cover" />
+                </a>
+            </li>
         </ul>
     </nav>
-    <header class="barra-superior">
-        <h1 class="titulo">Mariana - Panel de Estadisticas</h1>
+
+    <!-- Cabecera -->
+    <header class="fixed left-32 top-5 right-7 h-20 bg-gradient-to-r from-primary to-secondary dark:from-[#5751a8] dark:to-[#b3b747] flex items-center gap-4 px-8 shadow-lg z-40 rounded-2xl">
+        <h1 class="text-white text-3xl font-extrabold m-0">Panel de Estadísticas</h1>
+
+        <!-- Botón de Modo Oscuro -->
+        <button id="theme-toggle" type="button" class="ml-auto text-white bg-white/10 rounded-full p-2 transition-colors">
+            <span class="material-icons dark:hidden">light_mode</span>
+            <span class="material-icons hidden dark:block">dark_mode</span>
+        </button>
     </header>
-    <main class="principal">
-        <section class="grid-estadisticas">
-            <div class="tarjeta-estadistica">
-                <h3 class="titulo-estadistica">Pacientes Activos</h3>
-                <div class="valor-estadistica">1,892</div>
-                <p class="descripcion-estadistica">Total de pacientes en tratamiento activo</p>
+
+    <!-- Contenido principal -->
+    <main class="pt-36 pl-32 pr-8">
+        <div class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg">
+            <!-- Tabs -->
+            <div class="sm:hidden">
+                <select id="tabs" class="bg-gray-50 dark:bg-gray-700 border-0 border-b border-gray-200 dark:border-gray-700 text-gray-900 dark:text-secondary text-sm rounded-t-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                    <option>Estadísticas</option>
+                    <option>Servicios</option>
+                    <option>Preguntas</option>
+                </select>
             </div>
-            <div class="tarjeta-estadistica">
-                <h3 class="titulo-estadistica">Progreso Promedio</h3>
-                <div class="valor-estadistica">78%</div>
-                <p class="descripcion-estadistica">Tasa de mejora en los pacientes</p>
-            </div>
-            <div class="tarjeta-estadistica">
-                <h3 class="titulo-estadistica">Consultas Mensuales</h3>
-                <div class="valor-estadistica">456</div>
-                <p class="descripcion-estadistica">Consultas realizadas este mes</p>
-            </div>
-            <div class="tarjeta-estadistica">
-                <h3 class="titulo-estadistica">Recomendaciones</h3>
-                <div class="valor-estadistica">92%</div>
-                <p class="descripcion-estadistica">Tasa de recomendación de pacientes</p>
-            </div>
-            <div class="tarjeta-estadistica">
-                <h3 class="titulo-estadistica">Tiempo de Respuesta</h3>
-                <div class="valor-estadistica">4h</div>
-                <p class="descripcion-estadistica">Tiempo promedio de respuesta a consultas</p>
-            </div>
-        </section>
+            <ul class="hidden text-lg font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-t-2xl sm:flex rtl:divide-x-reverse dark:text-gray-400 dark:divide-gray-700" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
+                <li class="w-full">
+                    <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-primary dark:text-gray-100">Estadísticas</button>
+                </li>
+                <li class="w-full">
+                    <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-primary dark:text-gray-100 ">Alertas</button>
+                </li>
+                <li class="w-full">
+                    <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-se-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-primary dark:text-gray-100">Actividad</button>
+                </li>
+            </ul>
+
+            <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-700">
+                <div class="p-4 bg-white dark:bg-[#1f2937] rounded-lg md:p-8" id="stats" role="tabpanel">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                        <div>
+                            <h2 class="text-gray-900 dark:text-white text-2xl font-extrabold">Estadísticas Generales</h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Filtra por rango de fechas para ver las métricas del período.</p>
+                        </div>
+
+                        <!-- Selector de rango (fecha inicio / fin) -->
+                        <div class="flex items-center gap-2">
+                            <label class="sr-only" for="mariana-start">Fecha inicio</label>
+                            <input id="mariana-start" type="date" class="px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 text-sm" />
+
+                            <label class="sr-only" for="mariana-end">Fecha fin</label>
+                            <input id="mariana-end" type="date" class="px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 text-sm" />
+
+                            <button id="mariana-update" class="px-4 py-2 rounded-lg bg-secondary text-white text-sm hover:brightness-90">Actualizar</button>
+                        </div>
+                    </div>
+
+                    <!-- Métricas: 3 columnas en sm+, 2 en xs -->
+                    <dl class="grid gap-6 grid-cols-2 sm:grid-cols-3">
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-secondary" id="m-pacientes">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Pacientes Activos</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-pacientes-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-primary" id="m-sesiones">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Sesiones Realizadas</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sesiones-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-gray-900 dark:text-white" id="m-phq">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Índice Promedio (PHQ-9)</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-phq-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-secondary" id="m-canceladas">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Citas Canceladas</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-canceladas-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-primary" id="m-sat">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Satisfacción</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-sat-sub">—</div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/60 rounded-lg">
+                            <dt class="text-3xl font-extrabold text-gray-900 dark:text-white" id="m-deriv">--</dt>
+                            <dd class="mt-2 text-sm text-gray-700 dark:text-gray-300">Derivaciones a especialista</dd>
+                            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400" id="m-deriv-sub">—</div>
+                        </div>
+                    </dl>
+
+                    <!-- Acción / nota -->
+                    <div class="mt-6 text-sm text-gray-600 dark:text-gray-400 flex items-center justify-between">
+                        <span>Los valores son simulados; conectar con API para datos reales.</span>
+
+                        <!-- Botón de exportación -->
+                        <button type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-white hover:bg-secondary dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
+                            <span class="material-icons text-lg">download</span>
+                            Exportar PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hidden p-4 bg-white dark:bg-gray-800 rounded-lg md:p-8" id="about" role="tabpanel">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Alertas estáticas: aquí se muestran ejemplos visuales de anomalías posibles.</p>
+
+                    <div class="space-y-4">
+                        <!-- Crítica -->
+                        <div class="p-3 bg-red-50 dark:bg-red-900 border border-red-400 text-red-800 rounded-lg flex items-start gap-3">
+                            <div class="text-2xl">🔴</div>
+                            <div>
+                                <div class="font-semibold dark:text-gray-300">PHQ-9 elevado</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-300">Índice promedio muy alto — intervención urgente recomendada.</div>
+                            </div>
+                        </div>
+
+                        <!-- Alta -->
+                        <div class="p-3 bg-orange-50 dark:bg-orange-900 border border-orange-400 text-orange-800 rounded-lg flex items-start gap-3">
+                            <div class="text-2xl">🟠</div>
+                            <div>
+                                <div class="font-semibold dark:text-gray-300">Tasa de cancelaciones elevada</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-300">Porcentaje de citas canceladas superior al umbral esperado.</div>
+                            </div>
+                        </div>
+
+                        <!-- Media -->
+                        <div class="p-3 bg-yellow-50 dark:bg-yellow-900 border border-yellow-400 text-yellow-800 rounded-lg flex items-start gap-3">
+                            <div class="text-2xl">🟡</div>
+                            <div>
+                                <div class="font-semibold dark:text-gray-300">Satisfacción reducida</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-300">Valoración promedio por debajo de lo esperado; revisar feedback.</div>
+                            </div>
+                        </div>
+
+                        <!-- Baja -->
+                        <div class="p-3 bg-green-50 dark:bg-green-900 border border-green-400 text-green-800 rounded-lg flex items-start gap-3">
+                            <div class="text-2xl">🟢</div>
+                            <div>
+                                <div class="font-semibold dark:text-gray-300">Baja utilización</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-300">Número de sesiones por día menor al promedio histórico.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Actividad -->
+                <div class="hidden p-4 bg-white dark:bg-gradient-to-br dark:from-[#23243a] dark:to-[#3a3b5a] rounded-lg md:p-8 transition-colors duration-300" id="faq" role="tabpanel">
+                    <h2 class="text-2xl font-extrabold text-primary dark:text-[#e2e772] mb-4">
+                        Días de mayor actividad
+                    </h2>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Calendario visual -->
+                        <div class="bg-white dark:bg-[#23243a] rounded-xl p-6 shadow-lg w-full max-w-lg transition-colors duration-300 border border-gray-200 dark:border-[#44456a]">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-lg font-bold text-gray-800 dark:text-gray-200">Agosto 2025</span>
+                                <div class="flex gap-2">
+                                    <button class="px-2 py-1 rounded bg-gray-100 dark:bg-[#35365a] text-gray-500 dark:text-gray-300 cursor-not-allowed transition-colors duration-200" disabled>&lt;</button>
+                                    <button class="px-2 py-1 rounded bg-gray-100 dark:bg-[#35365a] text-gray-500 dark:text-gray-300 cursor-not-allowed transition-colors duration-200" disabled>&gt;</button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-7 gap-2 text-center text-xs font-semibold text-gray-900 dark:text-gray-400 mb-2">
+                                <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+                            </div>
+                            <div class="grid grid-cols-7 gap-2">
+                                <!-- Semana 1 -->
+                                <div></div><div></div><div></div><div class="py-2"></div><div class="py-2"></div><div class="py-2"></div><div class="py-2"></div>
+                                <!-- Semana 2 -->
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#7772e7]/60 rounded cursor-pointer transition-colors">1</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">2</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">3</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">4</div>
+                                <div class="py-2 bg-[#e2e772] dark:bg-[#7772e7] text-white rounded font-bold shadow hover:brightness-110 transition-colors cursor-pointer">5</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#7772e7]/60 rounded cursor-pointer transition-colors">6</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">7</div>
+                                <!-- Semana 3 -->
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#7772e7]/60 rounded cursor-pointer transition-colors">8</div>
+                                <div class="py-2 bg-[#e2e772] dark:bg-[#7772e7] text-white rounded font-bold shadow hover:brightness-110 transition-colors cursor-pointer">9</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">10</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">11</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">12</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#e7e7e72d]/60 rounded cursor-pointer transition-colors">13</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#e7e7e72d]/60 rounded cursor-pointer transition-colors">14</div>
+                                <!-- Semana 4 -->
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">15</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">16</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">17</div>
+                                <div class="py-2 bg-[#e2e772] dark:bg-[#7772e7] text-white rounded font-bold shadow hover:brightness-110 transition-colors cursor-pointer">18</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#e7e7e72d]/60 rounded cursor-pointer transition-colors">19</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">20</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">21</div>
+                                <!-- Semana 5 -->
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#7772e7]/60 rounded cursor-pointer transition-colors">22</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#e7e7e72d]/60 rounded cursor-pointer transition-colors">23</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">24</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">25</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#e7e7e72d]/60 rounded cursor-pointer transition-colors">26</div>
+                                <div class="py-2 bg-[#e2e772] dark:bg-[#7772e7] text-white rounded font-bold shadow hover:brightness-110 transition-colors cursor-pointer">27</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">28</div>
+                                <!-- Semana 6 -->
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">29</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#0d0d13]/60 rounded cursor-pointer transition-colors">30</div>
+                                <div class="py-2 hover:bg-[#e2e772]/60 dark:hover:bg-[#a8a4e9]/60 rounded cursor-pointer transition-colors">31</div>
+                            </div>
+                            <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                                <span class="inline-block w-4 h-4 rounded bg-[#e2e772] dark:bg-[#7772e7]"></span>
+                                <span>Días con mayor actividad</span>
+                            </div>
+                        </div>
+                        <!-- Escala de colores de actividad por día -->
+                        <div class="bg-white dark:bg-[#23243a] rounded-xl p-6 shadow-lg w-full max-w-xs transition-colors duration-300 border border-gray-200 dark:border-[#44456a] flex flex-col items-center justify-center">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Escala de actividad</h3>
+                            <div class="flex flex-col gap-2 w-full">
+                                <div class="actividad-bar actividad-bar-1 flex items-center px-4">
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-100">Alta actividad</span>
+                                </div>
+                                <div class="actividad-bar actividad-bar-2 flex items-center px-4">
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-100">Media-alta</span>
+                                </div>
+                                <div class="actividad-bar actividad-bar-3 flex items-center px-4">
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-100">Media</span>
+                                </div>
+                                <div class="actividad-bar actividad-bar-4 flex items-center px-4">
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-100">Baja</span>
+                                </div>
+                                <div class="actividad-bar actividad-bar-5 flex items-center px-4">
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-100">Sin actividad</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
     </main>
+    <footer class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 p-4 mt-10"
+        style="margin-left: 130px; margin-right: 30px; margin-bottom: 20px;">
+        <div class="max-w-7xl mx-auto mt-2 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between">
+            <div>© 2025 Panel de Estadísticas. Todos los derechos reservados.</div>
+            <div class="flex items-center gap-4">
+                <a class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-[#e2e772] dark:hover:bg-secondary transition-colors"
+                   href="#" aria-label="facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-gray-700 dark:text-gray-200">
+                        <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.09 5.66 21.17 10.44 21.92v-6.86H7.9v-2.99h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.62.77-1.62 1.56v1.88h2.77l-.44 2.99h-2.33V21.92C18.34 21.17 22 17.09 22 12.07z"/>
+                    </svg>
+                </a>
+                <a class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-[#e2e772] dark:hover:bg-secondary transition-colors"
+                   href="#" aria-label="instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-gray-700 dark:text-gray-200">
+                        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6.3-.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+                    </svg>
+                </a>
+                <a class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-[#e2e772] dark:hover:bg-secondary transition-colors"
+                   href="https://github.com/santiyosa/menteconectadafront/tree/Developer" aria-label="github">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-gray-700 dark:text-gray-200">
+                        <path d="M12 .5A12 12 0 0 0 0 12.7c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.5-1.5-1.9-1.5-1.9-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3.1 1.4 3.9 1 .1-.8.5-1.4.9-1.7-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C18.6 5 19.6 5.3 19.6 5.3c.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.5-5.3 5.8.5.4.9 1.1.9 2.3v3.4c0 .3.2.8.9.6A12 12 0 0 0 12 .5z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para activar toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    localStorage.setItem('color-theme', 'light');
+                }
+            });
+        });
+    </script>
+
+    <!-- Script local para manejar selector y métricas (solo afecta esta sección) -->
+    <script>
+    (function(){
+        // utilidades
+        function pad(n){ return n<10 ? '0'+n : n; }
+        function formatDate(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+
+        // elementos
+        const startEl = document.getElementById('mariana-start');
+        const endEl = document.getElementById('mariana-end');
+        const btnUpdate = document.getElementById('mariana-update');
+        const btnExport = document.getElementById('mariana-export');
+
+        // establecer rango por defecto: últimos 30 días
+        const end = new Date();
+        const start = new Date();
+        start.setDate(end.getDate() - 29);
+        if (startEl) startEl.value = formatDate(start);
+        if (endEl) endEl.value = formatDate(end);
+
+        // función que actualiza métricas (simulación)
+        function updateMetrics(startDate, endDate){
+            const s = new Date(startDate);
+            const e = new Date(endDate);
+            if (isNaN(s) || isNaN(e)) return;
+
+            // calcular días inclusivos
+            const diff = Math.round((e.setHours(0,0,0,0) - s.setHours(0,0,0,0)) / (1000*60*60*24)) + 1;
+            const days = Math.max(1, diff);
+
+            // simulación: valores dependientes del tamaño del rango
+            const pacientes = 300 + days * 6 + Math.round(Math.random()*80);
+            const sesiones = Math.round(days * (18 + Math.random()*12));
+            const phq = (5 + Math.random()*9).toFixed(1);
+            const cancelPct = (4 + Math.random()*10).toFixed(1) + '%';
+            const sat = (72 + Math.random()*22).toFixed(1) + '%';
+            const deriv = Math.round(days * (1 + Math.random()*4));
+
+            // actualizar DOM
+            document.getElementById('m-pacientes').textContent = pacientes.toLocaleString();
+            document.getElementById('m-pacientes-sub').textContent = `${days} días (${formatDate(s)} → ${formatDate(e)})`;
+
+            document.getElementById('m-sesiones').textContent = sesiones.toLocaleString();
+            document.getElementById('m-sesiones-sub').textContent = `≈ ${(sesiones/days).toFixed(1)} / día`;
+
+            document.getElementById('m-phq').textContent = phq;
+            document.getElementById('m-phq-sub').textContent = `promedio (0-27)`;
+
+            document.getElementById('m-canceladas').textContent = cancelPct;
+            document.getElementById('m-canceladas-sub').textContent = 'porcentaje';
+
+            document.getElementById('m-sat').textContent = sat;
+            document.getElementById('m-sat-sub').textContent = 'valoración promedio';
+
+            document.getElementById('m-deriv').textContent = deriv.toLocaleString();
+            document.getElementById('m-deriv-sub').textContent = `total en ${days} días`;
+        }
+
+        // inicializar con rango por defecto
+        updateMetrics(start, end);
+
+        // evento actualizar
+        if (btnUpdate) {
+            btnUpdate.addEventListener('click', () => {
+                const s = startEl.value;
+                const e = endEl.value;
+                if (!s || !e) return alert('Selecciona fecha de inicio y fin.');
+                updateMetrics(s, e);
+            });
+        }
+
+        // export CSV sencillo
+        if (btnExport) {
+            btnExport.addEventListener('click', () => {
+                const rows = [
+                    ['Métrica','Valor'],
+                    ['Pacientes Activos', document.getElementById('m-pacientes').textContent.trim()],
+                    ['Sesiones Realizadas', document.getElementById('m-sesiones').textContent.trim()],
+                    ['Índice PHQ-9', document.getElementById('m-phq').textContent.trim()],
+                    ['Citas Canceladas', document.getElementById('m-canceladas').textContent.trim()],
+                    ['Satisfacción', document.getElementById('m-sat').textContent.trim()],
+                    ['Derivaciones', document.getElementById('m-deriv').textContent.trim()]
+                ];
+                const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'metricas_salud_mental.csv';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+    })();
+    </script>
 </body>
-</html> 
+</html>
