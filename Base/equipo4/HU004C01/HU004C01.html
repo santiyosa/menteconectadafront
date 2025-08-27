@@ -6,43 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandeja de entrada</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="min-h-screen flex items-center justify-center scroll-smooth bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-[#2c3e50] font-[Segoe_UI] leading-relaxed">
 
-    <div class="tarjeta">
 
-        <div class="contenedorBotones">
-            <label for="menu">Ver detalle</label>
-            <select id="menu" name="menu">
-                <option value="opcion1">Mensajes recibidos</option>
-                <option value="opcion2">Fecha y hora</option>
-                <option value="opcion3">Enviados</option>
-            </select>
-            <a href="../HU001C01/HU001C01.html"> <button class="ContactarBoton">Contactar</button> </a>
-            <button class="enviarBoton">Enviar</button>
-            <input class="DestinatarioBoton" placeholder="Destinatario">
+<div class=" border-2 border-black rounded-[6px] shadow-xl w-[95%] sm:w-[90%] md:w-[800px] h-[auto] overflow-hidden bg-white">
+           
+    <div class="flex justify-evenly items-center bg-[#9896C3] text-black p-5 space-x-2">
+        <label for="menu">Ver detalle</label>
+        <select id="menu" name="menu" class="rounded px-2 py-1 border ">
+            <option value="opcion1">Mensajes recibidos</option>
+            <option value="opcion2">Fecha y hora</option>
+            <option value="opcion3">Enviados</option>
+        </select>
+        <button class="rounded px-4 py-2 bg-white hover:bg-gray-300">Contactar</button>
+        <input type="text" placeholder="Destinatario" class="rounded px-3 py-1 " />
+    </div>
+
+
+    <div class="flex justify-center items-center gap-10 bg-[#D0D486] h-[317px] px-5  ">
+        <div class="border-2 border-black rounded-lg w-[400px] h-[200px] text-black p-2 overflow-y-auto">
+            <p class="font-semibold">HIJ04C01 MEDICO</p>
+            <p>Revisar los mensajes recibidos</p>
+            <ul class="list-disc ml-5 mt-2">
+                <li>Se muestra en listas o tarjetas</li>
+                <li>Cada mensaje tiene remitente, resumen y fecha</li>
+                <li>Hay opción de ver detalle</li>
+            </ul>
         </div>
 
-        <div class="contenedorCajas">
 
-            <div class="caja">
-                <p>HIJ04C01 MEDICO</p>
-                <p>revisar los mensajes recibidos</p>
-                <ul>
-                    <li>se muestra en listas o tarjetas </li>
-                    <li>cada mensaje tiene remitente, resumen y fecha </li>
-                    <li>Hay opcion de ver detalle </li>
-                </ul>
+        <div class="flex flex-col items-end space-y-6">
+            <div class="rounded-lg bg-white w-[300px] h-[200px] shadow-lg overflow-hidden  ">
+                <textarea class="w-full h-full p-2 outline-none resize-none "
+                    placeholder="Redactar mensaje..."></textarea>
             </div>
 
-            <div class="caja2">
-                <textarea class="inputcaja2" placeholder="Escribir mensaje..."></textarea>
-            </div>
+            <button class="rounded px-4 py-2 bg-white hover:bg-violet-400 shadow-lg ring-2 ring-#7772e7 text-black ">Enviar</button>
+
         </div>
 
 
     </div>
+</div>
 
 </body>
 
