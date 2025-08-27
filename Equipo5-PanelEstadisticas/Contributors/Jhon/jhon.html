@@ -90,36 +90,116 @@
         </button>
     </header>
    <main class="principal">
-        <section>
-            <section class="contenido-central">
-    <h2 class="titulo-principal">Panel de Estadísticas Semanales</h2>
+       
+    
+<section class="py-12 px-6 #e2e772">
+  <div class="max-w-5xl mx-auto space-y-12">
+    
+    <!-- Bloque 1: Tarjetas -->
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+      <!-- Título -->
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">
+        Panel de Estadísticas Semanales
+      </h2>
 
-    <div class="panel-tarjetas">
-        <div class="tarjeta-individual">
-            <h3 class="highlight">Sesiones Iniciadas</h3>
-            <p>Recuento total de sesiones registradas durante la semana.</p>
-            <div class="highlight">83</div>
+      <!-- Tarjetas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Tarjeta 1 -->
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-100">
+          <h3 class="text-xl font-semibold text-primary mb-2">Sesiones Iniciadas</h3>
+          <p class="text-gray-600 mb-4">Recuento total de sesiones registradas durante la semana.</p>
+          <div class="text-4xl font-bold text-primary">83</div>
         </div>
 
-        <div class="tarjeta-individual">
-            <h3 class="highlight">Colaboraciones</h3>
-            <p>Número total de colaboraciones realizadas con otros usuarios.</p>
-            <div class="highlight">28</div>
+        <!-- Tarjeta 2 -->
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-100">
+          <h3 class="text-xl font-semibold text-primary mb-2">Colaboraciones</h3>
+          <p class="text-gray-600 mb-4">Número total de colaboraciones realizadas con otros usuarios.</p>
+          <div class="text-4xl font-bold text-primary">28</div>
         </div>
+      </div>
     </div>
 
-    <div style="margin-top: 40px; text-align: center;">
-        <h2 class="titulo-principal">¡Gracias por tu participación!</h2>
-        <a href="/Equipo5-PanelEstadisticas/landing/index.html" class="btn btn-primary">Volver al Inicio</a>
-    </div>
+    <!-- Bloque 2: Gráfica -->
+<!-- Bloque 2: Gráfica HU06C4 -->
+<div class="bg-white rounded-2xl shadow-lg p-8">
+  <!-- Título -->
+  <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
+    Gráfica de Visitas al Perfil
+  </h2>
+
+  <!-- Tarjeta de la gráfica -->
+  <div class="bg-gray-50 rounded-2xl shadow-md p-6 transform transition duration-700 hover:scale-105 hover:shadow-xl">
+    <svg viewBox="0 0 400 200" class="w-full h-56">
+      <!-- Ejes -->
+      <line x1="40" y1="10" x2="40" y2="170" stroke="#ccc" stroke-width="2"/>
+      <line x1="40" y1="170" x2="380" y2="170" stroke="#ccc" stroke-width="2"/>
+
+      <!-- Etiquetas del eje Y -->
+      <text x="10" y="170" class="text-sm fill-gray-600">0</text>
+      <text x="10" y="130" class="text-sm fill-gray-600">20</text>
+      <text x="10" y="90" class="text-sm fill-gray-600">40</text>
+      <text x="10" y="50" class="text-sm fill-gray-600">60</text>
+      <text x="10" y="10" class="text-sm fill-gray-600">80</text>
+
+      <!-- Etiquetas del eje X -->
+      <text x="70" y="190" class="text-sm fill-gray-600">Lun</text>
+      <text x="120" y="190" class="text-sm fill-gray-600">Mar</text>
+      <text x="170" y="190" class="text-sm fill-gray-600">Mié</text>
+      <text x="220" y="190" class="text-sm fill-gray-600">Jue</text>
+      <text x="270" y="190" class="text-sm fill-gray-600">Vie</text>
+      <text x="320" y="190" class="text-sm fill-gray-600">Sáb</text>
+      <text x="370" y="190" class="text-sm fill-gray-600">Dom</text>
+
+      <!-- Línea de datos -->
+      <polyline 
+        fill="none" 
+        stroke="#7772e7" 
+        stroke-width="3" 
+        points="70,140 120,110 170,90 220,80 270,100 320,60 370,40"
+      />
+
+      <!-- Puntos -->
+      <circle cx="70" cy="140" r="4" fill="#7772e7"/>
+      <circle cx="120" cy="110" r="4" fill="#7772e7"/>
+      <circle cx="170" cy="90" r="4" fill="#7772e7"/>
+      <circle cx="220" cy="80" r="4" fill="#7772e7"/>
+      <circle cx="270" cy="100" r="4" fill="#7772e7"/>
+      <circle cx="320" cy="60" r="4" fill="#7772e7"/>
+      <circle cx="370" cy="40" r="4" fill="#7772e7"/>
+    </svg>
   </div>
+
+  <!-- Texto explicativo -->
+  <p class="text-gray-600 text-center mt-6">
+        Esta gráfica representa el número de visitas recibidas en tu perfil a lo largo de la semana. 
+    Cada punto corresponde a un día específico, mientras que la línea conecta la evolución de esas visitas, 
+    facilitando la identificación de tendencias y patrones. <br><br>
+    Gracias a esta visualización, podrás analizar en qué días tuviste mayor interacción, 
+    detectar picos de actividad y evaluar cómo tu presencia en la plataforma varía con el tiempo. 
+    Esto puede ayudarte a planear mejores estrategias de conexión y participación.
+  </p>
 </div>
 
 
+
+
+    <!-- Sección final -->
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">¡Gracias por tu participación!</h2>
+      <a href="/Equipo5-PanelEstadisticas/landing/index.html"
+         class="inline-block bg-primary text-white px-6 py-3 rounded-xl shadow hover:bg-purple-800 transition">
+        Volver al Inicio
+      </a>
+    </div>
+  </div>
 </section>
 
-           
-        </section>
+
+
+ 
+
+
     </main>
     <footer class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 p-4 mt-10"
         style="margin-left: 130px; margin-right: 30px; margin-bottom: 20px;">
@@ -163,4 +243,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
