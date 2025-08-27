@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Eventos - Bienestar Mental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zenith-purple': '#6366f1',
+                        'zenith-light': '#f0f9ff',
+                        'zenith-yellow': '#fef3c7'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-yellow-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Z</span>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                        Zenith Eventos
+                    </h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
+                    <a href="#caracteristicas" class="text-gray-700 hover:text-purple-600 transition-colors">Características</a>
+                    <a href="#eventos" class="text-gray-700 hover:text-purple-600 transition-colors">Eventos</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="container mx-auto px-6 py-20">
+        <div class="text-center max-w-4xl mx-auto">
+            <div class="mb-8">
+                <span class="inline-block bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                    🌟 Gestión de Eventos de Bienestar
+                </span>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Conecta con tu
+                <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Bienestar Mental
+                </span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Descubre, participa y organiza eventos enfocados en salud mental, terapia, mindfulness y crecimiento personal. Tu camino hacia el bienestar comienza aquí.
+            </p>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                <button onclick="navigateTo('buscar')" class="group bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3">
+                    <i class="fas fa-search"></i>
+                    <span>Buscar Eventos</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                <button onclick="navigateTo('crear')" class="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-purple-200 hover:border-purple-400 hover:bg-purple-50 transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Crear Evento</span>
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">150+</div>
+                    <div class="text-gray-600">Eventos Activos</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600 mb-2">2.5K+</div>
+                    <div class="text-gray-600">Participantes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-pink-600 mb-2">95%</div>
+                    <div class="text-gray-600">Satisfacción</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">24/7</div>
+                    <div class="text-gray-600">Disponible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="caracteristicas" class="py-20 bg-white/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Módulos de Gestión</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Herramientas completas para gestionar todos los aspectos de tus eventos de bienestar mental
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Buscar Eventos -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-purple-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-search text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">Buscador de Eventos</h4>
+                    <p class="text-gray-600 mb-6">Encuentra eventos por categoría, fecha, ubicación y tipo de terapia.</p>
+                    <button onclick="navigateTo('buscar')" class="w-full bg-purple-100 text-purple-700 py-3 rounded-xl font-medium hover:bg-purple-200 transition-colors">
+                        Explorar
+                    </button>
+                </div>
+
+                <!-- Lista Eventos -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-indigo-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-list text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">Lista de Eventos</h4>
+                    <p class="text-gray-600 mb-6">Visualiza todos los eventos disponibles en formato organizado y filtrable.</p>
+                    <button onclick="navigateTo('lista')" class="w-full bg-indigo-100 text-indigo-700 py-3 rounded-xl font-medium hover:bg-indigo-200 transition-colors">
+                        Ver Lista
+                    </button>
+                </div>
+
+                <!-- Crear Evento -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-green-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-plus-circle text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">Crear Evento</h4>
+                    <p class="text-gray-600 mb-6">Organiza y publica nuevos eventos de bienestar mental fácilmente.</p>
+                    <button onclick="navigateTo('crear')" class="w-full bg-green-100 text-green-700 py-3 rounded-xl font-medium hover:bg-green-200 transition-colors">
+                        Crear Nuevo
+                    </button>
+                </div>
+
+                <!-- Detalles Evento -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-info-circle text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">Detalles de Eventos</h4>
+                    <p class="text-gray-600 mb-6">Gestiona información completa, inscripciones y seguimiento de eventos.</p>
+                    <button onclick="navigateTo('detalles')" class="w-full bg-pink-100 text-pink-700 py-3 rounded-xl font-medium hover:bg-pink-200 transition-colors">
+                        Administrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Types Section -->
+    <section id="eventos" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Tipos de Eventos</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Diversas modalidades para tu crecimiento personal y bienestar mental
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-user-md text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-purple-900 mb-3">Terapia Individual</h4>
+                    <p class="text-purple-700">Sesiones personalizadas con profesionales certificados</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mb-3">Mindfulness</h4>
+                    <p class="text-blue-700">Técnicas de meditación y atención plena</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-green-900 mb-3">Talleres</h4>
+                    <p class="text-green-700">Grupos de apoyo y desarrollo de habilidades</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-video text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-yellow-900 mb-3">Webinars</h4>
+                    <p class="text-yellow-700">Conferencias virtuales con expertos</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-100 to-pink-200 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-pink-900 mb-3">Bienestar</h4>
+                    <p class="text-pink-700">Actividades de autocuidado y relajación</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-3xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-indigo-900 mb-3">Grupos de Apoyo</h4>
+                    <p class="text-indigo-700">Espacios seguros para compartir experiencias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-indigo-600">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold text-white mb-6">¿Listo para comenzar tu viaje de bienestar?</h3>
+            <p class="text-xl text-purple-100 mb-12 max-w-2xl mx-auto">
+                Únete a miles de personas que ya están transformando su vida a través de nuestros eventos de salud mental
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button onclick="navigateTo('buscar')" class="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Explorar Eventos</span>
+                </button>
+                <button onclick="navigateTo('crear')" class="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-purple-600 transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3">
+                    <i class="fas fa-plus"></i>
+                    <span>Crear Mi Evento</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Z</span>
+                    </div>
+                    <span class="text-xl font-bold">Zenith Eventos</span>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">© 2025 Zenith Salud Mental & Profesionalismo</p>
+                    <p class="text-gray-500 text-sm">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            // Aquí puedes definir las rutas a tus páginas
+            const routes = {
+                'buscar': '/buscador-eventos',
+                'lista': '/lista-eventos',
+                'crear': '/crear-evento',
+                'detalles': '/detalles-eventos'
+            };
+            
+            // Simular navegación (reemplaza con tu lógica de routing)
+            alert(`Navegando a: ${page}\nRuta: ${routes[page] || '/'}`);
+            
+            // En tu aplicación real, usarías algo como:
+            // window.location.href = routes[page];
+            // o con un router: router.push(routes[page]);
+        }
+
+        // Smooth scrolling para los enlaces del nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animaciones a las tarjetas
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.group');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
