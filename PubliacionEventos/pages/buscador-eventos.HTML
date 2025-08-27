@@ -1,177 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscador de Eventos - Zenith</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              accent: '#FBC604',
-              accentHover: '#FAEEBD',
-              cardDark: '#1E293B',
-              bgDark: '#121212',
-              linkDark: '#A78BFA',
-              textSecondaryDark: '#9CA3AF',
-            }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador de Eventos - Zenith</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#FBC604',
+            accentHover: '#FAEEBD',
+            cardDark: '#1E293B',
+            bgDark: '#121212',
+            linkDark: '#A78BFA',
+            textSecondaryDark: '#9CA3AF',
           }
         }
       }
-    </script>
-  </head>
-  <body class="bg-white text-black min-h-screen transition-colors dark:bg-bgDark dark:text-white">
-    
-    <!-- La Nav bar 💻 -->
-    <header class="bg-white shadow-sm py-4 dark:bg-accent ">
-      <div class="flex items-center justify-between max-w-3xl mx-auto px-2">
-        <div class="flex items-center gap-2 mx-3">
-          <a href="/Base/index.html" class="font-bold text-indigo-600 text-xl"
-            >Zenith</a
-          >
-        </div>
-        <nav class="flex gap-3 flex-wrap ml-5">
-          <a
-            href="/PubliacionEventos/landing/landing-eventos.html"
-            class="sm:no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
+    }
+  </script>
+</head>
+
+<body class="bg-white text-black min-h-screen transition-colors dark:bg-bgDark dark:text-white">
+
+  <!-- La Nav bar 💻 -->
+  <header class="bg-white shadow-sm py-4 dark:bg-accent ">
+    <div class="flex items-center justify-between max-w-3xl mx-auto px-2">
+      <div class="flex items-center gap-2 mx-3">
+        <a href="/Base/index.html" class="font-bold text-indigo-600 text-xl">Zenith</a>
+      </div>
+      <nav class="flex gap-3 flex-wrap ml-5">
+        <a href="/PubliacionEventos/landing/landing-eventos.html" class="sm:no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
             transition hover:bg-indigo-600 hover:text-white
-            "
-            >Landing eventos</a
-          >
-          <a
-            href="/PubliacionEventos/pages/lista-eventos.html"
-            class="no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
-            transition hover:bg-indigo-600 hover:text-white"
-            >Lista Eventos</a
-          >
-          <a
-            href="/PubliacionEventos/pages/creacion-eventos.html"
-            class="no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
-            transition hover:bg-indigo-600 hover:text-white"
-            >Publicar Evento</a
-          >
-          <a
-            href="/PubliacionEventos/pages/detalles-eventos.html"
-            class="no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
-            transition hover:bg-indigo-600 hover:text-white"
-            >Detalles De Eventos</a
-          >
-        </nav>
-      </div>
-
-    </header>
-
-    <div class="max-w-6xl mx-auto px-6">
-
-      <!-- Título principal 😼 -->
-      <h1 class="text-center text-indigo-600 text-3xl font-bold my-8 ">
-        Buscador de Eventos
-      </h1>
-
-      <!-- Barra de búsqueda 🔍 -->
-      <input
-        type="text"
-        id="searchInput"
-        class="shadow-sm w-full p-4 text-base border-2 border-gray-200 rounded-lg mb-6 focus:outline-none focus:border-indigo-400"
-        placeholder="Buscar eventos..."
-      />
-
-      <!-- Botones de categorías 👀 -->
-      <div class="flex flex-wrap justify-center gap-2 mb-8" id="categoryButtons">
-        <button class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover" data-category="">Todos</button>
-        <button class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover" data-category="Terapia">Terapia</button>
-        <button class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover" data-category="Bienestar">Bienestar</button>
-        <button class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover" data-category="Talleres">Talleres</button>
-        <button class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover" data-category="Webinars">Webinars</button>
-      </div>
-
-      <!-- Lista de eventos 💃 -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10" id="eventList">
-        <div class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento" data-category="Terapia">
-          <span class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Terapia</span>
-          <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Sesión de Terapia Individual</h3>
-          <p class="mb-2 dark:text-textSecondaryDark">Acompañamiento personalizado con profesionales certificados.</p>
-          <div class="text-gray-500 text-sm dark:text-textSecondaryDark">15 de Agosto, 2025</div>
-        </div>
-        <div class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento" data-category="Bienestar">
-          <span class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Bienestar</span>
-          <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Meditación y Mindfulness</h3>
-          <p class="mb-2 dark:text-textSecondaryDark">Técnicas de relajación para reducir el estrés diario.</p>
-          <div class="text-gray-500 text-sm dark:text-textSecondaryDark">18 de Agosto, 2025</div>
-        </div>
-        <div class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento" data-category="Talleres">
-          <span class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Talleres</span>
-          <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Taller de Comunicación</h3>
-          <p class="mb-2 dark:text-textSecondaryDark">Mejora tus habilidades de comunicación asertiva.</p>
-          <div class="text-gray-500 text-sm dark:text-textSecondaryDark">22 de Agosto, 2025</div>
-        </div>
-        <div class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento" data-category="Webinars">
-          <span class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Webinars</span>
-          <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Salud Mental en el Trabajo</h3>
-          <p class="mb-2 dark:text-textSecondaryDark">Equilibrio entre vida laboral y personal.</p>
-          <div class="text-gray-500 text-sm dark:text-textSecondaryDark">25 de Agosto, 2025</div>
-        </div>
-        <div class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento" data-category="Terapia">
-          <span class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Terapia</span>
-          <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Terapia de Pareja</h3>
-          <p class="mb-2 dark:text-textSecondaryDark">Fortalece tu relación con herramientas profesionales.</p>
-          <div class="text-gray-500 text-sm dark:text-textSecondaryDark">28 de Agosto, 2025</div>
-        </div>
-        <div class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento" data-category="Bienestar">
-          <span class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Bienestar</span>
-          <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Yoga Terapéutico</h3>
-          <p class="mb-2 dark:text-textSecondaryDark">Práctica de yoga para el bienestar físico y mental.</p>
-          <div class="text-gray-500 text-sm dark:text-textSecondaryDark">30 de Agosto, 2025</div>
-        </div>
-      </div>
+            ">Landing eventos</a>
+        <a href="/PubliacionEventos/pages/lista-eventos.html" class="no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
+            transition hover:bg-indigo-600 hover:text-white">Lista Eventos</a>
+        <a href="/PubliacionEventos/pages/creacion-eventos.html" class="no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
+            transition hover:bg-indigo-600 hover:text-white">Publicar Evento</a>
+        <a href="/PubliacionEventos/pages/detalles-eventos.html" class="no-underline font-medium bg-yellow-200 text-gray-800 px-4 py-2 rounded-full 
+            transition hover:bg-indigo-600 hover:text-white">Detalles De Eventos</a>
+      </nav>
     </div>
 
-     <!-- Icono de noche -->
-    <div class="fixed bottom-6 right-6 z-50">
-      <img
-        src="../assets/luna-icon.gif"
-        alt="Modo noche"
-        id="theme-icon"
-        class="w-13 h-13 cursor-pointer drop-shadow-lg rounded-full hover:scale-110 transition transform"
-      />
+  </header>
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Título principal 😼 -->
+    <h1 class="text-center text-indigo-600 text-3xl font-bold my-8 ">
+      Buscador de Eventos
+    </h1>
+
+    <!-- Barra de búsqueda 🔍 -->
+    <input type="text" id="searchInput"
+      class="shadow-sm w-full p-4 text-base border-2 border-gray-200 rounded-lg mb-6 focus:outline-none focus:border-indigo-400"
+      placeholder="Buscar eventos..." />
+
+    <!-- Botones de categorías 👀 -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8" id="categoryButtons">
+      <button
+        class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover"
+        data-category="">Todos</button>
+      <button
+        class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover"
+        data-category="Terapia">Terapia</button>
+      <button
+        class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover"
+        data-category="Bienestar">Bienestar</button>
+      <button
+        class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover"
+        data-category="Talleres">Talleres</button>
+      <button
+        class="px-5 py-2 bg-yellow-200 text-black rounded-full text-xs font-semibold transition hover:bg-indigo-600 hover:text-white dark:bg-accent dark:text-black dark:hover:bg-accentHover"
+        data-category="Webinars">Webinars</button>
+    </div>
+
+    <!-- Lista de eventos 💃 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10" id="eventList">
+      <div
+        class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento"
+        data-category="Terapia">
+        <span
+          class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Terapia</span>
+        <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Sesión de Terapia Individual</h3>
+        <p class="mb-2 dark:text-textSecondaryDark">Acompañamiento personalizado con profesionales certificados.</p>
+        <div class="text-gray-500 text-sm dark:text-textSecondaryDark">15 de Agosto, 2025</div>
+      </div>
+      <div
+        class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento"
+        data-category="Bienestar">
+        <span
+          class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Bienestar</span>
+        <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Meditación y Mindfulness</h3>
+        <p class="mb-2 dark:text-textSecondaryDark">Técnicas de relajación para reducir el estrés diario.</p>
+        <div class="text-gray-500 text-sm dark:text-textSecondaryDark">18 de Agosto, 2025</div>
+      </div>
+      <div
+        class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento"
+        data-category="Talleres">
+        <span
+          class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Talleres</span>
+        <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Taller de Comunicación</h3>
+        <p class="mb-2 dark:text-textSecondaryDark">Mejora tus habilidades de comunicación asertiva.</p>
+        <div class="text-gray-500 text-sm dark:text-textSecondaryDark">22 de Agosto, 2025</div>
+      </div>
+      <div
+        class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento"
+        data-category="Webinars">
+        <span
+          class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Webinars</span>
+        <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Salud Mental en el Trabajo</h3>
+        <p class="mb-2 dark:text-textSecondaryDark">Equilibrio entre vida laboral y personal.</p>
+        <div class="text-gray-500 text-sm dark:text-textSecondaryDark">25 de Agosto, 2025</div>
+      </div>
+      <div
+        class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento"
+        data-category="Terapia">
+        <span
+          class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Terapia</span>
+        <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Terapia de Pareja</h3>
+        <p class="mb-2 dark:text-textSecondaryDark">Fortalece tu relación con herramientas profesionales.</p>
+        <div class="text-gray-500 text-sm dark:text-textSecondaryDark">28 de Agosto, 2025</div>
+      </div>
+      <div
+        class="bg-white p-10 rounded-xl shadow hover:-translate-y-1 hover:shadow-2xl transition dark:bg-cardDark evento"
+        data-category="Bienestar">
+        <span
+          class="bg-yellow-200 px-3 py-1 rounded-full text-xs font-semibold inline-block mb-2 dark:bg-accent dark:text-black">Bienestar</span>
+        <h3 class="text-indigo-600 font-bold text-lg mb-1 dark:text-linkDark">Yoga Terapéutico</h3>
+        <p class="mb-2 dark:text-textSecondaryDark">Práctica de yoga para el bienestar físico y mental.</p>
+        <div class="text-gray-500 text-sm dark:text-textSecondaryDark">30 de Agosto, 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Icono de noche -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <img src="../assets/luna-icon.gif" alt="Modo noche" id="theme-icon"
+      class="w-13 h-13 cursor-pointer drop-shadow-lg rounded-full hover:scale-110 transition transform" />
 
     <script>
-      
+
       const searchInput = document.getElementById('searchInput');
-    const categoryButtons = document.getElementById('categoryButtons').querySelectorAll('button');
-    const eventList = document.getElementById('eventList');
-    const eventos = eventList.querySelectorAll('.evento');
-    let categoriaSeleccionada = '';
+      const categoryButtons = document.getElementById('categoryButtons').querySelectorAll('button');
+      const eventList = document.getElementById('eventList');
+      const eventos = eventList.querySelectorAll('.evento');
+      let categoriaSeleccionada = '';
 
-    function filtrarEventos() {
-      const texto = searchInput.value.toLowerCase();
-      eventos.forEach(evento => {
-        const nombre = evento.textContent.toLowerCase();
-        const cat = evento.getAttribute('data-category');
-        const coincideTexto = nombre.includes(texto);
-        const coincideCategoria = !categoriaSeleccionada || cat === categoriaSeleccionada;
-        if (coincideTexto && coincideCategoria) {
-          evento.style.display = '';
-        } else {
-          evento.style.display = 'none';
-        }
-      });
-    }
+      function filtrarEventos() {
+        const texto = searchInput.value.toLowerCase();
+        eventos.forEach(evento => {
+          const nombre = evento.textContent.toLowerCase();
+          const cat = evento.getAttribute('data-category');
+          const coincideTexto = nombre.includes(texto);
+          const coincideCategoria = !categoriaSeleccionada || cat === categoriaSeleccionada;
+          if (coincideTexto && coincideCategoria) {
+            evento.style.display = '';
+          } else {
+            evento.style.display = 'none';
+          }
+        });
+      }
 
-    searchInput.addEventListener('input', filtrarEventos);
-    categoryButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        categoriaSeleccionada = btn.getAttribute('data-category');
-        categoryButtons.forEach(b => b.classList.remove('ring-2', 'ring-indigo-500'));
-        btn.classList.add('ring-2', 'ring-indigo-500');
-        filtrarEventos();
+      searchInput.addEventListener('input', filtrarEventos);
+      categoryButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          categoriaSeleccionada = btn.getAttribute('data-category');
+          categoryButtons.forEach(b => b.classList.remove('ring-2', 'ring-indigo-500'));
+          btn.classList.add('ring-2', 'ring-indigo-500');
+          filtrarEventos();
+        });
       });
-    });
-    // Inicializa con "Todos" seleccionado
-    categoryButtons[0].classList.add('ring-2', 'ring-indigo-500');
+
+
+      categoryButtons[0].classList.add('ring-2', 'ring-indigo-500');
 
       const themeIcon = document.getElementById('theme-icon');
       function updateThemeIcon() {
@@ -183,12 +189,13 @@
           themeIcon.alt = 'Modo noche';
         }
       }
-      themeIcon.addEventListener('click', function() {
+      themeIcon.addEventListener('click', function () {
         document.documentElement.classList.toggle('dark');
         updateThemeIcon();
       });
       // Inicializar el icono al cargar
       updateThemeIcon();
     </script>
-  </body>
+</body>
+
 </html>
