@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas por Contacto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Mis Contactos</h1>
+    <p>Añade notas personales a cada conversación</p>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="contact-name">Juan Pérez</div>
+      <label class="note-label">Notas:</label>
+      <textarea id="nota-juan"></textarea>
+      <button onclick="guardarNota('juan')">Guardar Nota</button>
+    </div>
+
+    <div class="card">
+      <div class="contact-name">María Gómez</div>
+      <label class="note-label">Notas:</label>
+      <textarea id="nota-maria"></textarea>
+      <button onclick="guardarNota('maria')">Guardar Nota</button>
+    </div>
+
+    <div class="card">
+      <div class="contact-name">Carlos López</div>
+      <label class="note-label">Notas:</label>
+      <textarea id="nota-carlos"></textarea>
+      <button onclick="guardarNota('carlos')">Guardar Nota</button>
+    </div>
+  </div>
+
+  <script>
+    // Función para guardar la nota en localStorage
+    function guardarNota(id) {
+      const textarea = document.getElementById(`nota-${id}`);
+      localStorage.setItem(`nota-${id}`, textarea.value);
+      alert("✅ Nota guardada localmente");
+    }
+
+    // Cargar las notas guardadas al abrir la página
+    window.onload = function() {
+      const ids = ["juan", "maria", "carlos"];
+      ids.forEach(id => {
+        const savedNote = localStorage.getItem(`nota-${id}`);
+        if (savedNote) {
+          document.getElementById(`nota-${id}`).value = savedNote;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

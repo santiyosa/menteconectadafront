@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #7772e7;   /* Morado */
+    --secondary-color: #e2e772; /* Amarillo */
+    --text-dark: #2c3e50;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-dark);
+}
+
+.header {
+    background: var(--white);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contacto {
+    text-align: center;
+    margin-top: 40px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.redes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 15px 25px; /* Más grandes */
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Colores adaptados con morado y amarillo */
+.facebook {
+    background: var(--primary-color);
+}
+
+.twitter {
+    background: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.linkedin {
+    background: var(--primary-color);
+}
