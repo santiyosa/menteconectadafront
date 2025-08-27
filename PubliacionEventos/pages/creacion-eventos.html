@@ -1,114 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>HUGeral</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>HUGeral</title>
 </head>
+
 <body class="bg-gradient-to-br from-[#e2e772] to-[#e8f4f8]">
 
-     <header class="sticky top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-lg transition-all">
+  <header class="sticky top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-lg transition-all">
     <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
       <div class="flex items-center gap-4">
-        <div class="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-xl">Z</div>
+        <div
+          class="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-xl">
+          Z</div>
         <span class="font-bold text-[#7772e7]">Zenith</span>
       </div>
       <div class="flex gap-4">
-        <a href="#login" class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5">Login</a>
-        <a href="#register" class="px-4 py-2 rounded-[12px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-medium transition hover:-translate-y-0.5 hover:shadow-lg">Registrarse</a>
+        <a href="#login"
+          class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5">Login</a>
+        <a href="#register"
+          class="px-4 py-2 rounded-[12px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-medium transition hover:-translate-y-0.5 hover:shadow-lg">Registrarse</a>
       </div>
     </div>
   </header>
 
-       <h1 class="text-4xl font-sans text-purple-500 font-bold text-center mt-10 mb-8 ">Crear un nuevo evento</h1>
+  <h1 class="text-4xl font-sans text-purple-500 font-bold text-center mt-10 mb-8 ">Crear un nuevo evento</h1>
 
-    <main class="container mx-auto px-4 py-8 max-w-2xl bg-white rounded-xl shadow-lg mb-10">
-        <form class="space-y-6" action="/publicar-evento" method="post">
-            <fieldset class="border border-gray-300 rounded-lg p-6 space-y-4">
-                <legend class="text-2xl font-semibold px-2 -ml-2">Detalles del Evento</legend>
+  <main class="container mx-auto px-4 py-8 max-w-2xl bg-white rounded-xl shadow-lg mb-10">
+    <form class="space-y-6" action="/publicar-evento" method="post">
+      <fieldset class="border border-gray-300 rounded-lg p-6 space-y-4">
+        <legend class="text-2xl font-semibold px-2 -ml-2">Detalles del Evento</legend>
 
-                
-                <section>
-                    <label for="titulo" class="block text-lg font-medium text-gray-700 mb-1">Título del Evento:</label>
-                    <input type="text" id="titulo" name="titulo" required aria-describedby="titulo-ayuda"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200">
-                    <small id="titulo-ayuda" class="block text-sm text-gray-500 mt-1">Ingresa un título claro y conciso para tu evento.</small>
-                </section>
 
-              
-                <section>
-                    <label for="fecha" class="block text-lg font-medium text-gray-700 mb-1">Fecha del Evento:</label>
-                    <input type="date" id="fecha" name="fecha" required aria-describedby="fecha-ayuda"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200">
-                    <small id="fecha-ayuda" class="block text-sm text-gray-500 mt-1">Selecciona la fecha en que se realizará el evento.</small>
-                </section>
+        <section>
+          <label for="titulo" class="block text-lg font-medium text-gray-700 mb-1">Título del Evento:</label>
+          <input type="text" id="titulo" name="titulo" required aria-describedby="titulo-ayuda"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200">
+          <small id="titulo-ayuda" class="block text-sm text-gray-500 mt-1">Ingresa un título claro y conciso para tu
+            evento.</small>
+        </section>
 
-               
-                <section>
-                    <label for="descripcion" class="block text-lg font-medium text-gray-700 mb-1">Descripción del Evento:</label>
-                    <textarea id="descripcion" name="descripcion" rows="5" required aria-describedby="descripcion-ayuda"
-                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200 resize-y"></textarea>
-                    <small id="descripcion-ayuda" class="block text-sm text-gray-500 mt-1">Proporciona una descripción detallada de lo que trata el evento.</small>
-                </section>
-            </fieldset>
 
-        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <section>
+          <label for="fecha" class="block text-lg font-medium text-gray-700 mb-1">Fecha del Evento:</label>
+          <input type="date" id="fecha" name="fecha" required aria-describedby="fecha-ayuda"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200">
+          <small id="fecha-ayuda" class="block text-sm text-gray-500 mt-1">Selecciona la fecha en que se realizará el
+            evento.</small>
+        </section>
+
+
+        <section>
+          <label for="descripcion" class="block text-lg font-medium text-gray-700 mb-1">Descripción del Evento:</label>
+          <textarea id="descripcion" name="descripcion" rows="5" required aria-describedby="descripcion-ayuda"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200 resize-y"></textarea>
+          <small id="descripcion-ayuda" class="block text-sm text-gray-500 mt-1">Proporciona una descripción detallada
+            de lo que trata el evento.</small>
+        </section>
+      </fieldset>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 class="text-2xl font-bold text-center mb-6">Cargar Imagen</h1>
 
         <div class="mb-4">
-            <label for="imageLoader" class="block text-sm font-medium text-gray-700 mb-2">Selecciona una imagen:</label>
-            <input type="file" id="imageLoader" name="imageLoader" accept="image/*" class="block w-full text-sm text-gray-500
+          <label for="imageLoader" class="block text-sm font-medium text-gray-700 mb-2">Selecciona una imagen:</label>
+          <input type="file" id="imageLoader" name="imageLoader" accept="image/*" class="block w-full text-sm text-gray-500
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
                 file:text-sm file:font-semibold
                 file:bg-violet-50 file:text-violet-700
-                hover:file:bg-violet-100 "/>
+                hover:file:bg-violet-100 " />
         </div>
 
         <div id="imagePreview" class="hidden mt-6">
-            <h2 class="text-xl font-semibold text-center mb-4">Evento Destacado</h2>
-            <img id="preview" src="#" alt="Vista previa de la imagen" class="w-[150px] h-[150px] rounded-lg shadow-md mx-auto"/>
+          <h2 class="text-xl font-semibold text-center mb-4">Evento Destacado</h2>
+          <img id="preview" src="#" alt="Vista previa de la imagen"
+            class="w-[150px] h-[150px] rounded-lg shadow-md mx-auto" />
         </div>
-    </div>
-            
-            <div class="flex justify-center mt-4"></div>
-             <a href="/PubliacionEventos/listaEventos.html"
-      class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white block mx-auto max-w-fit px-6 py-3 rounded-[12px] font-sans text-[#2c3e50] shadow-lg transition hover:scale-105 hover:shadow-2xl hover:ring-4 hover:ring-purple-300/40">
-      Ver próximos eventos
-          </a>
-          </div>
-        </form>
-    </main>
+      </div>
 
-   <footer class="bg-[#e9ed92] text-[#555] py-12 px-8 text-center">
+      <div class="flex justify-center mt-4"></div>
+      <a href="/PubliacionEventos/listaEventos.html"
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white block mx-auto max-w-fit px-6 py-3 rounded-[12px] font-sans text-[#2c3e50] shadow-lg transition hover:scale-105 hover:shadow-2xl hover:ring-4 hover:ring-purple-300/40">
+        Ver próximos eventos
+      </a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-[#e9ed92] text-[#555] py-12 px-8 text-center">
     <div class="max-w-[1200px] mx-auto">
       <p class="mb-4 opacity-90">&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
-      <p class="mb-4 opacity-90">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
-      <p class="mb-4 opacity-90">Encuentra nuestros <a href="#terms" target="_blank" class="text-[#e2e772] hover:underline">términos y condiciones aquí</a></p>
+      <p class="mb-4 opacity-90">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal
+      </p>
+      <p class="mb-4 opacity-90">Encuentra nuestros <a href="#terms" target="_blank"
+          class="text-[#e2e772] hover:underline">términos y condiciones aquí</a></p>
     </div>
   </footer>
-  
 
- <script>
-        const imageLoader = document.getElementById('imageLoader');
-        const imagePreview = document.getElementById('imagePreview');
-        const preview = document.getElementById('preview');
 
-        imageLoader.addEventListener('change', function(event) {
-            const file = event.target.files[0];
+  <script>
+    const imageLoader = document.getElementById('imageLoader');
+    const imagePreview = document.getElementById('imagePreview');
+    const preview = document.getElementById('preview');
 
-            if (file) {
-                const reader = new FileReader();
+    imageLoader.addEventListener('change', function (event) {
+      const file = event.target.files[0];
 
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    imagePreview.classList.remove('hidden');
-                }
+      if (file) {
+        const reader = new FileReader();
 
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          imagePreview.classList.remove('hidden');
+        }
+
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
 </body>
+
 </html>
