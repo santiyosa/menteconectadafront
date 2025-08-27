@@ -1,442 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Listado de Eventos</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="font-sans text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8]">
-  <header class="sticky top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-lg transition-all">
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
-      <div class="flex items-center gap-4">
-        <div class="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-xl">Z</div>
-        <span class="font-bold text-[#7772e7]">Zenith</span>
+  <body
+    class="font-sans text-[#2c3e50] bg-gradient-to-br from-[#e2e772] to-[#e8f4f8]"
+  >
+    <header
+      class="sticky top-0 w-full bg-white/95 backdrop-blur z-50 py-4 shadow-lg transition-all"
+    >
+      <div
+        class="max-w-[1200px] mx-auto flex justify-between items-center px-8"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-[#7772e7] to-[#e2e772] flex items-center justify-center text-white font-bold text-xl"
+          >
+            Z
+          </div>
+          <span class="font-bold text-[#7772e7]">Zenith</span>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="#login"
+            class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5"
+            >Login</a
+          >
+          <a
+            href="#register"
+            class="px-4 py-2 rounded-[12px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-medium transition hover:-translate-y-0.5 hover:shadow-lg"
+            >Registrarse</a
+          >
+        </div>
       </div>
-      <div class="flex gap-4">
-        <a href="#login" class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5">Login</a>
-        <a href="#register" class="px-4 py-2 rounded-[12px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-medium transition hover:-translate-y-0.5 hover:shadow-lg">Registrarse</a>
+    </header>
+
+    <section class="py-8 bg-[#e2e772]">
+      <h2 class="text-2xl font-bold mb-4 text-[#7772e7] text-center">
+        🌟 Eventos Destacados
+      </h2>
+      <div
+        class="flex gap-4 justify-center flex-wrap"
+        id="featuredEvents"
+      ></div>
+    </section>
+
+    <section>
+      <h1
+        class="text-center text-4xl text-[#7772e7] mb-12 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-br after:from-[#7772e7] after:to-[#e2e772] after:rounded"
+      ></h1>
+      <a
+        href="detalles-eventos.html"
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer block w-max mx-auto mb-8 font-medium transition hover:-translate-y-0.5 hover:shadow-lg"
+        >Ver detalles de los eventos</a
+      >
+      <a
+        href="creacion-eventos.html"
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer block w-max mx-auto mb-8 font-medium transition hover:-translate-y-0.5 hover:shadow-lg"
+        >Crear Formulario</a
+      >
+      <div class="flex flex-wrap justify-center items-stretch gap-5 px-8">
+        <!-- Evento Lunes -->
+        <div
+          class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center"
+        >
+          <div
+            class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]"
+          >
+            <span class="text-[#7772e7]">🕒</span>
+            <span class="mr-2">09:00</span>
+            <span class="text-[#e2e772]">📅</span>
+            <span class="ml-1">15/09/2025</span>
+          </div>
+          <h3 class="text-2xl">Lunes</h3>
+          <h5 class="font-semibold">Taller de Control Emocional</h5>
+          <p class="text-base">
+            Aprende técnicas prácticas para gestionar tus emociones. Identifica,
+            comprende y transforma tus reacciones para una vida más equilibrada.
+          </p>
+          <a
+            href=""
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+            >Talleres</a
+          >
+          <button
+            class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar"
+          >
+            Destacar
+          </button>
+          <button
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+          >
+            Detalles
+          </button>
+        </div>
+        <!-- Evento Martes -->
+        <div
+          class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center"
+        >
+          <div
+            class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]"
+          >
+            <span class="text-[#7772e7]">🕒</span>
+            <span class="mr-2">10:00</span>
+            <span class="text-[#e2e772]">📅</span>
+            <span class="ml-1">16/09/2025</span>
+          </div>
+          <h3 class="text-2xl">Martes</h3>
+          <h5 class="font-semibold">
+            Seminario sobre Trastorno Límite de la Personalidad (TLP)
+          </h5>
+          <p class="text-base">
+            Profundiza en el TLP: sus síntomas, causas y estrategias efectivas
+            para el manejo. Un enfoque claro para entender y apoyar a quienes lo
+            padecen.
+          </p>
+          <a
+            href=""
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+            >Seminarios</a
+          >
+          <button
+            class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar"
+          >
+            Destacar
+          </button>
+          <button
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+          >
+            Detalles
+          </button>
+        </div>
+        <!-- Evento Miércoles -->
+        <div
+          class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center"
+        >
+          <div
+            class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]"
+          >
+            <span class="text-[#7772e7]">🕒</span>
+            <span class="mr-2">11:00</span>
+            <span class="text-[#e2e772]">📅</span>
+            <span class="ml-1">17/09/2025</span>
+          </div>
+          <h3 class="text-2xl">Miércoles</h3>
+          <h5 class="font-semibold">Jornada de Mindfulness y Ansiedad</h5>
+          <p class="text-base">
+            Descubre el poder del mindfulness para reducir la ansiedad. Practica
+            la atención plena y encuentra calma en el presente.
+          </p>
+          <a
+            href=""
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+            >Jornadas de apoyo</a
+          >
+          <button
+            class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar"
+          >
+            Destacar
+          </button>
+          <button
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+          >
+            Detalles
+          </button>
+        </div>
+        <!-- Evento Jueves -->
+        <div
+          class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center"
+        >
+          <div
+            class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]"
+          >
+            <span class="text-[#7772e7]">🕒</span>
+            <span class="mr-2">12:00</span>
+            <span class="text-[#e2e772]">📅</span>
+            <span class="ml-1">18/09/2025</span>
+          </div>
+          <h3 class="text-2xl">Jueves</h3>
+          <h5 class="font-semibold">Charla sobre Depresión y Autoestima</h5>
+          <p class="text-base">
+            Explora la conexión entre la depresión y la autoestima. Obtén
+            herramientas para fortalecer tu valoración personal y recuperar el
+            bienestar.
+          </p>
+          <a
+            href=""
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+            >Charlas</a
+          >
+          <button
+            class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar"
+          >
+            Destacar
+          </button>
+          <button
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+          >
+            Detalles
+          </button>
+        </div>
+        <!-- Evento Viernes -->
+        <div
+          class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center"
+        >
+          <div
+            class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]"
+          >
+            <span class="text-[#7772e7]">🕒</span>
+            <span class="mr-2">13:00</span>
+            <span class="text-[#e2e772]">📅</span>
+            <span class="ml-1">19/09/2025</span>
+          </div>
+          <h3 class="text-2xl">Viernes</h3>
+          <h5 class="font-semibold">
+            Grupo de Apoyo para Jóvenes con Ansiedad
+          </h5>
+          <p class="text-base">
+            Un espacio seguro y confidencial donde jóvenes pueden compartir
+            experiencias, aprender estrategias y sentir el respaldo de una
+            comunidad.
+          </p>
+          <a
+            href=""
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+            >Grupos de apoyo</a
+          >
+          <button
+            class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar"
+          >
+            Destacar
+          </button>
+          <button
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+          >
+            Detalles
+          </button>
+        </div>
+        <!-- Evento Sábado -->
+        <div
+          class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center"
+        >
+          <div
+            class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]"
+          >
+            <span class="text-[#7772e7]">🕒</span>
+            <span class="mr-2">14:00</span>
+            <span class="text-[#e2e772]">📅</span>
+            <span class="ml-1">20/09/2025</span>
+          </div>
+          <h3 class="text-2xl">Sábado</h3>
+          <h5 class="font-semibold">Conferencia: Salud Mental en el Trabajo</h5>
+          <p class="text-base">
+            Analiza el impacto del entorno laboral en nuestra salud mental.
+            Identifica desafíos y descubre cómo fomentar un ambiente de trabajo
+            saludable y productivo.
+          </p>
+          <a
+            href=""
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+            >Conferencias</a
+          >
+          <button
+            class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar"
+          >
+            Destacar
+          </button>
+          <button
+            class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2"
+          >
+            Detalles
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#e9ed92] text-[#555] py-12 px-8 text-center">
+      <div class="max-w-[1200px] mx-auto">
+        <p class="mb-4 opacity-90">
+          &copy; 2025 ZENITH Salud Mental & Profesionalismo
+        </p>
+        <p class="mb-4 opacity-90">
+          Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad -
+          Crecimiento Personal
+        </p>
+        <p class="mb-4 opacity-90">
+          Encuentra nuestros
+          <a
+            href="#terms"
+            target="_blank"
+            class="text-[#e2e772] hover:underline"
+            >términos y condiciones aquí</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <div
+      id="alert-inscripcion"
+      class="fixed inset-0 flex items-center justify-center z-[9999] pointer-events-none"
+      style="display: none"
+    >
+      <div
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-xl shadow-lg px-8 py-6 flex items-center gap-3 border-2 border-[#16a34a]"
+      >
+        <span class="text-[#16a34a] text-3xl">✔️</span>
+        <span class="text-lg font-semibold text-white drop-shadow"
+          >Inscripción exitosa</span
+        >
       </div>
     </div>
-  </header>
 
-  <section class="py-8 bg-[#e2e772]">
-    <h2 class="text-2xl font-bold mb-4 text-[#7772e7] text-center">🌟 Eventos Destacados</h2>
-    <div class="flex gap-4 justify-center flex-wrap" id="featuredEvents"></div>
-  </section>
+    <!-- Botón para abrir el modal -->
+    <div class="fixed bottom-8 right-8 z-[9999]">
+      <button
+        id="btn-proximos-eventos"
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white px-6 py-3 rounded-[12px] font-semibold shadow-lg transition hover:scale-105 hover:shadow-2xl hover:ring-4 hover:ring-[#e2e772]/40"
+      >
+        Ver próximos eventos
+      </button>
+    </div>
 
-  <section>
-    <h1 class="text-center text-4xl text-[#7772e7] mb-12 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-br after:from-[#7772e7] after:to-[#e2e772] after:rounded"></h1>
-    <a href="/PubliacionEventos/pages/creacion-eventos.html" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer block w-max mx-auto mb-8 font-medium transition hover:-translate-y-0.5 hover:shadow-lg">Crear Formulario</a>
-    <div class="flex flex-wrap justify-center items-stretch gap-5 px-8">
-      <!-- Evento Lunes -->
-      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
-        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
-          <span class="text-[#7772e7]">🕒</span>
-          <span class="mr-2">09:00</span>
-          <span class="text-[#e2e772]">📅</span>
-          <span class="ml-1">15/09/2025</span>
+    <div
+      id="modal-proximos-eventos"
+      class="fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm transition-all duration-300"
+      style="display: none"
+    >
+      <div
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative"
+        onclick="event.stopPropagation();"
+      >
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">
+          Próximos eventos
+        </h2>
+        <div class="flex gap-4 mb-6 justify-center items-center">
+          <label class="text-white font-medium"
+            >Desde:
+            <input
+              type="date"
+              id="filtro-desde"
+              class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50]"
+            />
+          </label>
+          <label class="text-white font-medium"
+            >Hasta:
+            <input
+              type="date"
+              id="filtro-hasta"
+              class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50]"
+            />
+          </label>
+          <button
+            id="btn-filtrar-fechas"
+            class="bg-[#7772e7] text-white px-3 py-1 rounded font-semibold hover:bg-[#16a34a] transition"
+          >
+            Filtrar
+          </button>
+          <button
+            id="btn-limpiar-filtro"
+            class="bg-[#ef4444] text-white px-3 py-1 rounded font-semibold hover:bg-[#b91c1c] transition"
+          >
+            Limpiar filtro
+          </button>
         </div>
-        <h3 class="text-2xl">Lunes</h3>
-        <h5 class="font-semibold">Taller de Control Emocional</h5>
-        <p class="text-base">Aprende técnicas prácticas para gestionar tus emociones. Identifica, comprende y transforma tus reacciones para una vida más equilibrada.</p>
-        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Talleres</a>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-3 py-1 rounded cursor-pointer text-sm btn-inscribirme transition">Inscribirme</button>
-          <div class="flex justify-center gap-3 mt-4">
-    <a href="#" target="_blank" class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center" title="Compartir en Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center" title="Compartir en WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center" title="Compartir por Gmail">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"/>
-      </svg>
-    </a>
-  </div>
-      </div>
-      <!-- Evento Martes -->
-      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
-        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
-          <span class="text-[#7772e7]">🕒</span>
-          <span class="mr-2">10:00</span>
-          <span class="text-[#e2e772]">📅</span>
-          <span class="ml-1">16/09/2025</span>
-        </div>
-        <h3 class="text-2xl">Martes</h3>
-        <h5 class="font-semibold">Seminario sobre Trastorno Límite de la Personalidad (TLP)</h5>
-        <p class="text-base">Profundiza en el TLP: sus síntomas, causas y estrategias efectivas para el manejo. Un enfoque claro para entender y apoyar a quienes lo padecen.</p>
-        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Seminarios</a>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-3 py-1 rounded cursor-pointer text-sm btn-inscribirme transition">Inscribirme</button>
-        <div class="flex justify-center gap-3 mt-4">
-    <a href="#" target="_blank" class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center" title="Compartir en Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center" title="Compartir en WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center" title="Compartir por Gmail">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"/>
-      </svg>
-    </a>
-  </div>
-      </div>
-      <!-- Evento Miércoles -->
-      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
-        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
-          <span class="text-[#7772e7]">🕒</span>
-          <span class="mr-2">11:00</span>
-          <span class="text-[#e2e772]">📅</span>
-          <span class="ml-1">17/09/2025</span>
-        </div>
-        <h3 class="text-2xl">Miércoles</h3>
-        <h5 class="font-semibold">Jornada de Mindfulness y Ansiedad</h5>
-        <p class="text-base">Descubre el poder del mindfulness para reducir la ansiedad. Practica la atención plena y encuentra calma en el presente.</p>
-        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Jornadas de apoyo</a>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-3 py-1 rounded cursor-pointer text-sm btn-inscribirme transition">Inscribirme</button>
-        <div class="flex justify-center gap-3 mt-4">
-    <a href="#" target="_blank" class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center" title="Compartir en Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center" title="Compartir en WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center" title="Compartir por Gmail">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"/>
-      </svg>
-    </a>
-  </div>
-      </div>
-      <!-- Evento Jueves -->
-      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
-        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
-          <span class="text-[#7772e7]">🕒</span>
-          <span class="mr-2">12:00</span>
-          <span class="text-[#e2e772]">📅</span>
-          <span class="ml-1">18/09/2025</span>
-        </div>
-        <h3 class="text-2xl">Jueves</h3>
-        <h5 class="font-semibold">Charla sobre Depresión y Autoestima</h5>
-        <p class="text-base">Explora la conexión entre la depresión y la autoestima. Obtén herramientas para fortalecer tu valoración personal y recuperar el bienestar.</p>
-        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Charlas</a>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-3 py-1 rounded cursor-pointer text-sm btn-inscribirme transition">Inscribirme</button>
-        <div class="flex justify-center gap-3 mt-4">
-    <a href="#" target="_blank" class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center" title="Compartir en Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center" title="Compartir en WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center" title="Compartir por Gmail">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"/>
-      </svg>
-    </a>
-  </div>
-      </div>
-      <!-- Evento Viernes -->
-      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
-        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
-          <span class="text-[#7772e7]">🕒</span>
-          <span class="mr-2">13:00</span>
-          <span class="text-[#e2e772]">📅</span>
-          <span class="ml-1">19/09/2025</span>
-        </div>
-        <h3 class="text-2xl">Viernes</h3>
-        <h5 class="font-semibold">Grupo de Apoyo para Jóvenes con Ansiedad</h5>
-        <p class="text-base">Un espacio seguro y confidencial donde jóvenes pueden compartir experiencias, aprender estrategias y sentir el respaldo de una comunidad.</p>
-        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Grupos de apoyo</a>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-3 py-1 rounded cursor-pointer text-sm btn-inscribirme transition">Inscribirme</button>
-        <div class="flex justify-center gap-3 mt-4">
-    <a href="#" target="_blank" class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center" title="Compartir en Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center" title="Compartir en WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center" title="Compartir por Gmail">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"/>
-      </svg>
-    </a>
-  </div>
-      </div>
-      <!-- Evento Sábado -->
-      <div class="flex-grow max-w-[30vw] min-w-[250px] flex flex-col justify-center items-center text-lg m-0 p-5 rounded-[50px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-center">
-        <div class="flex items-center justify-between gap-2 text-xl font-medium text-[#2c3e50] bg-gradient-to-r from-[#7772e7] to-[#e2e772] rounded-[20px] px-4 py-1 mb-3 shadow border-2 border-[#e2e772]">
-          <span class="text-[#7772e7]">🕒</span>
-          <span class="mr-2">14:00</span>
-          <span class="text-[#e2e772]">📅</span>
-          <span class="ml-1">20/09/2025</span>
-        </div>
-        <h3 class="text-2xl">Sábado</h3>
-        <h5 class="font-semibold">Conferencia: Salud Mental en el Trabajo</h5>
-        <p class="text-base">Analiza el impacto del entorno laboral en nuestra salud mental. Identifica desafíos y descubre cómo fomentar un ambiente de trabajo saludable y productivo.</p>
-        <a href="" class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-6 py-3 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg mt-2">Conferencias</a>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#c084fc] px-3 py-1 rounded cursor-pointer text-sm btn-destacar">Destacar</button>
-        <button class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-3 py-1 rounded cursor-pointer text-sm btn-inscribirme transition">Inscribirme</button>
-        <div class="flex justify-center gap-3 mt-4">
-    <a href="#" target="_blank" class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center" title="Compartir en Facebook">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center" title="Compartir en WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"/>
-      </svg>
-    </a>
-    <a href="#" target="_blank" class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center" title="Compartir por Gmail">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"/>
-      </svg>
-    </a>
-  </div>
+        <ul id="lista-proximos-eventos" class="space-y-3"></ul>
       </div>
     </div>
-  </section>
 
-  <footer class="bg-[#e9ed92] text-[#555] py-12 px-8 text-center">
-    <div class="max-w-[1200px] mx-auto">
-      <p class="mb-4 opacity-90">&copy; 2025 ZENITH Salud Mental & Profesionalismo</p>
-      <p class="mb-4 opacity-90">Tu Bienestar es Nuestra Prioridad - Empatía - Confidencialidad - Crecimiento Personal</p>
-      <p class="mb-4 opacity-90">Encuentra nuestros <a href="#terms" target="_blank" class="text-[#e2e772] hover:underline">términos y condiciones aquí</a></p>
-    </div>
-  </footer>
-
-  <div id="alert-inscripcion" class="fixed inset-0 flex items-center justify-center z-[9999] pointer-events-none" style="display:none;">
-    <div class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-xl shadow-lg px-8 py-6 flex items-center gap-3 border-2 border-[#16a34a]">
-      <span class="text-[#16a34a] text-3xl">✔️</span>
-      <span class="text-lg font-semibold text-white drop-shadow">Inscripción exitosa</span>
-    </div>
-  </div>
-
-  <!-- Botón para abrir el modal -->
-  <div class="fixed bottom-8 right-8 z-[9999]">
-    <button id="btn-proximos-eventos"
-      class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white px-6 py-3 rounded-[12px] font-semibold shadow-lg transition hover:scale-105 hover:shadow-2xl hover:ring-4 hover:ring-[#e2e772]/40">
-      Ver próximos eventos
-    </button>
-  </div>
-
-  <div id="modal-proximos-eventos"
-    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm transition-all duration-300"
-    style="display:none;">
-    <div class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative"
-      onclick="event.stopPropagation();">
-      <h2 class="text-2xl font-bold text-white mb-6 text-center">Próximos eventos</h2>
-      <div class="flex gap-4 mb-6 justify-center items-center">
-        <label class="text-white font-medium">Desde:
-          <input type="date" id="filtro-desde" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50]">
-        </label>
-        <label class="text-white font-medium">Hasta:
-          <input type="date" id="filtro-hasta" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50]">
-        </label>
-        <button id="btn-filtrar-fechas"
-          class="bg-[#7772e7] text-white px-3 py-1 rounded font-semibold hover:bg-[#16a34a] transition">Filtrar</button>
-        <button id="btn-limpiar-filtro"
-          class="bg-[#ef4444] text-white px-3 py-1 rounded font-semibold hover:bg-[#b91c1c] transition">Limpiar filtro</button>
+    <!-- Modal de Detalles de Evento -->
+    <div
+      id="modal-detalles-evento"
+      class="fixed inset-0 z-[99999] flex justify-center items-center text-center bg-black/40 backdrop-blur-sm transition-all duration-300"
+      style="display: none"
+    >
+      <div
+        class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative"
+        onclick="event.stopPropagation();"
+      >
+        <button
+          id="btn-cerrar-modal-detalles"
+          class="absolute top-2 right-2 bg-[#ef4444] text-white px-2 py-1 text-xs rounded cursor-pointer border-none"
+        >
+          Cerrar
+        </button>
+        <h2 id="modal-titulo" class="text-2xl font-bold text-white mb-4"></h2>
+        <p id="modal-descripcion" class="text-base text-white mb-2"></p>
+        <p id="modal-autor" class="text-base text-white mb-2"></p>
+        <p id="modal-fecha" class="text-base text-white"></p>
+        <button
+          class="mt-2 bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border border-[#16a34a] px-6 py-2 rounded cursor-pointer text-base font-semibold btn-inscribirme-modal transition"
+        >
+          Inscribirme
+        </button>
+        <div class="flex justify-center gap-3 mt-4">
+          <a
+            href="#"
+            target="_blank"
+            class="bg-white border-2 border-[#7772e7] rounded-full p-2 shadow hover:bg-[#7772e7] hover:text-white transition flex items-center justify-center"
+            title="Compartir en Facebook"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            class="bg-white border-2 border-[#16a34a] rounded-full p-2 shadow hover:bg-[#16a34a] hover:text-white transition flex items-center justify-center"
+            title="Compartir en WhatsApp"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.468-.148-.666.15-.198.297-.767.967-.941 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.666-1.611-.916-2.207-.242-.579-.487-.5-.666-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.348.709.243 1.262.389 1.694.497.712.181 1.36.156 1.872.095.571-.068 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.271-.198-.568-.347z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            class="bg-white border-2 border-[#ea4335] rounded-full p-2 shadow hover:bg-[#ea4335] hover:text-white transition flex items-center justify-center"
+            title="Compartir por Gmail"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 13.065l-8-5.065v10c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-10l-8 5.065zm8-7.065v-.001c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v.001l8 5.065 8-5.065z"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
-      <ul id="lista-proximos-eventos" class="space-y-3"></ul>
     </div>
-  </div>
 
-  <script>
-    const featuredContainer = document.getElementById('featuredEvents');
-    const maxFeatured = 3;
+    <style>
+      /* Solo para aplicar clases de Tailwind dinámicamente */
+      .evento-inscrito {
+        background: #7772e7 !important;
+        color: white !important;
+        border-color: #e2e772 !important;
+      }
+      .evento-inscrito .fecha-hora {
+        background: #e2e772 !important;
+        color: black !important;
+        border-color: #e2e772 !important;
+      }
+      .evento-inscrito .btn-tarjeta {
+        background: #e2e772 !important;
+        color: black !important;
+        border-color: #e2e772 !important;
+      }
+    </style>
 
-    document.querySelectorAll('.btn-destacar').forEach(button => {
-      button.addEventListener('click', () => {
-        const parentBox = button.closest('.box') || button.closest('div');
-        const title = parentBox.querySelector('h5').textContent.trim();
-        const description = parentBox.querySelector('p').textContent.trim();
+    <script>
+      // Estado de inscripción por evento (por título)
+      const inscritos = {};
 
-        // Verificar si ya está destacado
-        const alreadyFeatured = Array.from(featuredContainer.children).some(el =>
-          el.querySelector('h4')?.textContent.trim() === title
-        );
-        if (alreadyFeatured) return;
+      // Funcionalidad para los botones "Detalles"
+      document.querySelectorAll("button").forEach((btn) => {
+        if (btn.textContent.trim() === "Detalles") {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const eventoDiv = btn.closest("div.flex-grow");
+            const titulo = eventoDiv.querySelector("h5")?.textContent.trim() || "";
+            const descripcion = eventoDiv.querySelector("p")?.textContent.trim() || "";
+            const fecha = eventoDiv.querySelector("span.ml-1")?.textContent.trim() || "";
 
-        if (featuredContainer.children.length >= maxFeatured) {
-          alert("Solo puedes destacar hasta 3 eventos.");
-          return;
+            // Mostrar modal y rellenar datos
+            document.getElementById("modal-titulo").textContent = titulo;
+            document.getElementById("modal-descripcion").textContent = descripcion;
+            document.getElementById("modal-autor").textContent = "Autor: Equipo Zenith";
+            document.getElementById("modal-fecha").textContent = "Fecha: " + fecha;
+
+            // Guardar referencia al evento actual
+            document.getElementById("modal-detalles-evento").setAttribute("data-evento-titulo", titulo);
+
+            // Resetear botón inscribirme en el modal según estado
+            const btnInscribirmeModal = document.querySelector(".btn-inscribirme-modal");
+            if (inscritos[titulo]) {
+              btnInscribirmeModal.textContent = "Inscrito";
+              btnInscribirmeModal.disabled = true;
+              btnInscribirmeModal.classList.remove("bg-gradient-to-br", "from-[#7772e7]", "to-[#e2e772]", "text-white");
+              btnInscribirmeModal.classList.add("bg-[#16a34a]", "text-white");
+            } else {
+              btnInscribirmeModal.textContent = "Inscribirme";
+              btnInscribirmeModal.disabled = false;
+              btnInscribirmeModal.classList.remove("bg-[#16a34a]", "text-white");
+              btnInscribirmeModal.classList.add("bg-gradient-to-br", "from-[#7772e7]", "to-[#e2e772]", "text-white");
+            }
+
+            document.getElementById("modal-detalles-evento").style.display = "flex";
+          });
         }
-
-        // Crear nueva tarjeta destacada
-        const featuredBox = document.createElement('div');
-        featuredBox.className = "relative bg-gradient-to-br from-[#7772e7] to-[#e2e772] p-4 rounded-[10px] w-[300px] shadow text-[#1f2937] transition hover:-translate-y-1";
-        featuredBox.innerHTML = `
-          <h4 class="mb-2 text-lg font-semibold text-[#2c3e50]">${title}</h4>
-          <p class="text-base text-[#2c3e50]">${description}</p>
-          <button class="absolute top-2 right-2 bg-[#ef4444] text-white px-2 py-1 text-xs rounded cursor-pointer border-none btn-eliminar">Eliminar</button>
-        `;
-        featuredContainer.appendChild(featuredBox);
-
-        // Agregar funcionalidad de eliminar
-        featuredBox.querySelector('.btn-eliminar').addEventListener('click', () => {
-          featuredBox.remove();
-        });
       });
-    });
 
-    // Inscribirme botón funcionalidad
-    document.querySelectorAll('.btn-inscribirme').forEach(btn => {
-      btn.addEventListener('click', function () {
-        // Cambia el color a verde y el texto a "Inscrito"
-        btn.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]');
-        btn.classList.add('bg-[#16a34a]', 'text-white');
+      // Funcionalidad del botón inscribirme en el modal
+      document.querySelector(".btn-inscribirme-modal").addEventListener("click", function () {
+        const btn = this;
+        const modal = document.getElementById("modal-detalles-evento");
+        const titulo = modal.getAttribute("data-evento-titulo");
+        inscritos[titulo] = true;
+
+        btn.classList.remove("bg-gradient-to-br", "from-[#7772e7]", "to-[#e2e772]", "text-white");
+        btn.classList.add("bg-[#16a34a]", "text-white");
         btn.textContent = "Inscrito";
         btn.disabled = true;
 
-        // Cambia el fondo y texto del evento
-        const eventoDiv = btn.closest('div.flex-grow');
-        if (eventoDiv) {
-          eventoDiv.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]', 'text-[#2c3e50]');
-          eventoDiv.classList.add('bg-[#7772e7]', 'text-white');
-
-          // Cambia el div de fecha/hora a amarillo y texto morado
-          const infoDiv = eventoDiv.querySelector('div.flex.items-center');
-          if (infoDiv) {
-            infoDiv.classList.remove('bg-gradient-to-r', 'from-[#7772e7]', 'to-[#e2e772]', 'text-[#2c3e50]');
-            infoDiv.classList.add('bg-[#e2e772]', 'text-[#7772e7]');
+        // Cambiar tarjeta principal
+        document.querySelectorAll("div.flex-grow").forEach((div) => {
+          const h5 = div.querySelector("h5");
+          if (h5 && h5.textContent.trim() === titulo) {
+            div.classList.add("evento-inscrito");
+            // Cambiar fondo y color de fecha/hora
+            const fechaHoraDiv = div.querySelector(".flex.items-center");
+            if (fechaHoraDiv) fechaHoraDiv.classList.add("fecha-hora");
+            // Cambiar botones
+            div.querySelectorAll("button, a").forEach((el) => {
+              el.classList.add("btn-tarjeta");
+            });
           }
+        });
 
-          // Cambia el botón "Destacar" a amarillo y texto morado
-          const btnDestacar = eventoDiv.querySelector('.btn-destacar');
-          if (btnDestacar) {
-            btnDestacar.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]', 'text-white');
-            btnDestacar.classList.add('bg-[#e2e772]', 'text-[#7772e7]');
-          }
-
-          // Cambia los dos botones antes del inscrito de color 
-          const links = eventoDiv.querySelectorAll('a');
-          if (links.length > 0) {
-            const mainLink = links[0];
-            mainLink.classList.remove('bg-gradient-to-br', 'from-[#7772e7]', 'to-[#e2e772]', 'text-white');
-            mainLink.classList.add('bg-[#e2e772]', 'text-[#7772e7]');
-          }
-        }
-
-        // Mostrar alerta
-        const alerta = document.getElementById('alert-inscripcion');
-        alerta.style.display = 'flex';
+        // Mostrar alerta al frente del modal
+        const alerta = document.getElementById("alert-inscripcion");
+        alerta.classList.add("z-[100000]");
+        alerta.style.display = "flex";
         setTimeout(() => {
-          alerta.style.display = 'none';
+          alerta.style.display = "none";
+          alerta.classList.remove("z-[100000]");
         }, 4000);
       });
-    });
 
-    // Funcionalidad del modal de próximos eventos
-    const btnProximosEventos = document.getElementById('btn-proximos-eventos');
-    const modalProximosEventos = document.getElementById('modal-proximos-eventos');
-
-    btnProximosEventos.addEventListener('click', () => {
-      modalProximosEventos.style.display = 'flex';
-    });
-
-    modalProximosEventos.addEventListener('click', () => {
-      modalProximosEventos.style.display = 'none';
-    });
-
-    // Filtrar eventos por fecha
-    document.getElementById('btn-filtrar-fechas').addEventListener('click', () => {
-      const fechaDesde = document.getElementById('filtro-desde').value;
-      const fechaHasta = document.getElementById('filtro-hasta').value;
-      const listaEventos = document.getElementById('lista-proximos-eventos');
-
-      // Limpiar lista
-      listaEventos.innerHTML = '';
-
-      // Aquí deberías filtrar los eventos según las fechas seleccionadas
-      const eventosEjemplo = [
-        {
-          fecha: '2025-09-22',
-          titulo: 'Taller de Resiliencia: Adaptarse y Crecer',
-          descripcion: 'Aprende a superar la adversidad y salir fortalecido. Descubre cómo enfrentar los desafíos de la vida con una mentalidad flexible y de crecimiento.'
-        },
-        {
-          fecha: '2025-09-23',
-          titulo: 'Webinar sobre el Manejo del Estrés Crónico',
-          descripcion: 'Comprende cómo el estrés prolongado te afecta. Aprende técnicas efectivas para identificar sus fuentes, reducir sus efectos y restaurar tu bienestar.'
-        },
-        {
-          fecha: '2025-09-24',
-          titulo: 'Conversatorio: Desafíos y Estrategias para la Salud Mental Masculina',
-          descripcion: 'Un espacio para abordar los desafíos que enfrentan los hombres. Fomenta el diálogo y ofrece estrategias para buscar ayuda y cuidarse.'
-        },
-         {
-          fecha: '2025-09-25',
-          titulo: 'Jornada de Psicología Positiva: Construyendo el Bienestar',
-          descripcion: 'Explora la psicología positiva para cultivar la felicidad. Aprende a enfocarte en tus fortalezas y a construir una vida más plena.'
-        },
-        {
-          fecha: '2025-09-26',
-          titulo: 'Charla sobre la Relación entre Sueño y Salud Mental',
-          descripcion: 'Descubre por qué un buen descanso es vital. Aprende cómo la falta de sueño afecta tu estado de ánimo y obtén consejos para mejorar tus hábitos.'
-        },
-        {
-          fecha: '2025-09-27',
-          titulo: 'Grupo de Apoyo para Familias de Personas con Trastornos de la Conducta Alimentaria',
-          descripcion: 'Un entorno de apoyo para familiares donde pueden compartir experiencias, recibir orientación y cuidar de su propio bienestar emocional.'
-        }
-      ];
-
-      const eventosFiltrados = eventosEjemplo.filter(evento => {
-        return (!fechaDesde || evento.fecha >= fechaDesde) && (!fechaHasta || evento.fecha <= fechaHasta);
+      // Cerrar modal de detalles
+      document.getElementById("btn-cerrar-modal-detalles").addEventListener("click", function () {
+        document.getElementById("modal-detalles-evento").style.display = "none";
       });
 
-      eventosFiltrados.forEach(evento => {
-        const li = document.createElement('li');
-        li.className = "bg-white rounded-lg shadow p-4";
-        li.innerHTML = `
+      // Cerrar modal al hacer click fuera del contenido
+      document.getElementById("modal-detalles-evento").addEventListener("click", function (e) {
+        if (e.target === this) {
+          this.style.display = "none";
+        }
+      });
+
+      // Funcionalidad del modal de próximos eventos
+      const btnProximosEventos = document.getElementById("btn-proximos-eventos");
+      const modalProximosEventos = document.getElementById("modal-proximos-eventos");
+
+      btnProximosEventos.addEventListener("click", () => {
+        modalProximosEventos.style.display = "flex";
+      });
+
+      modalProximosEventos.addEventListener("click", () => {
+        modalProximosEventos.style.display = "none";
+      });
+
+      // Filtrar eventos por fecha
+      document
+        .getElementById("btn-filtrar-fechas")
+        .addEventListener("click", () => {
+          const fechaDesde = document.getElementById("filtro-desde").value;
+          const fechaHasta = document.getElementById("filtro-hasta").value;
+          const listaEventos = document.getElementById("lista-proximos-eventos");
+
+          // Limpiar lista
+          listaEventos.innerHTML = "";
+
+          // Aquí deberías filtrar los eventos según las fechas seleccionadas
+          const eventosEjemplo = [
+            {
+              fecha: "2025-09-22",
+              titulo: "Taller de Resiliencia: Adaptarse y Crecer",
+              descripcion:
+                "Aprende a superar la adversidad y salir fortalecido. Descubre cómo enfrentar los desafíos de la vida con una mentalidad flexible y de crecimiento.",
+            },
+            {
+              fecha: "2025-09-23",
+              titulo: "Webinar sobre el Manejo del Estrés Crónico",
+              descripcion:
+                "Comprende cómo el estrés prolongado te afecta. Aprende técnicas efectivas para identificar sus fuentes, reducir sus efectos y restaurar tu bienestar.",
+            },
+            {
+              fecha: "2025-09-24",
+              titulo:
+                "Conversatorio: Desafíos y Estrategias para la Salud Mental Masculina",
+              descripcion:
+                "Un espacio para abordar los desafíos que enfrentan los hombres. Fomenta el diálogo y ofrece estrategias para buscar ayuda y cuidarse.",
+            },
+            {
+              fecha: "2025-09-25",
+              titulo:
+                "Jornada de Psicología Positiva: Construyendo el Bienestar",
+              descripcion:
+                "Explora la psicología positiva para cultivar la felicidad. Aprende a enfocarte en tus fortalezas y a construir una vida más plena.",
+            },
+            {
+              fecha: "2025-09-26",
+              titulo: "Charla sobre la Relación entre Sueño y Salud Mental",
+              descripcion:
+                "Descubre por qué un buen descanso es vital. Aprende cómo la falta de sueño afecta tu estado de ánimo y obtén consejos para mejorar tus hábitos.",
+            },
+            {
+              fecha: "2025-09-27",
+              titulo:
+                "Grupo de Apoyo para Familias de Personas con Trastornos de la Conducta Alimentaria",
+              descripcion:
+                "Un entorno de apoyo para familiares donde pueden compartir experiencias, recibir orientación y cuidar de su propio bienestar emocional.",
+            },
+          ];
+
+          const eventosFiltrados = eventosEjemplo.filter((evento) => {
+            return (
+              (!fechaDesde || evento.fecha >= fechaDesde) &&
+              (!fechaHasta || evento.fecha <= fechaHasta)
+            );
+          });
+
+          eventosFiltrados.forEach((evento) => {
+            const li = document.createElement("li");
+            li.className = "bg-white rounded-lg shadow p-4";
+            li.innerHTML = `
           <h3 class="text-[#2c3e50] font-semibold">${evento.titulo}</h3>
           <p class="text-[#555]">${evento.descripcion}</p>
           <span class="text-xs text-[#777]">${evento.fecha}</span>
         `;
-        listaEventos.appendChild(li);
-      });
+            listaEventos.appendChild(li);
+          });
 
-      if (eventosFiltrados.length === 0) {
-        listaEventos.innerHTML = '<li class="text-center text-[#777] py-2">No se encontraron eventos para las fechas seleccionadas.</li>';
-      }
-    });
+          if (eventosFiltrados.length === 0) {
+            listaEventos.innerHTML =
+              '<li class="text-center text-[#777] py-2">No se encontraron eventos para las fechas seleccionadas.</li>';
+          }
+        });
 
-    document.getElementById('btn-limpiar-filtro').addEventListener('click', () => {
-      document.getElementById('filtro-desde').value = '';
-      document.getElementById('filtro-hasta').value = '';
-      document.getElementById('lista-proximos-eventos').innerHTML = '';
-    });
-  </script>
-</body>
-
+      document
+        .getElementById("btn-limpiar-filtro")
+        .addEventListener("click", () => {
+          document.getElementById("filtro-desde").value = "";
+          document.getElementById("filtro-hasta").value = "";
+          document.getElementById("lista-proximos-eventos").innerHTML = "";
+        });
+    </script>
+  </body>
 </html>
