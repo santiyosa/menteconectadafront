@@ -24,13 +24,7 @@
           </div>
           <span class="font-bold text-[#7772e7]">Zenith</span>
         </div>
-
         <div class="flex gap-4">
-          <a
-            href="/PubliacionEventos/landing/landing-eventos.html"
-            class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5"
-            >Landing Eventos</a
-          >
           <a
             href="#login"
             class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5"
@@ -38,13 +32,15 @@
           >
           <a
             href="#register"
-            class="px-4 py-2 rounded-[12px] border-2 border-[#7772e7] text-[#7772e7] font-medium transition hover:bg-[#7772e7] hover:text-white hover:-translate-y-0.5"
+            class="px-4 py-2 rounded-[12px] bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-medium transition hover:-translate-y-0.5 hover:shadow-lg"
             >Registrarse</a
           >
         </div>
       </div>
     </header>
 
+    <!-- Banner evento más próximo destacado -->
+  <div id="banner-evento-proximo" class="w-full bg-gradient-to-r from-[#e2e772] to-[#7772e7] text-white text-center py-4 text-lg font-semibold mb-2"></div>
     <section class="py-8 bg-[#e2e772]">
       <h2 class="text-2xl font-bold mb-4 text-[#7772e7] text-center">
         🌟 Eventos Destacados
@@ -478,8 +474,12 @@
     </style>
 
     <script>
-      // Estado de inscripción por evento (por título)
-      const inscritos = {};
+
+  // Estado de inscripción por evento (por título)
+  const inscritos = {};
+  // Estado de destacados (array de títulos)
+  let destacados = [];
+
 
       // Funcionalidad para los botones "Detalles"
       document.querySelectorAll("button").forEach((btn) => {
@@ -499,6 +499,7 @@
 
             // Guardar referencia al evento actual
             document.getElementById("modal-detalles-evento").setAttribute("data-evento-titulo", titulo);
+            document.getElementById("modal-detalles-evento").setAttribute("data-evento-id", eventoDiv.dataset.eventoId || titulo);
 
             // Resetear botón inscribirme en el modal según estado
             const btnInscribirmeModal = document.querySelector(".btn-inscribirme-modal");
@@ -514,10 +515,244 @@
               btnInscribirmeModal.classList.add("bg-gradient-to-br", "from-[#7772e7]", "to-[#e2e772]", "text-white");
             }
 
+            // Botones de acción en el modal de detalles
+            let accionesDiv = document.getElementById("modal-acciones-evento");
+            if (!accionesDiv) {
+              accionesDiv = document.createElement("div");
+              accionesDiv.id = "modal-acciones-evento";
+              accionesDiv.className = "flex flex-wrap gap-2 justify-center mt-4";
+              document.getElementById("modal-detalles-evento").querySelector(".bg-gradient-to-br").appendChild(accionesDiv);
+            }
+            accionesDiv.innerHTML = "";
+            // Botón Editar
+            const btnEditar = document.createElement("button");
+            btnEditar.textContent = "Editar";
+            btnEditar.className = "bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white border-2 border-[#7772e7] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg";
+            btnEditar.onclick = function() { abrirModalEditar(eventoDiv); };
+            accionesDiv.appendChild(btnEditar);
+            // Botón Eliminar
+            const btnEliminar = document.createElement("button");
+            btnEliminar.textContent = "Eliminar";
+            btnEliminar.className = "bg-gradient-to-br from-[#e2e772] to-[#7772e7] text-white border-2 border-[#e2e772] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg";
+            btnEliminar.onclick = function() { confirmarEliminarEvento(eventoDiv); };
+            accionesDiv.appendChild(btnEliminar);
+            // Botón Cancelar Evento
+            const btnCancelar = document.createElement("button");
+            btnCancelar.textContent = "Cancelar Evento";
+            btnCancelar.className = "bg-gradient-to-br from-[#fbbf24] to-[#e2e772] text-white border-2 border-[#fbbf24] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg";
+            btnCancelar.onclick = function() { confirmarCancelarEvento(eventoDiv); };
+            accionesDiv.appendChild(btnCancelar);
+
             document.getElementById("modal-detalles-evento").style.display = "flex";
           });
         }
+      // Modal de confirmación para eliminar evento
+      function confirmarEliminarEvento(eventoDiv) {
+        let modal = document.getElementById('modal-confirmar-eliminar');
+        if (!modal) {
+          modal = document.createElement('div');
+          modal.id = 'modal-confirmar-eliminar';
+          modal.className = 'fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm';
+          modal.innerHTML = `
+            <div class="bg-white rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative text-center">
+              <h2 class="text-2xl font-bold text-[#ef4444] mb-4">¿Eliminar evento?</h2>
+              <p class="mb-4">Esta acción marcará el evento como eliminado.</p>
+              <button id="btn-confirmar-eliminar" class="bg-[#ef4444] text-white px-4 py-2 rounded font-semibold mr-2">Eliminar</button>
+              <button id="btn-cancelar-eliminar" class="bg-[#7772e7] text-white px-4 py-2 rounded font-semibold">Cancelar</button>
+            </div>
+          `;
+          document.body.appendChild(modal);
+        }
+        modal.style.display = 'flex';
+        document.getElementById('btn-cancelar-eliminar').onclick = () => { modal.style.display = 'none'; };
+        document.getElementById('btn-confirmar-eliminar').onclick = () => {
+          eventoDiv.classList.add('evento-eliminado');
+          let aviso = eventoDiv.querySelector('.aviso-estado-evento');
+          if (!aviso) {
+            aviso = document.createElement('div');
+            aviso.className = 'aviso-estado-evento text-white bg-[#ef4444] rounded px-2 py-1 mt-2 font-bold';
+            aviso.textContent = 'Evento eliminado';
+            eventoDiv.appendChild(aviso);
+          } else {
+            aviso.textContent = 'Evento eliminado';
+            aviso.className = 'aviso-estado-evento text-white bg-[#ef4444] rounded px-2 py-1 mt-2 font-bold';
+          }
+          modal.style.display = 'none';
+        };
+      }
+
+      // Modal de confirmación para cancelar evento
+      function confirmarCancelarEvento(eventoDiv) {
+        let modal = document.getElementById('modal-confirmar-cancelar');
+        if (!modal) {
+          modal = document.createElement('div');
+          modal.id = 'modal-confirmar-cancelar';
+          modal.className = 'fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm';
+          modal.innerHTML = `
+            <div class="bg-white rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative text-center">
+              <h2 class="text-2xl font-bold text-[#fbbf24] mb-4">¿Cancelar evento?</h2>
+              <p class="mb-4">Esta acción marcará el evento como cancelado.</p>
+              <button id="btn-confirmar-cancelar" class="bg-[#fbbf24] text-white px-4 py-2 rounded font-semibold mr-2">Cancelar Evento</button>
+              <button id="btn-cancelar-cancelar" class="bg-[#7772e7] text-white px-4 py-2 rounded font-semibold">Volver</button>
+            </div>
+          `;
+          document.body.appendChild(modal);
+        }
+        modal.style.display = 'flex';
+        document.getElementById('btn-cancelar-cancelar').onclick = () => { modal.style.display = 'none'; };
+        document.getElementById('btn-confirmar-cancelar').onclick = () => {
+          eventoDiv.classList.add('evento-cancelado');
+          let aviso = eventoDiv.querySelector('.aviso-estado-evento');
+          if (!aviso) {
+            aviso = document.createElement('div');
+            aviso.className = 'aviso-estado-evento text-white bg-[#fbbf24] rounded px-2 py-1 mt-2 font-bold';
+            aviso.textContent = 'Evento cancelado';
+            eventoDiv.appendChild(aviso);
+          } else {
+            aviso.textContent = 'Evento cancelado';
+            aviso.className = 'aviso-estado-evento text-white bg-[#fbbf24] rounded px-2 py-1 mt-2 font-bold';
+          }
+          modal.style.display = 'none';
+        };
+      }
+      // Estilos para eventos eliminados/cancelados
+      const styleExtra = document.createElement('style');
+      styleExtra.innerHTML = `
+        .evento-eliminado { opacity: 0.7; filter: grayscale(1); }
+        .evento-cancelado { opacity: 0.7; filter: grayscale(0.5); }
+      `;
+      document.head.appendChild(styleExtra);
+        // Botón Destacar
+        if (btn.classList.contains("btn-destacar")) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const eventoDiv = btn.closest("div.flex-grow");
+            const titulo = eventoDiv.querySelector("h5")?.textContent.trim() || "";
+            if (destacados.includes(titulo)) return; // Ya está destacado
+            if (destacados.length >= 3) {
+              alert("Solo puedes destacar hasta 3 eventos.");
+              return;
+            }
+            destacados.push(titulo);
+            renderDestacados();
+          });
+        }
       });
+
+      // Renderizar eventos destacados
+  function renderDestacados() {
+        const featured = document.getElementById("featuredEvents");
+        featured.innerHTML = "";
+        destacados.forEach((titulo) => {
+          // ...código de destacados...
+          const eventoDiv = Array.from(document.querySelectorAll("div.flex-grow")).find(div => div.querySelector("h5")?.textContent.trim() === titulo);
+          if (!eventoDiv) return;
+          const clone = eventoDiv.cloneNode(true);
+          clone.querySelectorAll("button, a").forEach(el => el.remove());
+          const btnEliminar = document.createElement("button");
+          btnEliminar.textContent = "Eliminar";
+          btnEliminar.className = "mt-2 bg-gradient-to-br from-[#e2e772] to-[#7772e7] text-white border-2 border-[#e2e772] px-4 py-2 rounded-[12px] cursor-pointer font-medium transition hover:-translate-y-0.5 hover:shadow-lg";
+          btnEliminar.addEventListener("click", function() {
+            destacados = destacados.filter(t => t !== titulo);
+            renderDestacados();
+          });
+          const btnsDiv = document.createElement("div");
+          btnsDiv.className = "flex gap-2 justify-center";
+          btnsDiv.appendChild(btnEliminar);
+          clone.appendChild(btnsDiv);
+          clone.classList.add("evento-inscrito");
+          featured.appendChild(clone);
+        });
+
+        // Banner evento más próximo (de tarjetas normales)
+        let eventosConFecha = [];
+        document.querySelectorAll('div.flex-grow').forEach(div => {
+          if (!div.classList.contains('evento-inscrito')) { // solo normales
+            const fechaSpan = div.querySelector('span.ml-1');
+            if (fechaSpan) {
+              const partes = fechaSpan.textContent.trim().split('/');
+              if (partes.length === 3) {
+                eventosConFecha.push({
+                  titulo: div.querySelector('h5')?.textContent.trim() || '',
+                  descripcion: div.querySelector('p')?.textContent.trim() || '',
+                  fecha: `${partes[2]}-${partes[1].padStart(2,'0')}-${partes[0].padStart(2,'0')}`,
+                  fechaOriginal: fechaSpan.textContent.trim()
+                });
+              }
+            }
+          }
+        });
+        const banner = document.getElementById('banner-evento-proximo');
+        if (eventosConFecha.length > 0) {
+          eventosConFecha.sort((a, b) => a.fecha.localeCompare(b.fecha));
+          const proximo = eventosConFecha[0];
+          banner.innerHTML = `Próximo evento: <span class=\"font-bold\">${proximo.titulo}</span> <span class=\"mx-2\">|</span> <span>${proximo.fechaOriginal}</span>`;
+        } else {
+          banner.innerHTML = 'No hay eventos próximos.';
+        }
+      }
+
+      // Mostrar el banner de evento próximo al cargar la página
+      window.addEventListener('DOMContentLoaded', function() {
+        renderDestacados();
+      });
+
+      // Modal para editar evento normal
+      function abrirModalEditar(eventoDiv) {
+        let modal = document.getElementById('modal-editar-evento');
+        if (!modal) {
+          modal = document.createElement('div');
+          modal.id = 'modal-editar-evento';
+          modal.className = 'fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm';
+          modal.innerHTML = `
+            <div class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] rounded-2xl shadow-2xl px-10 py-8 min-w-[350px] max-w-[90vw] relative" onclick="event.stopPropagation();">
+              <button id="btn-cerrar-modal-editar" class="absolute top-2 right-2 bg-[#ef4444] text-white px-2 py-1 text-xs rounded cursor-pointer border-none">Cerrar</button>
+              <h2 class="text-2xl font-bold text-white mb-4">Editar Evento</h2>
+              <form id="form-editar-evento" class="flex flex-col gap-3">
+                <label class="text-white font-medium">Título:<input type="text" id="editar-titulo" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50] w-full" required></label>
+                <label class="text-white font-medium">Descripción:<textarea id="editar-descripcion" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50] w-full" required></textarea></label>
+                <label class="text-white font-medium">Fecha:<input type="date" id="editar-fecha" class="rounded px-2 py-1 border border-[#7772e7] text-[#2c3e50] w-full" required></label>
+                <button type="submit" class="bg-[#16a34a] text-white px-4 py-2 rounded font-semibold mt-2">Guardar Cambios</button>
+              </form>
+            </div>
+          `;
+          document.body.appendChild(modal);
+        }
+        // Rellenar datos actuales
+        const h5 = eventoDiv.querySelector('h5');
+        const p = eventoDiv.querySelector('p');
+        const fechaSpan = eventoDiv.querySelector('span.ml-1');
+        document.getElementById('editar-titulo').value = h5 ? h5.textContent.trim() : '';
+        document.getElementById('editar-descripcion').value = p ? p.textContent.trim() : '';
+        // Convertir fecha a formato yyyy-mm-dd
+        let fechaVal = '';
+        if (fechaSpan) {
+          const partes = fechaSpan.textContent.trim().split('/');
+          if (partes.length === 3) {
+            fechaVal = `${partes[2]}-${partes[1].padStart(2,'0')}-${partes[0].padStart(2,'0')}`;
+          }
+        }
+        document.getElementById('editar-fecha').value = fechaVal;
+        // Mostrar modal
+        modal.style.display = 'flex';
+        // Cerrar modal
+        document.getElementById('btn-cerrar-modal-editar').onclick = () => { modal.style.display = 'none'; };
+        // Guardar cambios
+        document.getElementById('form-editar-evento').onsubmit = function(e) {
+          e.preventDefault();
+          const nuevoTitulo = document.getElementById('editar-titulo').value.trim();
+          const nuevaDescripcion = document.getElementById('editar-descripcion').value.trim();
+          const nuevaFecha = document.getElementById('editar-fecha').value;
+          // Actualizar la tarjeta normal
+          if (h5) h5.textContent = nuevoTitulo;
+          if (p) p.textContent = nuevaDescripcion;
+          if (fechaSpan && nuevaFecha) {
+            const [yyyy, mm, dd] = nuevaFecha.split('-');
+            fechaSpan.textContent = `${dd}/${mm}/${yyyy}`;
+          }
+          modal.style.display = 'none';
+        };
+      }
 
       // Funcionalidad del botón inscribirme en el modal
       document.querySelector(".btn-inscribirme-modal").addEventListener("click", function () {
