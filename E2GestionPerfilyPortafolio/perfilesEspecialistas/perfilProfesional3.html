@@ -38,30 +38,30 @@
     </header>
 
     <main class="w-[100%] h-auto flex flex-col items-center">
-        <div class="mt-27 w-[85%] h-auto flex items-center justify-between">
-            <div class="flex gap-1">
+        <div class="mt-27 w-[85%] h-auto flex md:flex-row flex-col items-center justify-between">
+            <div class="flex md:gap-1 gap-2">
                 <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional2.html"
-                    class="top-5 left-5 bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
+                    class="md:text-base text-sm bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold md:py-2 md:px-4 py-1 px-2 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-102">
                     ← Anterior
                 </a>
                 <a href="/E2GestionPerfilyPortafolio/TarjetasPerfiles.html"
-                    class="top-5 right-5 bg-[#8e89ef] hover:hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
+                    class="md:text-base text-sm bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold md:py-2 md:px-4 py-1 px-2 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-102">
                     Inicio
                 </a>
                 <a href="/E2GestionPerfilyPortafolio/perfilesEspecialistas/perfilProfesional4.html"
-                    class="top-5 right-5 bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110">
+                    class="md:text-base text-sm bg-[#8e89ef] hover:bg-[#C8AAF0] text-white font-bold md:py-2 md:px-4 py-1 px-2 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-102">
                     Siguiente perfil →
                 </a>
             </div>
-            <h2 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text 
+            <h2 class="md:mt-0 mt-4 text-base md:text-3xl font-extrabold text-transparent bg-clip-text 
   bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 
   drop-shadow-sm tracking-wide"> Perfil profesional</h2>
         </div>
 
         <div
-            class="bg-[#EAF4FB] lg:w-[77%] h-auto shadow-lg shadow-stone-500 rounded-xl flex flex-col items-center w-[90%] mt-4">
+            class="flex bg-[#EAF4FB] lg:w-[77%] h-auto shadow-lg shadow-stone-500 rounded-xl flex flex-col items-center w-[90%] mt-4">
 
-            <div class="flex justify-evenly w-[100%] py-14 px-9 gap-6">
+            <div class="flex flex-col md:flex-row md:justify-center w-[100%] py-14 items-center gap-6 md:gap-0">
                 <div class="w-[250px] flex flex-col justify-center items-center gap-3">
                     <img class="rounded-t-xl h-[300px] w-[100%]"
                         src="/E2GestionPerfilyPortafolio/img/fotosprofesionales/FotoPerfilProfesional3.jpg"
@@ -73,7 +73,7 @@
 
                 </div>
 
-                <div class="bg-white shadow-md rounded-lg p-4 w-4/7 h-auto">
+                <div class="bg-white shadow-md rounded-lg md:p-4 m-6 md:w-4/7 md:h-auto p-6 ">
                     <h3 class="text-3xl font-bold text-gray-800 ">Dr. Juan Esteban Rodríguez</h3>
 
                     <p class="font-semibold text-gray-700 bg-blue-100 px-2 py-0.5 rounded-md w-45 mb-1">
@@ -106,8 +106,7 @@
 
                     <div class="flex justify-between items-center">
                         <img src="../img/ImpactoPositivo.png" alt="Escucha Activa" class="w-[100px] h-[100px]">
-                        <img src="../img/conexionHumana.png" alt="mentor en crecimiento"
-                            class="w-[100px] h-[100px]">
+                        <img src="../img/conexionHumana.png" alt="mentor en crecimiento" class="w-[100px] h-[100px]">
                     </div>
 
                     <div class="relative w-full">
@@ -133,13 +132,13 @@
                 </div>
             </div>
 
-            <div class="w-[100%] px-14 h-auto flex items-center justify-between mt-3 ">
+            <div class="w-[100%] px-14 h-auto flex md:flex-row flex-col items-center justify-between mt-3 ">
                 <p
-                    class="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-700 drop-shadow-sm tracking-wide">
+                    class="md:mt-0 mt-4 self-start md:self-auto text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-700 drop-shadow-sm tracking-wide">
                     Proyectos:
                 </p>
 
-                <a class="bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
+                <a class="self-end md:self-auto bg-[#8e89ef] text-white px-3 py-2 my-4 rounded-lg hover:bg-[#C8AAF0] transition"
                     href="/E2GestionPerfilyPortafolio/FormularioProyectos.html"> + Agrega un proyecto</a>
             </div>
 
@@ -189,12 +188,15 @@
                     Otros profesionales con la misma especialidad:
                 </p>
             </div>
-            <div class="w-[100%] px-14 mb-12 flex justify-evenly">
+
+
+            <div class="w-[100%] md:gap-0 gap-8 px-8 mb-12 flex md:justify-evenly md:flex-row flex-col h-auto">
 
                 <div>
                     <div
-                        class="flex h-[90px] gap-5 bg-blue-100 rounded-lg border border-blue-400 shadow-md hover:shadow-lg transition">
-                        <img class="rounded-lg"
+                        class="md:p-0 py-2 flex h-auto gap-5 bg-blue-100 rounded-lg border border-blue-400 shadow-md hover:shadow-lg transition">
+
+                        <img class=" object-cover m:h-[100px] md:w-[80px] h-[100px] w-[80px]  rounded-lg h-[100px]"
                             src="/E2GestionPerfilyPortafolio/img/fotosprofesionales/FotoPerfilProfesional1.jpg"
                             alt="Imagen foto profesional">
                         <div class="flex flex-col justify-center pr-4 gap-0.5 ">
@@ -210,8 +212,8 @@
 
                 <div>
                     <div
-                        class="flex h-[90px] gap-5 bg-blue-100 rounded-lg border border-blue-400 shadow-md hover:shadow-lg transition">
-                        <img class="rounded-lg"
+                        class="md:p-0 py-2 flex h-auto gap-5 bg-blue-100 rounded-lg border border-blue-400 shadow-md hover:shadow-lg transition">
+                        <img class="object-cover rounded-lg h-[100px]"
                             src="/E2GestionPerfilyPortafolio/img/fotosprofesionales/FotoPerfilProfesional7.jpg"
                             alt="Imagen foto profesional">
                         <div class="flex flex-col justify-center pr-4 gap-0.5 ">
