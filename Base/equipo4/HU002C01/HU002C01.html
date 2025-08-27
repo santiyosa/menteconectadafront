@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal de Colaboración</title>
-    <link rel="stylesheet" href="/Base/equipo4/HU002C01/HU002C01.css" />
-  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #7772e7;
+            --secondary-color: #e2e772;
+            --background-color: #e2e772;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+    </style>
+</head>
 
-  <body>
-    <header class="header">
-      <nav class="nav-container">
-        <div class="logo-container">
-          <a href="/Base/index.html" class="logo">Home</a>
-          <a href="#">Portal de Colaboración</a>
-        </div>
+<body class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] font-sans text-[#2c3e50] leading-relaxed">
+    <header class="bg-white p-4 shadow-[0_2px_5px_rgba(0,0,0,0.1)]">
+        <nav class="flex justify-between items-center w-full max-w-full">
+            <div class="flex items-center gap-20 pl-[5%]">
+                <a href="/Base/index.html" class="text-[#7772e7] font-bold no-underline">Home</a>
+                <a href="#" class="text-[#2c3e50] font-bold no-underline">Portal de Colaboración</a>
+            </div>
 
-        <div class="profile">
-          <span>Jose</span>
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
-            alt="Perfil"
-          />
-        </div>
-      </nav>
+            <div class="flex items-center gap-3 pr-[5%]">
+                <span class="font-bold">Jose</span> 
+                <img
+                    src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+                    alt="Perfil"
+                    class="w-12 h-12 rounded-full"
+                />
+            </div>
+        </nav>
     </header>
 
     <main>
-      <h1>Recomendar perfiles para contactar</h1>
-      <div class="card-container">
-        <div class="card">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
-            alt="Perfil"
-          />
-          <h3>ra. Laura Martínez</h3>
-          <p>Psicóloga Clínica - Especialista en Ansiedad.</p>
-          <a href="../HU004C01/HU004C01.html">
-            <button>Contactar</button>
-          </a>
-        </div>
-        <br />
+        <h1 class="pt-6 text-center font-bold text-2xl">Recomendar perfiles para contactar</h1>
+        <div class="flex flex-wrap justify-center gap-8 mx-8 mt-8 pt-2">
+            <div class="bg-white p-6 rounded-lg w-80 text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)]">
+                <img
+                    src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+                    alt="Perfil"
+                    class="w-24 h-24 rounded-full mx-auto mb-4"
+                />
+                <h3 class="text-xl font-bold mb-2">Dra. Laura Martínez</h3>
+                <p class="mb-4">Psicóloga Clínica - Especialista en Ansiedad.</p>
+                <a href="../HU004C01/HU004C01.html">
+                    <button class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-bold py-3 px-6 rounded-lg mt-2 cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)]">Contactar</button>
+                </a>
+            </div>
 
-        <div class="card">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
-            alt="Perfil"
-          />
-          <h3>Dr. Carlos Ruiz</h3>
-          <p>Psiquiatra - Terapia Cognitivo Conductual</p>
-          <a href="../HU004C01/HU004C01.html">
-            <button>Contactar</button>
-          </a>
-        </div>
+            <div class="bg-white p-6 rounded-lg w-80 text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)]">
+                <img
+                    src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+                    alt="Perfil"
+                    class="w-24 h-24 rounded-full mx-auto mb-4"
+                />
+                <h3 class="text-xl font-bold mb-2">Dr. Carlos Ruiz</h3>
+                <p class="mb-4">Psiquiatra - Terapia Cognitivo Conductual</p>
+                <a href="../HU004C01/HU004C01.html">
+                    <button class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-bold py-3 px-6 rounded-lg mt-2 cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)]">Contactar</button>
+                </a>
+            </div>
 
-        <br />
-
-        <div class="card">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
-            alt="Perfil"
-          />
-          <h3>Dra. Sofia Vergara</h3>
-          <p>Psicoterapeuta - Mindfulness y Meditación</p>
-          <a href="../HU005C01/HU005.html">
-            <button>Contactar</button>
-          </a>
+            <div class="bg-white p-6 rounded-lg w-80 text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)]">
+                <img
+                    src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+                    alt="Perfil"
+                    class="w-24 h-24 rounded-full mx-auto mb-4"
+                />
+                <h3 class="text-xl font-bold mb-2">Dra. Sofia Valencia</h3>
+                <p class="mb-4">Psicoterapeuta - Mindfulness y Meditación</p>
+                <a href="../HU004C01/HU004C01.html">
+                    <button class="bg-gradient-to-br from-[#7772e7] to-[#e2e772] text-white font-bold py-3 px-6 rounded-lg mt-2 cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(115,148,239,0.4)]">Contactar</button>
+                </a>
+            </div>
         </div>
-      </div>
     </main>
-  </body>
+</body>
 </html>

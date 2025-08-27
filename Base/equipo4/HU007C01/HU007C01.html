@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Usuario - MenteConectada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #7772e7;
+            --secondary-color: #e2e772;
+            --background-color: #e2e772;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --white: #ffffff;
+        }
+        
+        .burbuja-emisor {
+            background-color: #7772e7;
+            color: white;
+            border-radius: 18px 18px 4px 18px;
+        }
+        
+        .burbuja-receptor {
+            background-color: #e2e772;
+            color: #2c3e50;
+            border-radius: 18px 18px 18px 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+    <div class="max-w-md mx-auto bg-white min-h-screen shadow-lg flex flex-col">
+        <!-- Encabezado del chat -->
+        <header class="bg-[#7772e7] text-white p-4 flex items-center">
+            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mr-3">
+                <span class="text-[#7772e7] font-medium">M</span>
+            </div>
+            <div>
+                <h1 class="font-semibold">María González</h1>
+                <p class="text-sm text-white text-opacity-80">En línea</p>
+            </div>
+        </header>
+
+        <!-- Área de mensajes -->
+        <div class="flex-1 p-4 overflow-y-auto space-y-3">
+            <!-- Mensaje del receptor -->
+            <div class="flex justify-start">
+                <div class="burbuja-receptor px-4 py-2 max-w-[70%]">
+                    <p class="text-sm">Hola, ¿cómo estás hoy?</p>
+                    <span class="text-xs opacity-70 block text-right mt-1">10:05 AM</span>
+                </div>
+            </div>
+
+            <!-- Mensaje del emisor -->
+            <div class="flex justify-end">
+                <div class="burbuja-emisor px-4 py-2 max-w-[70%]">
+                    <p class="text-sm">¡Hola! Estoy bien, gracias. ¿Y tú?</p>
+                    <span class="text-xs opacity-70 block text-right mt-1">10:06 AM</span>
+                </div>
+            </div>
+
+            <!-- Mensaje del receptor -->
+            <div class="flex justify-start">
+                <div class="burbuja-receptor px-4 py-2 max-w-[70%]">
+                    <p class="text-sm">Todo bien por aquí. ¿Avanzaste con el proyecto?</p>
+                    <span class="text-xs opacity-70 block text-right mt-1">10:07 AM</span>
+                </div>
+            </div>
+
+            <!-- Mensaje del emisor -->
+            <div class="flex justify-end">
+                <div class="burbuja-emisor px-4 py-2 max-w-[70%]">
+                    <p class="text-sm">Sí, ya terminé la parte de diseño. ¿Podemos revisarlo?</p>
+                    <span class="text-xs opacity-70 block text-right mt-1">10:08 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de escribir mensaje -->
+        <div class="p-3 border-t border-gray-200">
+            <div class="flex items-center">
+                <input 
+                    type="text" 
+                    placeholder="Escribe un mensaje..." 
+                    class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#7772e7]"
+                >
+                <button class="bg-[#7772e7] text-white px-4 py-2 rounded-r-lg hover:bg-[#6660d6] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

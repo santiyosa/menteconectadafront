@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Contactos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #7772e7;
+            --secondary-color: #e2e772;
+            --background-color: #e2e772;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
+        /* Estilo para las imágenes de iconos */
+        .imagen-icono {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body class="bg-[#e2e772] min-h-screen font-sans p-4">
+    <div class="max-w-2xl mx-auto">
+        <!-- Encabezado principal -->
+        <header class="bg-white rounded-xl p-4 mb-6 text-center shadow-md">
+            <h1 class="text-2xl font-bold text-[#2c3e50] flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1250/1250682.png" class="imagen-icono mr-2"
+                    alt="Icono de contactos">
+                Resumen de Contactos
+            </h1>
+            <p class="text-[#555]">Resumen de contactos realizados</p>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="bg-white rounded-xl shadow-md p-5 mb-6">
+            <h2 class="text-xl font-semibold text-[#2c3e50] mb-4 text-center flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="imagen-icono mr-2"
+                    alt="Icono de usuarios">
+                Total de Contactos
+            </h2>
+
+            <!-- Número total de contactos -->
+            <div class="text-center mb-6">
+                <div class="text-5xl font-bold text-[#7772e7]">128</div>
+                <p class="text-[#555]">contactos realizados</p>
+            </div>
+
+            <!-- Barra de progreso 1 -->
+            <div class="mb-4">
+                <p class="text-[#555] mb-1 flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="imagen-icono mr-2"
+                        alt="Icono de calendario">
+                    Contactos esta semana: 15/20
+                </p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-[#7772e7] h-2.5 rounded-full" style="width: 75%"></div>
+                </div>
+            </div>
+
+            <!-- Barra de progreso 2 -->
+            <div class="mb-4">
+                <p class="text-[#555] mb-1 flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" class="imagen-icono mr-2"
+                        alt="Icono de éxito">
+                    Contactos exitosos: 42/128
+                </p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-[#7772e7] h-2.5 rounded-full" style="width: 33%"></div>
+                </div>
+            </div>
+
+            <!-- Barra de progreso 3 -->
+            <div class="mb-6">
+                <p class="text-[#555] mb-1 flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="imagen-icono mr-2"
+                        alt="Icono de meta">
+                    Meta mensual: 128/200
+                </p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-[#7772e7] h-2.5 rounded-full" style="width: 64%"></div>
+                </div>
+            </div>
+
+            <!-- Tipos de contacto -->
+            <div class="flex justify-between text-center">
+                <!-- Llamadas -->
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-[#7772e7] flex items-center justify-center mx-auto mb-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" class="imagen-icono"
+                            alt="Icono de teléfono">
+                    </div>
+                    <p class="text-sm text-[#555]">56 llamadas</p>
+                </div>
+
+                <!-- Mensajes -->
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-[#7772e7] flex items-center justify-center mx-auto mb-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1040/1040235.png" class="imagen-icono"
+                            alt="Icono de mensaje">
+                    </div>
+                    <p class="text-sm text-[#555]">42 mensajes</p>
+                </div>
+
+                <!-- Videos -->
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-[#7772e7] flex items-center justify-center mx-auto mb-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991131.png" class="imagen-icono"
+                            alt="Icono de video">
+                    </div>
+                    <p class="text-sm text-[#555]">30 videos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contactos recientes -->
+        <div class="bg-white rounded-xl shadow-md p-5">
+            <h2 class="text-xl font-semibold text-[#2c3e50] mb-4 text-center flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/2089/2089676.png" class="imagen-icono mr-2"
+                    alt="Icono de reloj">
+                Contactos Recientes
+            </h2>
+
+            <!-- Contacto 1 -->
+            <div class="mb-4">
+                <div class="flex items-center p-2">
+                    <div class="w-8 h-8 rounded-full bg-[#7772e7] flex items-center justify-center mr-3">
+                        <span class="text-white text-sm">M</span>
+                    </div>
+                    <div>
+                        <p class="font-medium text-[#2c3e50]">María González</p>
+                        <p class="text-[#555] text-sm">Hoy - Llamada</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contacto 2 -->
+            <div class="mb-4">
+                <div class="flex items-center p-2">
+                    <div class="w-8 h-8 rounded-full bg-[#7772e7] flex items-center justify-center mr-3">
+                        <span class="text-white text-sm">J</span>
+                    </div>
+                    <div>
+                        <p class="font-medium text-[#2c3e50]">Juan Pérez</p>
+                        <p class="text-[#555] text-sm">Ayer - Mensaje</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contacto 3 -->
+            <div class="mb-4">
+                <div class="flex items-center p-2">
+                    <div class="w-8 h-8 rounded-full bg-[#7772e7] flex items-center justify-center mr-3">
+                        <span class="text-white text-sm">A</span>
+                    </div>
+                    <div>
+                        <p class="font-medium text-[#2c3e50]">Ana Rodríguez</p>
+                        <p class="text-[#555] text-sm">Ayer - Video</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de ver todos -->
+            <div class="text-center mt-4">
+                <button
+                    class="bg-[#7772e7] hover:bg-[#6660d6] text-white px-4 py-1 rounded-lg text-sm flex items-center justify-center mx-auto">
+                    <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" class="imagen-icono mr-2"
+                        alt="Icono de ver todos">
+                    Ver todos
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
