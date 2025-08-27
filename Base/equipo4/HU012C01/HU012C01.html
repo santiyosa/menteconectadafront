@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HU012C01 - Mensajes Enviados Agrupados</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	</head>
+
+	<body class="bg-gray-50 min-h-screen">
+		<header class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b">
+			<div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+				<h1 class="text-lg sm:text-xl font-semibold text-gray-800">Mis mensajes enviados</h1>
+				<a href="../HU008C01/HU008.html" class="text-sm text-indigo-600 hover:underline">Volver</a>
+			</div>
+		</header>
+
+		<main class="max-w-4xl mx-auto px-4 py-8">
+			<div class="mb-6">
+				<h2 class="text-2xl font-bold text-gray-900">Bandeja de enviados</h2>
+				<p class="text-gray-600">Tus mensajes organizados por destinatario. Abre cada sección para ver el historial.</p>
+			</div>
+
+			<details class="bg-white border rounded-xl shadow-sm mb-4 open:shadow transition-all">
+				<summary class="list-none cursor-pointer select-none flex items-center justify-between gap-4 p-4">
+					<div class="flex items-center gap-3">
+						<div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-semibold">A</div>
+						<div>
+							<p class="font-semibold text-gray-900">Ana López</p>
+							<p class="text-xs text-gray-500">Terapeuta Cognitiva</p>
+						</div>
+					</div>
+					<span class="text-xs bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full">3 mensajes</span>
+				</summary>
+				<ul class="divide-y">
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Hola Ana, ¿podemos agendar una sesión para el jueves?</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 12/08/2025 09:15</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-green-100 text-green-700 h-fit">Leído</span>
+					</li>
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Adjunto el formulario que solicitaste. ¡Gracias!</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 10/08/2025 16:42</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 h-fit">Entregado</span>
+					</li>
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Buenos días, confirmo asistencia a la sesión de hoy.</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 05/08/2025 08:03</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-gray-100 text-gray-700 h-fit">Enviado</span>
+					</li>
+				</ul>
+			</details>
+
+			<details class="bg-white border rounded-xl shadow-sm mb-4">
+				<summary class="list-none cursor-pointer select-none flex items-center justify-between gap-4 p-4">
+					<div class="flex items-center gap-3">
+						<div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-semibold">C</div>
+						<div>
+							<p class="font-semibold text-gray-900">Carlos Pérez</p>
+							<p class="text-xs text-gray-500">Coach de Hábitos</p>
+						</div>
+					</div>
+					<span class="text-xs bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full">2 mensajes</span>
+				</summary>
+				<ul class="divide-y">
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">¡Gracias por la guía de rutina! Voy a empezar hoy.</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 14/08/2025 11:22</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-green-100 text-green-700 h-fit">Leído</span>
+					</li>
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">¿Podrías enviar ejemplos de menús semanales?</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 11/08/2025 13:54</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 h-fit">Entregado</span>
+					</li>
+				</ul>
+			</details>
+
+			<!-- Grupo 3: Destinatario - Equipo de Apoyo -->
+			<details class="bg-white border rounded-xl shadow-sm mb-4">
+				<summary class="list-none cursor-pointer select-none flex items-center justify-between gap-4 p-4">
+					<div class="flex items-center gap-3">
+						<div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-semibold">EA</div>
+						<div>
+							<p class="font-semibold text-gray-900">Equipo de Apoyo</p>
+							<p class="text-xs text-gray-500">Soporte</p>
+						</div>
+					</div>
+					<span class="text-xs bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full">4 mensajes</span>
+				</summary>
+				<ul class="divide-y">
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Tengo problemas para ingresar a mi cuenta.</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 15/08/2025 07:40</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-gray-100 text-gray-700 h-fit">Enviado</span>
+					</li>
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Ya reinicié la contraseña, pero sigue fallando.</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 15/08/2025 07:55</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 h-fit">Entregado</span>
+					</li>
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Pueden verificar si hay bloqueo por intentos?</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 15/08/2025 08:02</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-green-100 text-green-700 h-fit">Leído</span>
+					</li>
+					<li class="p-4 flex items-start justify-between gap-4">
+						<div>
+							<p class="text-gray-800">Gracias, ya funciona correctamente</p>
+							<p class="text-xs text-gray-500 mt-1">Enviado el 15/08/2025 09:12</p>
+						</div>
+						<span class="text-[10px] px-2 py-1 rounded-full bg-green-100 text-green-700 h-fit">Leído</span>
+					</li>
+				</ul>
+			</details>
+
+			<!-- Nota: Todo el contenido es estático (datos "quemados") y sin JavaScript -->
+		</main>
+
+		<footer class="border-t mt-8">
+			<div class="max-w-4xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
+				&copy; 2025 ZENITH
+			</div>
+		</footer>
+	</body>
+</html>
