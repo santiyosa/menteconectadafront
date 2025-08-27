@@ -1,73 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Eventos de Salud Mental</title>
-  <link rel="stylesheet" href="DetallesEvento.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Urbanist', sans-serif;
+    }
+  </style>
 </head>
-<body>
 
-  <h1 class="titulo">Eventos de Salud Mental</h1>
+<body class="bg-gradient-to-br from-[#e2e772] to-[#e8f4f8] text-[#2c3e50] text-center p-5">
 
-  <div class="galeria">
-    <a href="#modal1"><img src="https://psiconecta.org/wp-content/uploads/2024/04/regulacion_emocional.png" alt="Control Emocional"></a>
-    <a href="#modal2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9HodHojyYokm1TI5bnhxzL_zU7xYKp1Ahw&s" alt="TLP"></a>
-    <a href="#modal3"><img src="https://media.istockphoto.com/id/1457842724/es/vector/manejo-del-estr%C3%A9s-meditaci%C3%B3n-o-relajaci%C3%B3n-para-reducir-la-ansiedad-controlar-la-emoci%C3%B3n.jpg?s=612x612&w=0&k=20&c=fKwcFFN6kXoOHQi8QPkP1O4qmKrhkBKYu0MRFbrPg7k=" alt="Mindfulness"></a>
-    <a href="#modal4"><img src="https://media.istockphoto.com/id/1301034661/es/vector/ni%C3%B1a-rodeada-de-s%C3%ADntomas-de-trastorno-de-depresi%C3%B3n-ansiedad-crisis-l%C3%A1grimas-agotamiento.jpg?s=612x612&w=0&k=20&c=fER2R6VSoW41QpjpwrMRSFRnD5kb_y_i2RioJIpbRnU=" alt="Depresión"></a>
-    <a href="#modal5"><img src="https://www.shutterstock.com/image-vector/upset-teen-girl-crying-suffer-600nw-2135270661.jpg" alt="Ansiedad Jóvenes"></a>
-    <a href="#modal6"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRu4cfMtZz_rXB2GlAPzRQknTI-rTJflrg&s" alt="Trabajo"></a>
+  <h1 class="mb-8 text-[#7772e7] font-bold text-3xl">Eventos de Salud Mental</h1>
+
+  <div class="flex flex-wrap gap-4 justify-center mb-6">
+    <button class="px-4 py-2 rounded-full bg-gray-300 hover:bg-gray-400"
+      onclick="filtrarEventos('todas')">Todas</button>
+    <button class="px-4 py-2 rounded-full bg-blue-300 hover:bg-blue-400"
+      onclick="filtrarEventos('taller')">Taller</button>
+    <button class="px-4 py-2 rounded-full bg-pink-300 hover:bg-pink-400"
+      onclick="filtrarEventos('seminario')">Seminario</button>
+    <button class="px-4 py-2 rounded-full bg-purple-300 hover:bg-purple-400"
+      onclick="filtrarEventos('mindfulness')">Mindfulness</button>
+    <button class="px-4 py-2 rounded-full bg-red-300 hover:bg-red-400"
+      onclick="filtrarEventos('depresion')">Depresión</button>
+    <button class="px-4 py-2 rounded-full bg-yellow-300 hover:bg-yellow-400"
+      onclick="filtrarEventos('apoyo')">Apoyo</button>
+    <button class="px-4 py-2 rounded-full bg-green-300 hover:bg-green-400"
+      onclick="filtrarEventos('trabajo')">Trabajo</button>
   </div>
 
-  <div id="modal1" class="modal">
-    <div class="modal-contenido">
-      <a href="#" class="cerrar">×</a>
-      <h2>Taller de Control Emocional</h2>
-      <p>Aprende técnicas para gestionar tus emociones de forma saludable.</p>
+  <div class="flex flex-wrap gap-6 justify-center" id="contenedorEventos">
+    <a href="#Evento1" class="evento" data-categoria="taller">
+      <img
+        class="w-[250px] h-[160px] object-cover rounded-xl border-2 border-[#7772e7] shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        src="https://psiconecta.org/wp-content/uploads/2024/04/regulacion_emocional.png" alt="Control Emocional">
+    </a>
+    <a href="#Evento2" class="evento" data-categoria="seminario">
+      <img
+        class="w-[250px] h-[160px] object-cover rounded-xl border-2 border-[#7772e7] shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9HodHojyYokm1TI5bnhxzL_zU7xYKp1Ahw&s" alt="TLP">
+    </a>
+    <a href="#Evento3" class="evento" data-categoria="mindfulness">
+      <img
+        class="w-[250px] h-[160px] object-cover rounded-xl border-2 border-[#7772e7] shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        src="https://media.istockphoto.com/id/1457842724/es/vector/manejo-del-estr%C3%A9s-meditaci%C3%B3n-o-relajaci%C3%B3n-para-reducir-la-ansiedad-controlar-la-emoci%C3%B3n.jpg?s=612x612&w=0&k=20&c=fKwcFFN6kXoOHQi8QPkP1O4qmKrhkBKYu0MRFbrPg7k="
+        alt="Mindfulness">
+    </a>
+    <a href="#Evento4" class="evento" data-categoria="depresion">
+      <img
+        class="w-[250px] h-[160px] object-cover rounded-xl border-2 border-[#7772e7] shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        src="https://media.istockphoto.com/id/1301034661/es/vector/ni%C3%B1a-rodeada-de-s%C3%ADntomas-de-trastorno-de-depresi%C3%B3n-ansiedad-crisis-l%C3%A1grimas-agotamiento.jpg?s=612x612&w=0&k=20&c=fER2R6VSoW41QpjpwrMRSFRnD5kb_y_i2RioJIpbRnU="
+        alt="Depresión">
+    </a>
+    <a href="#Evento5" class="evento" data-categoria="apoyo">
+      <img
+        class="w-[250px] h-[160px] object-cover rounded-xl border-2 border-[#7772e7] shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        src="https://www.shutterstock.com/image-vector/upset-teen-girl-crying-suffer-600nw-2135270661.jpg"
+        alt="Ansiedad Jóvenes">
+    </a>
+    <a href="#Evento6" class="evento" data-categoria="trabajo">
+      <img
+        class="w-[250px] h-[160px] object-cover rounded-xl border-2 border-[#7772e7] shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRu4cfMtZz_rXB2GlAPzRQknTI-rTJflrg&s"
+        alt="Trabajo">
+    </a>
+  </div>
+
+  <div id="Evento1" class="fixed inset-0 hidden bg-black/60 z-50 items-center justify-center target:flex">
+    <div class="bg-white p-8 rounded-xl max-w-md w-11/12 text-left relative shadow-lg border-2 border-[#7772e7]">
+      <a href="#" class="absolute top-3 right-4 text-2xl text-gray-600 hover:text-[#7772e7]">&times;</a>
+      <h2 class="text-[#7772e7] font-semibold text-xl mb-2">Taller de Control Emocional</h2>
+      <p class="text-gray-600">Aprende técnicas para gestionar tus emociones de forma saludable.</p>
+      <p class="text-gray-700 font-semibold mt-2">Hora: 09:00 - Fecha: 15/09/2025</p>
+      <br>
+      <label for="taller" class="px-3 py-1 rounded-full bg-blue-200">Taller</label>
+      <label for="todas" class="px-3 py-1 rounded-full bg-gray-200">Todas</label>
     </div>
   </div>
 
-  <div id="modal2" class="modal">
-    <div class="modal-contenido">
-      <a href="#" class="cerrar">×</a>
-      <h2>Seminario sobre TLP</h2>
-      <p>Conoce más sobre el Trastorno Límite de la Personalidad y sus tratamientos.</p>
+  <div id="Evento2" class="fixed inset-0 hidden bg-black/60 z-50 items-center justify-center target:flex">
+    <div class="bg-white p-8 rounded-xl max-w-md w-11/12 text-left relative shadow-lg border-2 border-[#7772e7]">
+      <a href="#" class="absolute top-3 right-4 text-2xl text-gray-600 hover:text-[#7772e7]">&times;</a>
+      <h2 class="text-[#7772e7] font-semibold text-xl mb-2">Seminario sobre TLP</h2>
+      <p class="text-gray-600">Conoce más sobre el Trastorno Límite de la Personalidad y sus tratamientos.</p>
+      <p class="text-gray-700 font-semibold mt-2">Hora: 10:00 - Fecha: 16/09/2025</p>
+      <br>
+      <label for="seminario" class="px-3 py-1 rounded-full bg-pink-200">Seminario</label>
+      <label for="todas" class="px-3 py-1 rounded-full bg-gray-200">Todas</label>
     </div>
   </div>
 
-  <div id="modal3" class="modal">
-    <div class="modal-contenido">
-      <a href="#" class="cerrar">×</a>
-      <h2>Jornada de Mindfulness y Ansiedad</h2>
-      <p>Herramientas de mindfulness para combatir la ansiedad.</p>
+  <div id="Evento3" class="fixed inset-0 hidden bg-black/60 z-50 items-center justify-center target:flex">
+    <div class="bg-white p-8 rounded-xl max-w-md w-11/12 text-left relative shadow-lg border-2 border-[#7772e7]">
+      <a href="#" class="absolute top-3 right-4 text-2xl text-gray-600 hover:text-[#7772e7]">&times;</a>
+      <h2 class="text-[#7772e7] font-semibold text-xl mb-2">Jornada de Mindfulness y Ansiedad</h2>
+      <p class="text-gray-600">Herramientas de mindfulness para combatir la ansiedad.</p>
+      <p class="text-gray-700 font-semibold mt-2">Hora: 11:00 - Fecha: 17/09/2025</p>
+      <br>
+      <label for="mindfulness" class="px-3 py-1 rounded-full bg-purple-200">Mindfulness</label>
+      <label for="todas" class="px-3 py-1 rounded-full bg-gray-200">Todas</label>
     </div>
   </div>
 
-  <div id="modal4" class="modal">
-    <div class="modal-contenido">
-      <a href="#" class="cerrar">×</a>
-      <h2>Charla sobre Depresión y Autoestima</h2>
-      <p>Reflexiones y consejos para mejorar la autoestima.</p>
+  <div id="Evento4" class="fixed inset-0 hidden bg-black/60 z-50 items-center justify-center target:flex">
+    <div class="bg-white p-8 rounded-xl max-w-md w-11/12 text-left relative shadow-lg border-2 border-[#7772e7]">
+      <a href="#" class="absolute top-3 right-4 text-2xl text-gray-600 hover:text-[#7772e7]">&times;</a>
+      <h2 class="text-[#7772e7] font-semibold text-xl mb-2">Charla sobre Depresión y Autoestima</h2>
+      <p class="text-gray-600">Reflexiones y consejos para mejorar la autoestima.</p>
+      <p class="text-gray-700 font-semibold mt-2">Hora: 12:00 - Fecha: 18/09/2025</p>
+      <br>
+      <label for="depresion" class="px-3 py-1 rounded-full bg-red-200">Depresión</label>
+      <label for="todas" class="px-3 py-1 rounded-full bg-gray-200">Todas</label>
     </div>
   </div>
 
-  <div id="modal5" class="modal">
-    <div class="modal-contenido">
-      <a href="#" class="cerrar">×</a>
-      <h2>Grupo de Apoyo para Jóvenes con Ansiedad</h2>
-      <p>Espacio seguro para compartir experiencias.</p>
+  <div id="Evento5" class="fixed inset-0 hidden bg-black/60 z-50 items-center justify-center target:flex">
+    <div class="bg-white p-8 rounded-xl max-w-md w-11/12 text-left relative shadow-lg border-2 border-[#7772e7]">
+      <a href="#" class="absolute top-3 right-4 text-2xl text-gray-600 hover:text-[#7772e7]">&times;</a>
+      <h2 class="text-[#7772e7] font-semibold text-xl mb-2">Grupo de Apoyo para Jóvenes con Ansiedad</h2>
+      <p class="text-gray-600">Espacio seguro para compartir experiencias.</p>
+      <p class="text-gray-700 font-semibold mt-2">Hora: 13:00 - Fecha: 19/09/2025</p>
+      <br>
+      <label for="apoyo" class="px-3 py-1 rounded-full bg-yellow-200">Apoyo</label>
+      <label for="todas" class="px-3 py-1 rounded-full bg-gray-200">Todas</label>
     </div>
   </div>
 
-  <div id="modal6" class="modal">
-    <div class="modal-contenido">
-      <a href="#" class="cerrar">×</a>
-      <h2>Conferencia: Salud Mental en el Trabajo</h2>
-      <p>Cómo cuidar tu salud mental en el entorno laboral.</p>
+  <div id="Evento6" class="fixed inset-0 hidden bg-black/60 z-50 items-center justify-center target:flex">
+    <div class="bg-white p-8 rounded-xl max-w-md w-11/12 text-left relative shadow-lg border-2 border-[#7772e7]">
+      <a href="#" class="absolute top-3 right-4 text-2xl text-gray-600 hover:text-[#7772e7]">&times;</a>
+      <h2 class="text-[#7772e7] font-semibold text-xl mb-2">Conferencia: Salud Mental en el Trabajo</h2>
+      <p class="text-gray-600">Cómo cuidar tu salud mental en el entorno laboral.</p>
+      <p class="text-gray-700 font-semibold mt-2">Hora: 14:00 - Fecha: 20/09/2025</p>
+      <br>
+      <label for="trabajo" class="px-3 py-1 rounded-full bg-green-200">Trabajo</label>
+      <label for="todas" class="px-3 py-1 rounded-full bg-gray-200">Todas</label>
     </div>
   </div>
 
+  <script>
+    function filtrarEventos(categoria) {
+      const eventos = document.querySelectorAll('.evento');
+      eventos.forEach(ev => {
+        if (categoria === 'todas' || ev.dataset.categoria === categoria) {
+          ev.style.display = 'block';
+        } else {
+          ev.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
+
 </html>
