@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* Animación personalizada para mensajes */
+
     @keyframes desaparecer {
       0% { opacity: 1; }
       80% { opacity: 1; }
@@ -61,12 +61,33 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center font-sans font-bold bg-gradient-to-b from-[#dcd4e4] to-[#fafad2]">
 
-  <!-- Logo -->
+
+  <nav class="w-full bg-white shadow mb-6">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="text-indigo-700 font-bold text-lg">MenteConectada</a>
+        <button id="nav-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Abrir menú">
+          &#9776;
+        </button>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 font-semibold">
+          <li><a href="index.html" class="hover:text-indigo-700 transition">Inicio</a></li>
+          <li><a href="contacto.html" class="hover:text-indigo-700 transition">Contacto</a></li>
+        </ul>
+      </div>
+      <!-- Menú móvil -->
+      <ul id="nav-menu-mobile" class="md:hidden hidden flex-col space-y-2 mt-2 font-semibold">
+        <li><a href="index.html" class="block px-2 py-1 hover:bg-indigo-100 rounded">Inicio</a></li>
+        <li><a href="contacto.html" class="block px-2 py-1 hover:bg-indigo-100 rounded">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
   <div>
     <img src="logolisto-removebg-preview.png" alt="logo" class="w-40 h-auto mx-auto my-12">
   </div>
 
-  <!-- Tarjeta del formulario -->
+
   <div class="w-80 p-6 rounded-xl shadow-lg bg-gradient-to-b from-[#dcd4e4] to-[#fafad2]">
 
     <!-- Tabs -->
@@ -79,7 +100,7 @@
       </li>
     </ul>
 
-    <!-- Login -->
+
     <div id="login" class="tab-content block">
       <h2 class="text-xl font-bold text-center mb-4">Iniciar Sesión</h2>
       <form id="loginform" class="flex flex-col gap-4">
@@ -91,21 +112,18 @@
         <div class="flex flex-col gap-1 relative">
           <label for="contrasena" class="text-sm">Contraseña</label>
 
-          <!-- Checkbox oculto para mostrar/ocultar contraseña -->
           <input type="checkbox" id="toggleLogin" class="hidden peer">
 
-          <!-- Input contraseña oculto -->
+
           <input type="password" id="contrasena" placeholder="Ingrese contraseña" minlength="6"
             class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 peer-checked:hidden" required>
 
-          <!-- Input texto visible al activar 👁 -->
+
           <input type="text" id="contrasena-text" placeholder="Ingrese contraseña" minlength="6"
             class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 hidden peer-checked:block" required>
 
-          <!-- Botón ojo -->
           <label for="toggleLogin" class="absolute right-3 top-9 cursor-pointer text-gray-600">👁</label>
 
-          <!-- Recordarme y mínimo caracteres -->
           <div class="flex items-center justify-between mt-2">
             <span class="text-xs text-gray-600">Mínimo 6 caracteres</span>
             <div class="flex items-center recordar">
@@ -121,54 +139,47 @@
       </form>
     </div>
 
-    <!-- Registro -->
+
     <div id="register" class="tab-content hidden">
       <h2 class="text-xl font-bold text-center mb-4">Registrarse</h2>
-      <!-- Aquí va el truco: enviamos a #exito -->
+
       <form id="registerform" action="#exito" method="get" class="flex flex-col gap-4">
 
-        <!-- Usuario -->
         <div class="flex flex-col gap-1">
           <label for="Usuario" class="text-sm">Nombre</label>
           <input type="text" id="Usuario" name="Usuario" placeholder="Ingrese Usuario"
             class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
         </div>
 
-        <!-- Especialidad -->
         <div class="flex flex-col gap-1">
-          <label for="especialidad" class="text-sm">Especialidad</label>
-          <select id="especialidad" name="especialidad" required
-            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          <label for="rolSeleccionado" class="text-sm mb-1">Selecciona tu rol</label>
+          <select id="rolSeleccionado" name="rolSeleccionado" required
+            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-colors"
+            onchange="resaltarRol()">
             <option value="" disabled selected>Seleccione una opción</option>
             <option value="profesional">Profesional</option>
             <option value="paciente">Paciente</option>
             <option value="moderador">Moderador</option>
+            <option value="servidor">Servidor Público</option>
           </select>
+          <span id="rolError" class="text-xs text-red-600 hidden">Por favor, selecciona un rol.</span>
         </div>
 
-        <!-- Correo -->
-        <div class="flex flex-col gap-1">
-          <label for="regcorreo" class="text-sm">Correo Electrónico</label>
-          <input type="email" id="regcorreo" name="regcorreo" placeholder="Ingrese correo electrónico"
-            class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
-        </div>
-
-        <!-- Contraseña con 👁 -->
+  
         <div class="flex flex-col gap-1 relative">
           <label for="regcontrasena" class="text-sm">Contraseña</label>
 
-          <!-- Checkbox oculto -->
+      
           <input type="checkbox" id="toggleReg" class="hidden peer">
 
-          <!-- Input contraseña -->
+
           <input type="password" id="regcontrasena" name="regcontrasena" placeholder="Cree una contraseña" minlength="6"
             class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 peer-checked:hidden" required>
 
-          <!-- Input texto -->
+
           <input type="text" id="regcontrasena-text" placeholder="Cree una contraseña" minlength="6"
             class="p-2 rounded-md border-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 hidden peer-checked:block" required>
 
-          <!-- Botón ojo -->
           <label for="toggleReg" class="absolute right-3 top-9 cursor-pointer text-gray-600">👁</label>
           <span class="text-xs text-gray-600">Mínimo 6 caracteres</span>
         </div>
@@ -178,7 +189,7 @@
     </div>
   </div>
 
-  <!-- Modal recuperación -->
+
   <div id="recover" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 hidden">
     <div class="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg relative text-center">
       <h3 class="text-lg font-bold mb-3">Recuperar contraseña</h3>
@@ -193,7 +204,7 @@
     </div>
   </div>
 
-  <!-- Modal éxito -->
+
   <div id="exito" class="hidden fixed inset-0 flex items-center justify-center bg-black/50">
     <div class="bg-green-600 text-white p-4 rounded-lg shadow-lg text-center">
       ✅ Registro exitoso
@@ -219,9 +230,49 @@
       event.target.classList.add('bg-indigo-300', 'text-white');
       event.target.classList.remove('bg-[#dcd4e4]', 'text-black');
     }
+
+
+    function resaltarRol() {
+      const select = document.getElementById('rolSeleccionado');
+      if (select.value) {
+        select.classList.add('bg-indigo-100', 'border-indigo-500');
+      } else {
+        select.classList.remove('bg-indigo-100', 'border-indigo-500');
+      }
+    }
+
+    document.getElementById('registerform').addEventListener('submit', function (e) {
+      const rolInput = document.getElementById('rolSeleccionado');
+      const rolError = document.getElementById('rolError');
+      if (!rolInput.value) {
+        rolError.classList.remove('hidden');
+        e.preventDefault();
+      } else {
+        rolError.classList.add('hidden');
+      }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenuMobile = document.getElementById('nav-menu-mobile');
+
+      if (navToggle && navMenuMobile) {
+        navToggle.addEventListener('click', function () {
+          navMenuMobile.classList.toggle('hidden');
+        });
+
+  
+        navMenuMobile.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenuMobile.classList.add('hidden');
+          });
+        });
+      }
+    });
   </script>
 
-  <!--Terminos y Condiciones-->
+
   <p class="terminos">
     Al continuar, aceptas nuestros
     <a href="terminos-y-condiciones.html" target="_blank" rel="noopener noreferrer" class="link-terminos">
@@ -229,24 +280,24 @@
     </a>.
   </p>
 
-  <!-- Preguntas Frecuentes -->
+
   <section class="max-w-2xl mx-auto mt-10 p-6">
     <h2 class="text-2xl font-bold mb-4 text-center">Preguntas Frecuentes</h2>
 
     <div class="space-y-4">
-      <!-- Pregunta 1 -->
+
       <details class="border rounded-lg p-4">
         <summary class="cursor-pointer font-semibold">¿Cómo puedo registrarme?</summary>
         <p class="mt-2 text-gray-600">Puedes registrarte en la pestaña de "Registro" dentro del formulario principal.</p>
       </details>
 
-      <!-- Pregunta 2 -->
+
       <details class="border rounded-lg p-4">
         <summary class="cursor-pointer font-semibold">¿Como puedo recuperar mi contraseña?</summary>
         <p class="mt-2 text-gray-600">Cuando vayas a iniciar sesión, en caso de que olvides tu contraseña, dale al link "¿olvidaste tu contraseña?", justo abajo del boton "Ingresar", te pediremos tu correo, y luego recibirás un enlace en tu bandeja de entrada para que puedas restablecer tu contraseña.</p>
       </details>
 
-      <!-- Pregunta 3 -->
+
       <details class="border rounded-lg p-4">
         <summary class="cursor-pointer font-semibold">¿Dónde puedo contactar soporte?</summary>
         <p class="mt-2 text-gray-600">Puedes escribirnos al correo <a href="mailto:soportementeconectada@gmail.com" class="underline text-blue-600">soportementeconectada@gmail.com</a> o en la sección de contacto.</p>
